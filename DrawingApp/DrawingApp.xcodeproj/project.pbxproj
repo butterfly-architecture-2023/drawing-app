@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453307882AF5FFA500DF41A3 /* CanvasView.swift */; };
+		4533078B2AF6179B00DF41A3 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533078A2AF6179B00DF41A3 /* Context.swift */; };
 		4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8202AF5EC190077907E /* AppDelegate.swift */; };
 		4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8222AF5EC190077907E /* SceneDelegate.swift */; };
 		4594C8252AF5EC190077907E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8242AF5EC190077907E /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		453307882AF5FFA500DF41A3 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		4533078A2AF6179B00DF41A3 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		4594C81D2AF5EC190077907E /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594C8202AF5EC190077907E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4594C8222AF5EC190077907E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4533078C2AF617B000DF41A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4533078E2AF6181500DF41A3 /* SubViews */,
+				4594C8242AF5EC190077907E /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4533078D2AF617CA00DF41A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4533078A2AF6179B00DF41A3 /* Context.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4533078E2AF6181500DF41A3 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				453307882AF5FFA500DF41A3 /* CanvasView.swift */,
+				4594C8562AF5EDF50077907E /* DrawingButton.swift */,
+				4594C85A2AF5F0730077907E /* DrawingButtonType.swift */,
+				4594C8582AF5F0600077907E /* UISubviewStyle.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		4594C8142AF5EC190077907E = {
 			isa = PBXGroup;
 			children = (
@@ -111,14 +143,12 @@
 			children = (
 				4594C8202AF5EC190077907E /* AppDelegate.swift */,
 				4594C8222AF5EC190077907E /* SceneDelegate.swift */,
-				4594C8242AF5EC190077907E /* ViewController.swift */,
 				4594C8262AF5EC190077907E /* Main.storyboard */,
 				4594C8292AF5EC1A0077907E /* Assets.xcassets */,
 				4594C82B2AF5EC1A0077907E /* LaunchScreen.storyboard */,
 				4594C82E2AF5EC1A0077907E /* Info.plist */,
-				4594C8562AF5EDF50077907E /* DrawingButton.swift */,
-				4594C8582AF5F0600077907E /* UISubviewStyle.swift */,
-				4594C85A2AF5F0730077907E /* DrawingButtonType.swift */,
+				4533078C2AF617B000DF41A3 /* View */,
+				4533078D2AF617CA00DF41A3 /* Model */,
 			);
 			path = DrawingApp;
 			sourceTree = "<group>";
@@ -280,9 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */,
+				453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */,
 				4594C8252AF5EC190077907E /* ViewController.swift in Sources */,
 				4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */,
 				4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */,
+				4533078B2AF6179B00DF41A3 /* Context.swift in Sources */,
 				4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */,
 				4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */,
 			);

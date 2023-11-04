@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     // MARK: - UI Items
     
+    private var canvasView: CanvasView = CanvasView()
     private var drawingToolView: UIStackView = UIStackView().then {
         $0.backgroundColor = .systemPink
         $0.alignment = .center
@@ -43,12 +44,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UISubviewStyle {
     func addSubviews() {
+        self.view.addSubview(canvasView)
         self.view.addSubview(drawingToolView)
         drawingToolView.addArrangedSubview(rectangleButton)
         drawingToolView.addArrangedSubview(drawingButton)
     }
     
     func makeConstraints() {
+        canvasView.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.bottom.equalToSuperview().offset(-150)
+        }
         drawingToolView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-16)

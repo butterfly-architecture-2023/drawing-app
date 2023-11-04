@@ -18,8 +18,8 @@ struct Path {
         let points = [
             rect.origin,
             rect.offsetBy(dx: rect.width, dy: 0).origin,
+            rect.offsetBy(dx: rect.width, dy: rect.height).origin,
             rect.offsetBy(dx: 0, dy: rect.height).origin,
-            rect.offsetBy(dx: rect.width, dy: rect.height).origin
         ].map(Point.init)
         self.init(points: points)
     }

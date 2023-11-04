@@ -7,20 +7,10 @@
 
 import Foundation
 
-protocol CanvasDelegate: AnyObject {
-    func didElementsChanged(canvas: Canvas, elements: [UUID: any Drawable])
-}
-
-struct Canvas {
-    private var elements: [UUID: any Drawable] {
-        didSet {
-            delegate?.didElementsChanged(canvas: self, elements: elements)
-        }
-    }
+final class Canvas {
+    @Published private(set) var elements: [UUID: any Drawable] = [:]
     
-    weak var delegate: CanvasDelegate?
-    
-    mutating func add(_ drawable: some Drawable) {
+    func add(_ drawable: some Drawable) {
         elements[drawable.id] = drawable
     }
 }

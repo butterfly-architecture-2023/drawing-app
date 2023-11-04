@@ -18,12 +18,16 @@ class CanvasView: UIView {
     
     private var shapeInfoList: [ShapeInfo] = []
     private var drawingInfoList: [DrawingInfo] = []
+    private var mode: DrawingButtonType = .rectangle
     
     
     // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectRectangle(_:)))
+        self.addGestureRecognizer(tapGesture)
         
         addSubviews()
         makeConstraints()
@@ -37,11 +41,13 @@ class CanvasView: UIView {
     // MARK: - Touch Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard self.mode == .drawing else { return }
         let line = DrawingInfo(width: 2.0, color: UIColor.random().without(.red), point: makeTouchPoint(touches))
         drawingInfoList.append(line)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard self.mode == .drawing else { return }
         var context = setContext()
         let currentPoint = makeTouchPoint(touches)
         drawLine(context.point, currentPoint)
@@ -54,6 +60,7 @@ class CanvasView: UIView {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard self.mode == .drawing else { return }
         let context = setContext()
         let currentPoint = makeTouchPoint(touches)
         drawLine(context.point, currentPoint)
@@ -65,7 +72,8 @@ class CanvasView: UIView {
     override func draw(_ rect: CGRect) {
         _ = shapeInfoList.map {
             guard let context = UIGraphicsGetCurrentContext() else { return }
-            context.setStrokeColor($0.color.cgColor)
+            let color = ($0.isSelected == true) ? UIColor.red : $0.color
+            context.setStrokeColor(color.cgColor)
             context.addPath($0.path.cgPath)
             context.strokePath()
             UIGraphicsEndImageContext()
@@ -97,34 +105,41 @@ class CanvasView: UIView {
         UIGraphicsEndImageContext()
     }
     
-    private func makeRectangle() {
+    private func makeRectangle(_ position: CGPoint, _ color: UIColor, _ isSelected: Bool = false) {
         // 사각형 사이즈
         let width: CGFloat = 100
         let height: CGFloat = 100
-        
-        // 랜덤 위치
-        let position = CGPoint.random()
 
         let path = UIBezierPath()
-        UIColor.systemBlue.set()
         path.lineWidth = 1.0
         path.move(to: CGPoint(x: position.x, y: position.y))
         path.addLine(to: CGPoint(x: position.x + width, y: position.y))
         path.addLine(to: CGPoint(x: position.x + width, y: position.y + height))
         path.addLine(to: CGPoint(x: position.x, y: position.y+height))
         path.close()
-        
-        shapeInfoList.append(ShapeInfo(path: path, color: UIColor.random().without(.red)))
+        shapeInfoList.append(ShapeInfo(point: position, path: path, color: color, isSelected: isSelected))
         self.setNeedsDisplay()
     }
     
-    func removeAllContext() {
-        drawingInfoList.removeAll()
-        canvasImageView.image = nil
+    @objc private func selectRectangle(_ sender: UITapGestureRecognizer) {
+        guard let index = self.shapeInfoList.map({ $0.contains(sender.location(in: sender.view)) }).firstIndex(of: true) else { return }
+        let shapeInfo = shapeInfoList[index]
+        shapeInfoList.remove(at: index)
+        makeRectangle(shapeInfo.point, shapeInfo.color, !shapeInfo.isSelected)
     }
     
-    func printStamp() {
-        makeRectangle()
+    private func printStamp() {
+        makeRectangle(CGPoint.random(), UIColor.random().without(.red))
+    }
+    
+    func updateMode(_ type: DrawingButtonType) {
+        self.mode = type
+        switch type {
+            case .rectangle:
+                printStamp()
+            case .drawing:
+                break
+        }
     }
 }
 

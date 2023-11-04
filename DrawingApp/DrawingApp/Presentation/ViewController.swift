@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: BaseViewController {
 
-    private let squareAddingUseCase: SquareAddingType
+    private let squareManagementUseCase: SquareManagementType
     private let squareSelectionUseCase: SquareSelectionType
 
     private let drawingContainerView: UIView = {
@@ -41,10 +41,10 @@ final class ViewController: BaseViewController {
     }()
 
     init(
-        squareAddingUseCase: SquareAddingType,
+        squareAddingUseCase: SquareManagementType,
         squareSelectionUseCase: SquareSelectionType
     ) {
-        self.squareAddingUseCase = squareAddingUseCase
+        self.squareManagementUseCase = squareAddingUseCase
         self.squareSelectionUseCase = squareSelectionUseCase
         super.init(nibName: nil, bundle: nil)
     }
@@ -90,6 +90,13 @@ final class ViewController: BaseViewController {
 extension ViewController {
     @objc
     private func squareButtonDidTap() {
+        let maxPosition = Position(
+            x: drawingContainerView.bounds.width - 100,
+            y: drawingContainerView.bounds.height - 100
+        )
 
+        let square = squareManagementUseCase.createSquare(within: maxPosition)
+        let squareView = SquareView(position: square.position, color: square.color)
+        drawingContainerView.addSubview(squareView)
     }
 }

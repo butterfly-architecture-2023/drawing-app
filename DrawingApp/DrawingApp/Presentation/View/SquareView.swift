@@ -23,9 +23,11 @@ final class SquareView: UIView {
         }
     }
 
-    init(x: CGFloat, y: CGFloat) {
-        let initialFrame = CGRect(x: x, y: y, width: 100, height: 100)
+    init(position: Position, color: ColorType) {
+        let initialFrame = CGRect(x: position.x, y: position.y, width: 100, height: 100)
         super.init(frame: initialFrame)
+
+        self.backgroundColor = color.uiColor
     }
 
     required init?(coder: NSCoder) {

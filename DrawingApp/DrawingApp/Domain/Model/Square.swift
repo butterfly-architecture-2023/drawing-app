@@ -7,13 +7,19 @@
 
 import Foundation
 
+struct Position: Hashable {
+    var x, y: CGFloat
+}
+
 struct Square {
     var id: Int
     var color: ColorType
+    var position: Position
     var isSelected: Bool = false
 
-    init(id: Int, color: ColorType) {
+    init(id: Int, color: ColorType, position: Position) {
         self.id = id
         self.color = color
+        self.position = position
     }
 }

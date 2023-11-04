@@ -24,6 +24,7 @@
 		B4E31CCD2AF6882F0030DD44 /* SquareSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCC2AF6882F0030DD44 /* SquareSelectionType.swift */; };
 		B4E31CCF2AF690370030DD44 /* SquareManagementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCE2AF690370030DD44 /* SquareManagementUseCase.swift */; };
 		B4E31CD12AF690430030DD44 /* SquareManagementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD02AF690430030DD44 /* SquareManagementType.swift */; };
+		B4E31CD32AF69C860030DD44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD22AF69C860030DD44 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B4E31CCC2AF6882F0030DD44 /* SquareSelectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionType.swift; sourceTree = "<group>"; };
 		B4E31CCE2AF690370030DD44 /* SquareManagementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementUseCase.swift; sourceTree = "<group>"; };
 		B4E31CD02AF690430030DD44 /* SquareManagementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementType.swift; sourceTree = "<group>"; };
+		B4E31CD22AF69C860030DD44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E31CC42AF683F00030DD44 /* ColorType.swift */,
+				B4E31CD22AF69C860030DD44 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				B4E31CB72AF658110030DD44 /* CreateButton.swift in Sources */,
 				B4E31CC52AF683F00030DD44 /* ColorType.swift in Sources */,
 				B4E31CC22AF682AB0030DD44 /* Square.swift in Sources */,
+				B4E31CD32AF69C860030DD44 /* Constants.swift in Sources */,
 				B4E31CCA2AF685580030DD44 /* SquareSelectionUseCase.swift in Sources */,
 				B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */,
 				B4E31CCD2AF6882F0030DD44 /* SquareSelectionType.swift in Sources */,

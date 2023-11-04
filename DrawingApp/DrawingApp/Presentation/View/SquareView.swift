@@ -17,14 +17,19 @@ final class SquareView: UIView {
             super.frame = CGRect(
                 x: newValue.origin.x,
                 y: newValue.origin.y,
-                width: 100,
-                height: 100
+                width: Constants.squareWidth,
+                height: Constants.squareHeight
             )
         }
     }
 
     init(position: Position, color: ColorType) {
-        let initialFrame = CGRect(x: position.x, y: position.y, width: 100, height: 100)
+        let initialFrame = CGRect(
+            x: position.x,
+            y: position.y,
+            width: Constants.squareWidth,
+            height: Constants.squareHeight
+        )
         super.init(frame: initialFrame)
 
         self.backgroundColor = color.uiColor

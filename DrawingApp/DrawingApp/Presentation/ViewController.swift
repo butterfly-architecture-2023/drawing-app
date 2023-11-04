@@ -91,8 +91,8 @@ extension ViewController {
     @objc
     private func squareButtonDidTap() {
         let maxPosition = Position(
-            x: drawingContainerView.bounds.width - 100,
-            y: drawingContainerView.bounds.height - 100
+            x: drawingContainerView.bounds.width - Constants.squareWidth,
+            y: drawingContainerView.bounds.height - Constants.squareHeight
         )
 
         let square = squareManagementUseCase.createSquare(within: maxPosition)

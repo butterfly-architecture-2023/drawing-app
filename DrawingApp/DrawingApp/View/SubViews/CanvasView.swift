@@ -16,6 +16,7 @@ class CanvasView: UIView {
     
     // MARK: - Properties
     
+    private var shapeInfoList: [(path: UIBezierPath, color: UIColor)] = []
     private var contextList: [Context] = []
     
     
@@ -58,6 +59,19 @@ class CanvasView: UIView {
         drawLine(context.point, currentPoint)
     }
     
+    
+    // MARK: - Draw CGRect
+    
+    override func draw(_ rect: CGRect) {
+        _ = shapeInfoList.map {
+            guard let context = UIGraphicsGetCurrentContext() else { return }
+            context.setStrokeColor($0.color.cgColor)
+            context.addPath($0.path.cgPath)
+            context.strokePath()
+            UIGraphicsEndImageContext()
+        }
+    }
+    
     private func makeTouchPoint(_ touches: Set<UITouch>) -> CGPoint {
         let touch = touches.first! as UITouch
         let point = touch.location(in: canvasImageView)
@@ -83,9 +97,45 @@ class CanvasView: UIView {
         UIGraphicsEndImageContext()
     }
     
+    private func makeRectangle() {
+        // 사각형 사이즈
+        let width = 100
+        let height = 100
+        
+        // 랜덤 위치
+        let bounds = UIScreen.main.bounds
+        let randomX = Int.random(in: 0...(Int(bounds.width))-width - 16)
+        let randomY = Int.random(in: 0...(Int(bounds.height))-height - 200)
+        print(randomX, randomY)
+
+        let path = UIBezierPath()
+        UIColor.systemBlue.set()
+        path.lineWidth = 1.0
+        path.move(to: CGPoint(x: randomX, y: randomY))
+        path.addLine(to: CGPoint(x: randomX+width, y: randomY))
+        path.addLine(to: CGPoint(x: randomX+width, y: randomY+height))
+        path.addLine(to: CGPoint(x: randomX, y: randomY+height))
+        path.close()
+        
+        shapeInfoList.append((path: path, color: makeRandomColor()))
+        self.setNeedsDisplay()
+    }
+    
+    private func makeRandomColor() -> UIColor {
+        let red = CGFloat.random(in: 0...255) / 255.0
+        let green = CGFloat.random(in: 0...255) / 255.0
+        let blue = CGFloat.random(in: 0...255) / 255.0
+        let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        return color
+    }
+    
     func removeAllContext() {
         contextList.removeAll()
         canvasImageView.image = nil
+    }
+    
+    func printStamp() {
+        makeRectangle()
     }
 }
 

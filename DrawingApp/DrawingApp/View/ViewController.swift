@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     private var canvasView: CanvasView = CanvasView().then {
         $0.isUserInteractionEnabled = false
+        $0.backgroundColor = .white
     }
     private var drawingToolView: UIStackView = UIStackView().then {
         $0.backgroundColor = .systemPink
@@ -43,8 +44,12 @@ class ViewController: UIViewController {
     
     @objc func rectangleButtonTapped() {
         debugPrint("rectangleButtonTapped")
+        canvasView.printStamp()
     }
 }
+
+
+// MARK: - UI
 
 extension ViewController: UISubviewStyle {
     func addSubviews() {

@@ -16,7 +16,7 @@ class CanvasView: UIView {
     
     // MARK: - Properties
     
-    private var shapeInfoList: [(path: UIBezierPath, color: UIColor)] = []
+    private var shapeInfoList: [ShapeInfo] = []
     private var drawingInfoList: [DrawingInfo] = []
     
     
@@ -117,7 +117,7 @@ class CanvasView: UIView {
         path.addLine(to: CGPoint(x: randomX, y: randomY+height))
         path.close()
         
-        shapeInfoList.append((path: path, color: makeRandomColor()))
+        shapeInfoList.append(ShapeInfo(path: path, color: makeRandomColor()))
         self.setNeedsDisplay()
     }
     

@@ -18,6 +18,8 @@
 		B4E31CB72AF658110030DD44 /* CreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CB62AF658110030DD44 /* CreateButton.swift */; };
 		B4E31CB92AF65F1D0030DD44 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CB82AF65F1D0030DD44 /* BaseViewController.swift */; };
 		B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CBC2AF67C0B0030DD44 /* SquareView.swift */; };
+		B4E31CC22AF682AB0030DD44 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC12AF682AB0030DD44 /* Square.swift */; };
+		B4E31CC52AF683F00030DD44 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC42AF683F00030DD44 /* ColorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B4E31CB62AF658110030DD44 /* CreateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButton.swift; sourceTree = "<group>"; };
 		B4E31CB82AF65F1D0030DD44 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B4E31CBC2AF67C0B0030DD44 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		B4E31CC12AF682AB0030DD44 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		B4E31CC42AF683F00030DD44 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			children = (
 				B4E31CAF2AF6445A0030DD44 /* Application */,
 				B4E31CAE2AF644370030DD44 /* Resources */,
+				B4E31CC32AF683E10030DD44 /* Utility */,
+				B4E31CC02AF6829C0030DD44 /* Model */,
 				B4E31CB02AF645090030DD44 /* Presentation */,
 			);
 			path = DrawingApp;
@@ -179,6 +185,22 @@
 				B4E31CBC2AF67C0B0030DD44 /* SquareView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B4E31CC02AF6829C0030DD44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4E31CC12AF682AB0030DD44 /* Square.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E31CC32AF683E10030DD44 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B4E31CC42AF683F00030DD44 /* ColorType.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +336,8 @@
 				B4E31CB92AF65F1D0030DD44 /* BaseViewController.swift in Sources */,
 				B4E31C832AF63D600030DD44 /* ViewController.swift in Sources */,
 				B4E31CB72AF658110030DD44 /* CreateButton.swift in Sources */,
+				B4E31CC52AF683F00030DD44 /* ColorType.swift in Sources */,
+				B4E31CC22AF682AB0030DD44 /* Square.swift in Sources */,
 				B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */,
 				B4E31C7F2AF63D600030DD44 /* AppDelegate.swift in Sources */,
 				B4E31C812AF63D600030DD44 /* SceneDelegate.swift in Sources */,

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SquareViewDelegate: AnyObject {
+    func squareViewTapped(_ squareView: SquareView)
+}
+
 final class SquareView: UIView {
+
+    weak var delegate: SquareViewDelegate?
 
     override var frame: CGRect {
         get {
@@ -31,11 +37,22 @@ final class SquareView: UIView {
             height: Constants.squareHeight
         )
         super.init(frame: initialFrame)
-
         self.backgroundColor = color.uiColor
+
+        setupTapGesture()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        addGestureRecognizer(tapGesture)
+        isUserInteractionEnabled = true
+    }
+
+    @objc private func handleTap() {
+        delegate?.squareViewTapped(self)
     }
 }

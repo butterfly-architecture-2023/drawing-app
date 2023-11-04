@@ -97,6 +97,13 @@ extension ViewController {
 
         let square = squareManagementUseCase.createSquare(within: maxPosition)
         let squareView = SquareView(position: square.position, color: square.color)
+        squareView.delegate = self
         drawingContainerView.addSubview(squareView)
+    }
+}
+
+extension ViewController: SquareViewDelegate {
+    func squareViewTapped(_ squareView: SquareView) {
+
     }
 }

@@ -14,6 +14,7 @@
 		8DB149F92AF624A70003CC95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB149F72AF624A70003CC95 /* LaunchScreen.storyboard */; };
 		8DB14A042AF624A70003CC95 /* drawing_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB14A032AF624A70003CC95 /* drawing_appTests.swift */; };
 		8DB14A1E2AF62DFF0003CC95 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB14A1D2AF62DFF0003CC95 /* SnapKit */; };
+		8DB14A202AF668F10003CC95 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB14A1F2AF668F10003CC95 /* Rectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8DB149FA2AF624A70003CC95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB149FF2AF624A70003CC95 /* drawing-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drawing-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB14A032AF624A70003CC95 /* drawing_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appTests.swift; sourceTree = "<group>"; };
+		8DB14A1F2AF668F10003CC95 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				8DB149EC2AF624A60003CC95 /* AppDelegate.swift */,
 				8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */,
 				8DB149F02AF624A60003CC95 /* DrawingViewController.swift */,
+				8DB14A1F2AF668F10003CC95 /* Rectangle.swift */,
 				8DB149F52AF624A70003CC95 /* Assets.xcassets */,
 				8DB149F72AF624A70003CC95 /* LaunchScreen.storyboard */,
 				8DB149FA2AF624A70003CC95 /* Info.plist */,
@@ -205,6 +208,7 @@
 				8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */,
 				8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */,
 				8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */,
+				8DB14A202AF668F10003CC95 /* Rectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

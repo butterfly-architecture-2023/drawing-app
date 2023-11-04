@@ -10,6 +10,10 @@ import SnapKit
 
 class DrawingViewController: UIViewController {
     
+    private var firstTouchPoint: CGPoint?
+    private var endTouchPoint: CGPoint?
+    private var touchPoints: [CGPoint?] = []
+
     private var addRectangleButton: UIButton {
         let button = UIButton()
         button.configuration = makeButtonConfigure(title: "사각형", imageName: "square")
@@ -29,7 +33,19 @@ class DrawingViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
         addButtonStackView()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchPoints = []
+        self.firstTouchPoint = touches.first?.location(in: self.view)
+    }
 
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endTouchPoint = touches.first?.location(in: self.view)
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchPoints.append(touches.first?.location(in: self.view))
+    }
 
     @objc private func tabAddRectangleButton() {
         print("Tapped add rectangle button!")

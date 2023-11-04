@@ -18,6 +18,9 @@
 		4594C8442AF5EC1A0077907E /* DrawingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8432AF5EC1A0077907E /* DrawingAppUITestsLaunchTests.swift */; };
 		4594C8522AF5ED600077907E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4594C8512AF5ED600077907E /* SnapKit */; };
 		4594C8552AF5ED6F0077907E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 4594C8542AF5ED6F0077907E /* Then */; };
+		4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8562AF5EDF50077907E /* DrawingButton.swift */; };
+		4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8582AF5F0600077907E /* UISubviewStyle.swift */; };
+		4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C85A2AF5F0730077907E /* DrawingButtonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		4594C83D2AF5EC1A0077907E /* DrawingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594C8412AF5EC1A0077907E /* DrawingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppUITests.swift; sourceTree = "<group>"; };
 		4594C8432AF5EC1A0077907E /* DrawingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4594C8562AF5EDF50077907E /* DrawingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButton.swift; sourceTree = "<group>"; };
+		4594C8582AF5F0600077907E /* UISubviewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISubviewStyle.swift; sourceTree = "<group>"; };
+		4594C85A2AF5F0730077907E /* DrawingButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				4594C8292AF5EC1A0077907E /* Assets.xcassets */,
 				4594C82B2AF5EC1A0077907E /* LaunchScreen.storyboard */,
 				4594C82E2AF5EC1A0077907E /* Info.plist */,
+				4594C8562AF5EDF50077907E /* DrawingButton.swift */,
+				4594C8582AF5F0600077907E /* UISubviewStyle.swift */,
+				4594C85A2AF5F0730077907E /* DrawingButtonType.swift */,
 			);
 			path = DrawingApp;
 			sourceTree = "<group>";
@@ -270,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */,
 				4594C8252AF5EC190077907E /* ViewController.swift in Sources */,
+				4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */,
 				4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */,
+				4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */,
 				4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

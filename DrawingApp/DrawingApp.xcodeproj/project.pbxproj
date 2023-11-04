@@ -21,6 +21,7 @@
 		CCBD245E2AF61BCB00B737C0 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD245D2AF61BCB00B737C0 /* ColorTests.swift */; };
 		CCBD24602AF61BE200B737C0 /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD245F2AF61BE200B737C0 /* PathTests.swift */; };
 		CCBD24622AF61E2000B737C0 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24612AF61E2000B737C0 /* Drawable.swift */; };
+		CCBD24652AF623D300B737C0 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24642AF623D200B737C0 /* Canvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CCBD245D2AF61BCB00B737C0 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		CCBD245F2AF61BE200B737C0 /* PathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
 		CCBD24612AF61E2000B737C0 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		CCBD24642AF623D200B737C0 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				CCBD24632AF6202000B737C0 /* Drawable */,
 				CCBD24552AF612C600B737C0 /* Point.swift */,
 				CCBD24572AF6150600B737C0 /* Color.swift */,
+				CCBD24642AF623D200B737C0 /* Canvas.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				CCBD24232AF60F9300B737C0 /* ViewController.swift in Sources */,
 				CCBD241F2AF60F9300B737C0 /* AppDelegate.swift in Sources */,
 				CCBD24212AF60F9300B737C0 /* SceneDelegate.swift in Sources */,
+				CCBD24652AF623D300B737C0 /* Canvas.swift in Sources */,
 				CCBD24542AF611D300B737C0 /* Rectangle.swift in Sources */,
 				CCBD24562AF612C600B737C0 /* Point.swift in Sources */,
 				CCBD24582AF6150700B737C0 /* Color.swift in Sources */,

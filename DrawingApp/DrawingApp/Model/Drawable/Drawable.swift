@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol Drawable {
+protocol Drawable: Identifiable {
+    var id: UUID { get }
     var path: Path { get }
     var foregroundColor: Color? { get }
 }

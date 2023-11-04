@@ -8,6 +8,8 @@
 import Foundation
 
 struct Rectangle: Shape {
+    let id: UUID = UUID()
+    
     let path: Path
     let fillColor: Color?
     

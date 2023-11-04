@@ -8,6 +8,8 @@
 import Foundation
 
 struct Path: Drawable {
+    let id: UUID = UUID()
+    
     let points: [Point]
     let foregroundColor: Color?
     

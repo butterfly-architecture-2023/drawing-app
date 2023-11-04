@@ -9,6 +9,9 @@ import UIKit
 
 final class ViewController: BaseViewController {
 
+    private let squareAddingUseCase: SquareAddingType
+    private let squareSelectionUseCase: SquareSelectionType
+
     private let drawingContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +40,19 @@ final class ViewController: BaseViewController {
         return stackView
     }()
 
+    init(
+        squareAddingUseCase: SquareAddingType,
+        squareSelectionUseCase: SquareSelectionType
+    ) {
+        self.squareAddingUseCase = squareAddingUseCase
+        self.squareSelectionUseCase = squareSelectionUseCase
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -13,6 +13,7 @@
 		8DB149F62AF624A70003CC95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB149F52AF624A70003CC95 /* Assets.xcassets */; };
 		8DB149F92AF624A70003CC95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB149F72AF624A70003CC95 /* LaunchScreen.storyboard */; };
 		8DB14A042AF624A70003CC95 /* drawing_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB14A032AF624A70003CC95 /* drawing_appTests.swift */; };
+		8DB14A1E2AF62DFF0003CC95 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB14A1D2AF62DFF0003CC95 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB14A1E2AF62DFF0003CC95 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +112,9 @@
 			dependencies = (
 			);
 			name = "drawing-app";
+			packageProductDependencies = (
+				8DB14A1D2AF62DFF0003CC95 /* SnapKit */,
+			);
 			productName = "drawing-app";
 			productReference = 8DB149E92AF624A60003CC95 /* drawing-app.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 8DB149E02AF624A60003CC95;
+			packageReferences = (
+				8DB14A1C2AF62DFF0003CC95 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8DB149EA2AF624A60003CC95 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -361,8 +369,8 @@
 				INFOPLIST_FILE = "drawing-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,8 +400,8 @@
 				INFOPLIST_FILE = "drawing-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DB14A1C2AF62DFF0003CC95 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DB14A1D2AF62DFF0003CC95 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DB14A1C2AF62DFF0003CC95 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DB149E12AF624A60003CC95 /* Project object */;
 }

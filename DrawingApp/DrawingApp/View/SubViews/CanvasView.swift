@@ -82,6 +82,11 @@ class CanvasView: UIView {
         canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
+    
+    func removeAllContext() {
+        contextList.removeAll()
+        canvasImageView.image = nil
+    }
 }
 
 

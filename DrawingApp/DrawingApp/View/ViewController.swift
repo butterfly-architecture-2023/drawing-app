@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     
     // MARK: - UI Items
     
-    private var canvasView: CanvasView = CanvasView()
+    private var canvasView: CanvasView = CanvasView().then {
+        $0.isUserInteractionEnabled = false
+    }
     private var drawingToolView: UIStackView = UIStackView().then {
         $0.backgroundColor = .systemPink
         $0.alignment = .center
@@ -35,6 +37,8 @@ class ViewController: UIViewController {
     
     @objc func drawingButtonTapped() {
         debugPrint("drawingButtonTapped")
+        canvasView.isUserInteractionEnabled = true
+        canvasView.removeAllContext()
     }
     
     @objc func rectangleButtonTapped() {

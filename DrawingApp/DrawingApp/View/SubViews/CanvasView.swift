@@ -17,7 +17,7 @@ class CanvasView: UIView {
     // MARK: - Properties
     
     private var shapeInfoList: [(path: UIBezierPath, color: UIColor)] = []
-    private var contextList: [Context] = []
+    private var drawingInfoList: [DrawingInfo] = []
     
     
     // MARK: - Initializer
@@ -37,8 +37,8 @@ class CanvasView: UIView {
     // MARK: - Touch Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let line = Context(width: 2.0, color: .black, point: makeTouchPoint(touches))
-        contextList.append(line)
+        let line = DrawingInfo(width: 2.0, color: .black, point: makeTouchPoint(touches))
+        drawingInfoList.append(line)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,8 +48,8 @@ class CanvasView: UIView {
 
         context.point = currentPoint
         
-        if let index = contextList.firstIndex(where: { $0.id == context.id }) {
-            contextList[index] = context
+        if let index = drawingInfoList.firstIndex(where: { $0.id == context.id }) {
+            drawingInfoList[index] = context
         }
     }
 
@@ -78,8 +78,8 @@ class CanvasView: UIView {
         return point
     }
     
-    private func setContext() -> Context {
-        guard let line = contextList.last else { return Context() }
+    private func setContext() -> DrawingInfo {
+        guard let line = drawingInfoList.last else { return DrawingInfo() }
         UIGraphicsBeginImageContext(canvasImageView.frame.size)
         UIGraphicsGetCurrentContext()?.setStrokeColor(line.color.cgColor)
         UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
@@ -130,7 +130,7 @@ class CanvasView: UIView {
     }
     
     func removeAllContext() {
-        contextList.removeAll()
+        drawingInfoList.removeAll()
         canvasImageView.image = nil
     }
     

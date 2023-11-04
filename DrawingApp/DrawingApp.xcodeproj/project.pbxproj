@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453307882AF5FFA500DF41A3 /* CanvasView.swift */; };
-		4533078B2AF6179B00DF41A3 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533078A2AF6179B00DF41A3 /* Context.swift */; };
+		4533078B2AF6179B00DF41A3 /* DrawingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */; };
 		4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8202AF5EC190077907E /* AppDelegate.swift */; };
 		4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8222AF5EC190077907E /* SceneDelegate.swift */; };
 		4594C8252AF5EC190077907E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8242AF5EC190077907E /* ViewController.swift */; };
@@ -23,6 +23,7 @@
 		4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8562AF5EDF50077907E /* DrawingButton.swift */; };
 		4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8582AF5F0600077907E /* UISubviewStyle.swift */; };
 		4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C85A2AF5F0730077907E /* DrawingButtonType.swift */; };
+		45BB0CD52AF62D89008B21AD /* ShapeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		453307882AF5FFA500DF41A3 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		4533078A2AF6179B00DF41A3 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingInfo.swift; sourceTree = "<group>"; };
 		4594C81D2AF5EC190077907E /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594C8202AF5EC190077907E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4594C8222AF5EC190077907E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		4594C8562AF5EDF50077907E /* DrawingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButton.swift; sourceTree = "<group>"; };
 		4594C8582AF5F0600077907E /* UISubviewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISubviewStyle.swift; sourceTree = "<group>"; };
 		4594C85A2AF5F0730077907E /* DrawingButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonType.swift; sourceTree = "<group>"; };
+		45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 		4533078D2AF617CA00DF41A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4533078A2AF6179B00DF41A3 /* Context.swift */,
+				4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */,
+				45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,12 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45BB0CD52AF62D89008B21AD /* ShapeInfo.swift in Sources */,
 				4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */,
 				453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */,
 				4594C8252AF5EC190077907E /* ViewController.swift in Sources */,
 				4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */,
 				4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */,
-				4533078B2AF6179B00DF41A3 /* Context.swift in Sources */,
+				4533078B2AF6179B00DF41A3 /* DrawingInfo.swift in Sources */,
 				4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */,
 				4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */,
 			);

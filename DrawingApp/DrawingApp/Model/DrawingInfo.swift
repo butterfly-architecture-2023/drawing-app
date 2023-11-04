@@ -1,5 +1,5 @@
 //
-//  Context.swift
+//  DrawingInfo.swift
 //  DrawingApp
 //
 //  Created by elly on 11/4/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Context {
+struct DrawingInfo {
     var id: UUID
     var width: CGFloat
     var color: UIColor

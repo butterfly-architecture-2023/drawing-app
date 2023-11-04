@@ -37,7 +37,7 @@ class CanvasView: UIView {
     // MARK: - Touch Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let line = DrawingInfo(width: 2.0, color: .black, point: makeTouchPoint(touches))
+        let line = DrawingInfo(width: 2.0, color: UIColor.random().without(.red), point: makeTouchPoint(touches))
         drawingInfoList.append(line)
     }
     
@@ -99,34 +99,23 @@ class CanvasView: UIView {
     
     private func makeRectangle() {
         // 사각형 사이즈
-        let width = 100
-        let height = 100
+        let width: CGFloat = 100
+        let height: CGFloat = 100
         
         // 랜덤 위치
-        let bounds = UIScreen.main.bounds
-        let randomX = Int.random(in: 0...(Int(bounds.width))-width - 16)
-        let randomY = Int.random(in: 0...(Int(bounds.height))-height - 200)
-        print(randomX, randomY)
+        let position = CGPoint.random()
 
         let path = UIBezierPath()
         UIColor.systemBlue.set()
         path.lineWidth = 1.0
-        path.move(to: CGPoint(x: randomX, y: randomY))
-        path.addLine(to: CGPoint(x: randomX+width, y: randomY))
-        path.addLine(to: CGPoint(x: randomX+width, y: randomY+height))
-        path.addLine(to: CGPoint(x: randomX, y: randomY+height))
+        path.move(to: CGPoint(x: position.x, y: position.y))
+        path.addLine(to: CGPoint(x: position.x + width, y: position.y))
+        path.addLine(to: CGPoint(x: position.x + width, y: position.y + height))
+        path.addLine(to: CGPoint(x: position.x, y: position.y+height))
         path.close()
         
-        shapeInfoList.append(ShapeInfo(path: path, color: makeRandomColor()))
+        shapeInfoList.append(ShapeInfo(path: path, color: UIColor.random().without(.red)))
         self.setNeedsDisplay()
-    }
-    
-    private func makeRandomColor() -> UIColor {
-        let red = CGFloat.random(in: 0...255) / 255.0
-        let green = CGFloat.random(in: 0...255) / 255.0
-        let blue = CGFloat.random(in: 0...255) / 255.0
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-        return color
     }
     
     func removeAllContext() {

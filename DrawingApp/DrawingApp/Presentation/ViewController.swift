@@ -9,8 +9,8 @@ import UIKit
 
 final class ViewController: BaseViewController {
 
-    private let squareManagementUseCase: SquareManagementType
-    private let squareSelectionUseCase: SquareSelectionType
+    private let squareManagementUseCase: SquareManagementUseCase
+    private let squareSelectionUseCase: SquareSelectionUseCase
 
     private let drawingContainerView: UIView = {
         let view = UIView()
@@ -41,8 +41,8 @@ final class ViewController: BaseViewController {
     }()
 
     init(
-        squareAddingUseCase: SquareManagementType,
-        squareSelectionUseCase: SquareSelectionType
+        squareAddingUseCase: SquareManagementUseCase,
+        squareSelectionUseCase: SquareSelectionUseCase
     ) {
         self.squareManagementUseCase = squareAddingUseCase
         self.squareSelectionUseCase = squareSelectionUseCase

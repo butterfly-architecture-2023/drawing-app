@@ -1,5 +1,5 @@
 //
-//  SquareManagementUseCase.swift
+//  SquareManagementUseCaseImpl.swift
 //  DrawingApp
 //
 //  Created by 강호성 on 11/4/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SquareManagementUseCase: SquareManagementType {
+final class SquareManagementUseCaseImpl: SquareManagementUseCase {
 
     private var squares: [Square] = []
 
@@ -24,7 +24,7 @@ final class SquareManagementUseCase: SquareManagementType {
 
         let square = Square(
             id: UUID().hashValue,
-            color: randomColor, 
+            color: randomColor,
             position: position
         )
         squares.append(square)

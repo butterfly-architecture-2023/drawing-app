@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = ViewController(
-            squareAddingUseCase: SquareManagementUseCase(),
-            squareSelectionUseCase: SquareSelectionUseCase()
+            squareAddingUseCase: SquareManagementUseCaseImpl(),
+            squareSelectionUseCase: SquareSelectionUseCaseImpl()
         )
         window?.makeKeyAndVisible()
     }

@@ -20,11 +20,12 @@
 		B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CBC2AF67C0B0030DD44 /* SquareView.swift */; };
 		B4E31CC22AF682AB0030DD44 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC12AF682AB0030DD44 /* Square.swift */; };
 		B4E31CC52AF683F00030DD44 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC42AF683F00030DD44 /* ColorType.swift */; };
-		B4E31CCA2AF685580030DD44 /* SquareSelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC92AF685580030DD44 /* SquareSelectionUseCase.swift */; };
-		B4E31CCD2AF6882F0030DD44 /* SquareSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCC2AF6882F0030DD44 /* SquareSelectionType.swift */; };
-		B4E31CCF2AF690370030DD44 /* SquareManagementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCE2AF690370030DD44 /* SquareManagementUseCase.swift */; };
-		B4E31CD12AF690430030DD44 /* SquareManagementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD02AF690430030DD44 /* SquareManagementType.swift */; };
+		B4E31CCA2AF685580030DD44 /* SquareSelectionUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CC92AF685580030DD44 /* SquareSelectionUseCaseImpl.swift */; };
+		B4E31CCD2AF6882F0030DD44 /* SquareSelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCC2AF6882F0030DD44 /* SquareSelectionUseCase.swift */; };
+		B4E31CCF2AF690370030DD44 /* SquareManagementUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CCE2AF690370030DD44 /* SquareManagementUseCaseImpl.swift */; };
+		B4E31CD12AF690430030DD44 /* SquareManagementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD02AF690430030DD44 /* SquareManagementUseCase.swift */; };
 		B4E31CD32AF69C860030DD44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD22AF69C860030DD44 /* Constants.swift */; };
+		B4E31CD52AF74EA70030DD44 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD42AF74EA70030DD44 /* SquareTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +63,12 @@
 		B4E31CBC2AF67C0B0030DD44 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		B4E31CC12AF682AB0030DD44 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		B4E31CC42AF683F00030DD44 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
-		B4E31CC92AF685580030DD44 /* SquareSelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionUseCase.swift; sourceTree = "<group>"; };
-		B4E31CCC2AF6882F0030DD44 /* SquareSelectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionType.swift; sourceTree = "<group>"; };
-		B4E31CCE2AF690370030DD44 /* SquareManagementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementUseCase.swift; sourceTree = "<group>"; };
-		B4E31CD02AF690430030DD44 /* SquareManagementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementType.swift; sourceTree = "<group>"; };
+		B4E31CC92AF685580030DD44 /* SquareSelectionUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionUseCaseImpl.swift; sourceTree = "<group>"; };
+		B4E31CCC2AF6882F0030DD44 /* SquareSelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionUseCase.swift; sourceTree = "<group>"; };
+		B4E31CCE2AF690370030DD44 /* SquareManagementUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementUseCaseImpl.swift; sourceTree = "<group>"; };
+		B4E31CD02AF690430030DD44 /* SquareManagementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementUseCase.swift; sourceTree = "<group>"; };
 		B4E31CD22AF69C860030DD44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4E31CD42AF74EA70030DD44 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		B4E31C942AF63D620030DD44 /* DrawingAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4E31CD42AF74EA70030DD44 /* SquareTests.swift */,
 				B4E31C952AF63D620030DD44 /* DrawingAppTests.swift */,
 			);
 			path = DrawingAppTests;
@@ -218,36 +221,36 @@
 			isa = PBXGroup;
 			children = (
 				B4E31CC02AF6829C0030DD44 /* Model */,
-				B4E31CCB2AF688080030DD44 /* Interface */,
-				B4E31CC72AF684E40030DD44 /* UseCase */,
+				B4E31CCB2AF688080030DD44 /* UseCase */,
+				B4E31CC72AF684E40030DD44 /* implementation */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		B4E31CC72AF684E40030DD44 /* UseCase */ = {
+		B4E31CC72AF684E40030DD44 /* implementation */ = {
 			isa = PBXGroup;
 			children = (
 				B4E31CC82AF684EF0030DD44 /* Square */,
 			);
-			path = UseCase;
+			path = implementation;
 			sourceTree = "<group>";
 		};
 		B4E31CC82AF684EF0030DD44 /* Square */ = {
 			isa = PBXGroup;
 			children = (
-				B4E31CC92AF685580030DD44 /* SquareSelectionUseCase.swift */,
-				B4E31CCE2AF690370030DD44 /* SquareManagementUseCase.swift */,
+				B4E31CC92AF685580030DD44 /* SquareSelectionUseCaseImpl.swift */,
+				B4E31CCE2AF690370030DD44 /* SquareManagementUseCaseImpl.swift */,
 			);
 			path = Square;
 			sourceTree = "<group>";
 		};
-		B4E31CCB2AF688080030DD44 /* Interface */ = {
+		B4E31CCB2AF688080030DD44 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				B4E31CCC2AF6882F0030DD44 /* SquareSelectionType.swift */,
-				B4E31CD02AF690430030DD44 /* SquareManagementType.swift */,
+				B4E31CCC2AF6882F0030DD44 /* SquareSelectionUseCase.swift */,
+				B4E31CD02AF690430030DD44 /* SquareManagementUseCase.swift */,
 			);
-			path = Interface;
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,15 +385,15 @@
 			files = (
 				B4E31CB92AF65F1D0030DD44 /* BaseViewController.swift in Sources */,
 				B4E31C832AF63D600030DD44 /* ViewController.swift in Sources */,
-				B4E31CCF2AF690370030DD44 /* SquareManagementUseCase.swift in Sources */,
-				B4E31CD12AF690430030DD44 /* SquareManagementType.swift in Sources */,
+				B4E31CCF2AF690370030DD44 /* SquareManagementUseCaseImpl.swift in Sources */,
+				B4E31CD12AF690430030DD44 /* SquareManagementUseCase.swift in Sources */,
 				B4E31CB72AF658110030DD44 /* CreateButton.swift in Sources */,
 				B4E31CC52AF683F00030DD44 /* ColorType.swift in Sources */,
 				B4E31CC22AF682AB0030DD44 /* Square.swift in Sources */,
 				B4E31CD32AF69C860030DD44 /* Constants.swift in Sources */,
-				B4E31CCA2AF685580030DD44 /* SquareSelectionUseCase.swift in Sources */,
+				B4E31CCA2AF685580030DD44 /* SquareSelectionUseCaseImpl.swift in Sources */,
 				B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */,
-				B4E31CCD2AF6882F0030DD44 /* SquareSelectionType.swift in Sources */,
+				B4E31CCD2AF6882F0030DD44 /* SquareSelectionUseCase.swift in Sources */,
 				B4E31C7F2AF63D600030DD44 /* AppDelegate.swift in Sources */,
 				B4E31C812AF63D600030DD44 /* SceneDelegate.swift in Sources */,
 			);
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E31CD52AF74EA70030DD44 /* SquareTests.swift in Sources */,
 				B4E31C962AF63D620030DD44 /* DrawingAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

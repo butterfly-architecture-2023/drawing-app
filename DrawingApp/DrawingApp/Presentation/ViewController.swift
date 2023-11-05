@@ -9,6 +9,8 @@ import UIKit
 
 final class ViewController: BaseViewController {
 
+    // MARK: - Properties
+
     private let squareManagementUseCase: SquareManagementUseCase
     private let squareSelectionUseCase: SquareSelectionUseCase
 
@@ -27,8 +29,15 @@ final class ViewController: BaseViewController {
         )
         return button
     }()
-    private let createDrawingButton = CreateButton(text: "드로잉")
-
+    private lazy var createDrawingButton: CreateButton = {
+        let button = CreateButton(text: "드로잉")
+        button.addTarget(
+            self,
+            action: #selector(drawingButtonDidTap),
+            for: .touchUpInside
+        )
+        return button
+    }()
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(
             arrangedSubviews: [createSquareButton, createDrawingButton]
@@ -39,6 +48,8 @@ final class ViewController: BaseViewController {
         stackView.distribution = .fillEqually
         return stackView
     }()
+
+    // MARK: - Init
 
     init(
         squareAddingUseCase: SquareManagementUseCase,
@@ -52,11 +63,15 @@ final class ViewController: BaseViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+
+    // MARK: - Helpers
 
     override func setViews() {
         super.setViews()
@@ -87,6 +102,7 @@ final class ViewController: BaseViewController {
     }
 }
 
+// MARK: - Actions
 extension ViewController {
     @objc
     private func squareButtonDidTap() {
@@ -100,8 +116,14 @@ extension ViewController {
         squareView.delegate = self
         drawingContainerView.addSubview(squareView)
     }
+
+    @objc
+    private func drawingButtonDidTap() {
+
+    }
 }
 
+// MARK: - SquareViewDelegate
 extension ViewController: SquareViewDelegate {
     func squareViewTapped(_ squareView: SquareView, square id: Int) {
         if var square = squareManagementUseCase.readSquare(id: id) {

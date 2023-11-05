@@ -11,12 +11,7 @@ final class ViewController: BaseViewController {
 
     // MARK: - Properties
 
-    private var selectedButtonType: ButtonType? {
-        didSet {
-            drawingContainerView.isUserInteractionEnabled = (selectedButtonType == .drawing) ?
-            true : false
-        }
-    }
+    private var selectedButtonType: ButtonType?
 
     private let squareManagementUseCase: SquareManagementUseCase
     private let squareSelectionUseCase: SquareSelectionUseCase
@@ -177,6 +172,7 @@ extension ViewController {
     @objc
     private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
         guard selectedButtonType == .drawing else { return }
+
         let location = sender.location(in: drawingContainerView)
 
         switch sender.state {
@@ -199,6 +195,8 @@ extension ViewController {
 // MARK: - SquareViewDelegate
 extension ViewController: SquareViewDelegate {
     func squareViewTapped(_ squareView: SquareView, square id: Int) {
+        guard selectedButtonType == .square else { return }
+
         if var square = squareManagementUseCase.readSquare(id: id) {
 
             if square.isSelected {

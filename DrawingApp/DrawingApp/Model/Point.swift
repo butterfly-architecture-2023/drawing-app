@@ -20,4 +20,8 @@ struct Point: Equatable {
         self.x = cgPoint.x
         self.y = cgPoint.y
     }
+    
+    var cgPoint: CGPoint {
+        CGPoint(x: x, y: y)
+    }
 }

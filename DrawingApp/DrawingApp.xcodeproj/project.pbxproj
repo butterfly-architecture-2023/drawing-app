@@ -26,6 +26,7 @@
 		B4E31CD12AF690430030DD44 /* SquareManagementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD02AF690430030DD44 /* SquareManagementUseCase.swift */; };
 		B4E31CD32AF69C860030DD44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD22AF69C860030DD44 /* Constants.swift */; };
 		B4E31CD82AF754690030DD44 /* SquareManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD72AF754690030DD44 /* SquareManagementTests.swift */; };
+		B4E31CDA2AF757C90030DD44 /* SquareSelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CD92AF757C90030DD44 /* SquareSelectionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B4E31CD02AF690430030DD44 /* SquareManagementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementUseCase.swift; sourceTree = "<group>"; };
 		B4E31CD22AF69C860030DD44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B4E31CD72AF754690030DD44 /* SquareManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagementTests.swift; sourceTree = "<group>"; };
+		B4E31CD92AF757C90030DD44 /* SquareSelectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSelectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 		B4E31CD62AF7545A0030DD44 /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				B4E31CD92AF757C90030DD44 /* SquareSelectionTests.swift */,
 				B4E31CD72AF754690030DD44 /* SquareManagementTests.swift */,
 			);
 			path = Square;
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E31CDA2AF757C90030DD44 /* SquareSelectionTests.swift in Sources */,
 				B4E31C962AF63D620030DD44 /* DrawingAppTests.swift in Sources */,
 				B4E31CD82AF754690030DD44 /* SquareManagementTests.swift in Sources */,
 			);

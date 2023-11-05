@@ -24,8 +24,12 @@ final class SquareSelectionUseCaseImpl: SquareSelectionUseCase {
          square.isSelected = false
 
          if let selectedSquare = selectedSquare,
-            selectedSquare == square {
+            selectedSquare.id == square.id {
              self.selectedSquare = nil
          }
      }
+
+    func readSelectedSquare() -> Square? {
+        return selectedSquare
+    }
 }

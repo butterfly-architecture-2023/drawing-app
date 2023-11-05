@@ -10,4 +10,5 @@ import Foundation
 protocol SquareSelectionUseCase {
     func selectSquare(_ square: inout Square)
     func deselectSquare(_ square: inout Square)
+    func readSelectedSquare() -> Square?
 }

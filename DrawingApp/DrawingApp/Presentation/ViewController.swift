@@ -96,14 +96,24 @@ extension ViewController {
         )
 
         let square = squareManagementUseCase.createSquare(within: maxPosition)
-        let squareView = SquareView(position: square.position, color: square.color)
+        let squareView = SquareView(id: square.id, position: square.position, color: square.color)
         squareView.delegate = self
         drawingContainerView.addSubview(squareView)
     }
 }
 
 extension ViewController: SquareViewDelegate {
-    func squareViewTapped(_ squareView: SquareView) {
+    func squareViewTapped(_ squareView: SquareView, square id: Int) {
+        if var square = squareManagementUseCase.readSquare(id: id) {
 
+            if square.isSelected {
+                squareSelectionUseCase.deselectSquare(&square)
+            } else {
+                squareSelectionUseCase.selectSquare(&square)
+            }
+
+            squareManagementUseCase.updateSquare(square)
+            squareView.updateBorderColor(isSelected: square.isSelected)
+        }
     }
 }

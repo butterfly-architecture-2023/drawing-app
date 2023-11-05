@@ -23,3 +23,11 @@ struct Square {
         self.position = position
     }
 }
+
+extension Square {
+    static func == (lhs: Square, rhs: Square) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.color == rhs.color &&
+        lhs.isSelected == rhs.isSelected
+    }
+}

@@ -11,7 +11,6 @@ enum ColorType: CaseIterable {
     case blue
     case green
     case teal
-    case pink
     case purple
     case orange
     case cyan
@@ -30,8 +29,6 @@ enum ColorType: CaseIterable {
             return .systemGreen
         case .teal:
             return .systemTeal
-        case .pink:
-            return .systemPink
         case .purple:
             return .systemPurple
         case .orange:

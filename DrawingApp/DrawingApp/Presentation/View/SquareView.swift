@@ -8,12 +8,13 @@
 import UIKit
 
 protocol SquareViewDelegate: AnyObject {
-    func squareViewTapped(_ squareView: SquareView)
+    func squareViewTapped(_ squareView: SquareView, square id: Int)
 }
 
 final class SquareView: UIView {
 
     weak var delegate: SquareViewDelegate?
+    private var squareId: Int?
 
     override var frame: CGRect {
         get {
@@ -29,7 +30,8 @@ final class SquareView: UIView {
         }
     }
 
-    init(position: Position, color: ColorType) {
+    init(id: Int, position: Position, color: ColorType) {
+        self.squareId = id
         let initialFrame = CGRect(
             x: position.x,
             y: position.y,
@@ -53,6 +55,13 @@ final class SquareView: UIView {
     }
 
     @objc private func handleTap() {
-        delegate?.squareViewTapped(self)
+        if let squareId = squareId {
+            delegate?.squareViewTapped(self, square: squareId)
+        }
+    }
+
+    func updateBorderColor(isSelected: Bool) {
+        self.layer.borderWidth = isSelected ? 3 : 0
+        self.layer.borderColor = isSelected ? UIColor.systemRed.cgColor : UIColor.clear.cgColor
     }
 }

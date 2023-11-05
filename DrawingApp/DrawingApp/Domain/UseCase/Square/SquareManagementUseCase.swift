@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: Square 데이터 관리
 final class SquareManagementUseCase: SquareManagementType {
 
     private var squares: [Square] = []
@@ -30,5 +29,15 @@ final class SquareManagementUseCase: SquareManagementType {
         )
         squares.append(square)
         return square
+    }
+
+    func readSquare(id: Int) -> Square? {
+        return squares.first { $0.id == id }
+    }
+
+    func updateSquare(_ square: Square) {
+        if let index = squares.firstIndex(where: { $0.id == square.id }) {
+            squares[index] = square
+        }
     }
 }

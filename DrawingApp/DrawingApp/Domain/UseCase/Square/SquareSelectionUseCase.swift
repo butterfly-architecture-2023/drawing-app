@@ -9,11 +9,23 @@ import Foundation
 
 final class SquareSelectionUseCase: SquareSelectionType {
 
-    func selectSquare(_ square: inout Square) {
+    private var selectedSquare: Square?
 
-    }
+     func selectSquare(_ square: inout Square) {
+         if var selectedSquare = selectedSquare {
+             deselectSquare(&selectedSquare)
+         }
 
-    func deselectSquare(_ square: inout Square) {
-        
-    }
+         square.isSelected = true
+         selectedSquare = square
+     }
+
+     func deselectSquare(_ square: inout Square) {
+         square.isSelected = false
+
+         if let selectedSquare = selectedSquare,
+            selectedSquare == square {
+             self.selectedSquare = nil
+         }
+     }
 }

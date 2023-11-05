@@ -9,4 +9,6 @@ import Foundation
 
 protocol SquareManagementType {
     func createSquare(within maxPosition: Position) -> Square
+    func readSquare(id: Int) -> Square?
+    func updateSquare(_ square: Square)
 }

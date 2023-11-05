@@ -13,11 +13,18 @@ final class ViewController: BaseViewController {
 
     private let squareManagementUseCase: SquareManagementUseCase
     private let squareSelectionUseCase: SquareSelectionUseCase
+    private let drawingUseCase: DrawingUseCase
 
-    private let drawingContainerView: UIView = {
+    private lazy var drawingContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
+
+        let panGestureRecognizer = UIPanGestureRecognizer(
+            target: self,
+            action: #selector(panGestureHandler(_:))
+        )
+        view.addGestureRecognizer(panGestureRecognizer)
         return view
     }()
     private lazy var createSquareButton: CreateButton = {
@@ -53,10 +60,12 @@ final class ViewController: BaseViewController {
 
     init(
         squareAddingUseCase: SquareManagementUseCase,
-        squareSelectionUseCase: SquareSelectionUseCase
+        squareSelectionUseCase: SquareSelectionUseCase,
+        drawingManagementUseCase: DrawingUseCase
     ) {
         self.squareManagementUseCase = squareAddingUseCase
         self.squareSelectionUseCase = squareSelectionUseCase
+        self.drawingUseCase = drawingManagementUseCase
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -102,6 +111,40 @@ final class ViewController: BaseViewController {
     }
 }
 
+// MARK: - Drawing Helpers
+extension ViewController {
+    private func drawCurrentPath() {
+        let currentCoordinates = drawingUseCase.readCurrentCoordinates()
+
+        guard let currentColor = drawingUseCase.readCurrentColor(),
+              currentCoordinates.count >= 2
+        else { return }
+
+        let path = setBezierPath(currentCoordinates: currentCoordinates)
+        let lineLayer = setLineLayer(path: path, currentColor: currentColor)
+        drawingContainerView.layer.addSublayer(lineLayer)
+    }
+
+    private func setBezierPath(currentCoordinates: [CGPoint]) -> UIBezierPath {
+        let path = UIBezierPath()
+        path.move(to: currentCoordinates[0])
+
+        for i in 1..<currentCoordinates.count {
+            path.addLine(to: currentCoordinates[i])
+        }
+        return path
+    }
+
+    private func setLineLayer(path: UIBezierPath, currentColor: ColorType) -> CAShapeLayer {
+        let lineLayer = CAShapeLayer()
+        lineLayer.path = path.cgPath
+        lineLayer.strokeColor = currentColor.uiColor.cgColor
+        lineLayer.fillColor = UIColor.clear.cgColor
+        lineLayer.lineWidth = 5
+        return lineLayer
+    }
+}
+
 // MARK: - Actions
 extension ViewController {
     @objc
@@ -120,6 +163,26 @@ extension ViewController {
     @objc
     private func drawingButtonDidTap() {
 
+    }
+
+    @objc
+    private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: drawingContainerView)
+
+        switch sender.state {
+        case .began:
+            drawingUseCase.startDrawing(at: location)
+
+        case .changed:
+            drawingUseCase.continueDrawing(to: location)
+            drawCurrentPath()
+
+        case .ended:
+            drawingUseCase.endDrawing()
+
+        default:
+            return
+        }
     }
 }
 

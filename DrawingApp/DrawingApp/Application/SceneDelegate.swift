@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = ViewController(
             squareAddingUseCase: SquareManagementUseCaseImpl(),
-            squareSelectionUseCase: SquareSelectionUseCaseImpl()
+            squareSelectionUseCase: SquareSelectionUseCaseImpl(),
+            drawingManagementUseCase: DrawingUseCaseImpl()
         )
         window?.makeKeyAndVisible()
     }

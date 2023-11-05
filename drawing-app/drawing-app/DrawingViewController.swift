@@ -48,12 +48,37 @@ class DrawingViewController: UIViewController {
     }
 
     @objc private func tabAddRectangleButton() {
-        print("Tapped add rectangle button!")
+        let rectangle = makeRandomRectangle()
+        let rectangleStyle = rectangle.style
+        let rectangleView = UIImageView(frame: .init(origin: .init(x: rectangle.x, y: rectangle.y), size: .init(width: rectangle.width, height: rectangle.height)))
+        rectangleView.backgroundColor = .init(red: CGFloat(rectangleStyle.backgroundColor.red) / 255,
+                                              green: CGFloat(rectangleStyle.backgroundColor.green) / 255,
+                                              blue: CGFloat(rectangleStyle.backgroundColor.blue) / 255,
+                                              alpha: rectangle.style.backgroundColor.alpha)
+        self.view.addSubview(rectangleView)
     }
 
     @objc private func tabDrawingButton() {
         print("Tapped drawing button!")
     }
+
+    private func makeRandomRectangle() -> Rectangle {
+        let width = 100.0
+        let height = 100.0
+        let maxXPosition = self.view.frame.width - width
+        let maxYPosition = self.view.frame.height - height
+        let randomXPosition = Double.random(in: 0...maxXPosition)
+        let randomYPosition = Double.random(in: 0...maxYPosition)
+        let randomRedValue = Int.random(in: 0...255)
+        let randomGreenValue = Int.random(in: 0...255)
+        let randomBlueValue = Int.random(in: 0...255)
+        let randomAlphaValue = Double.random(in: 0...1)
+        let randomRectangle = Rectangle(width: width, height: height,
+                                        x: randomXPosition, y: randomYPosition,
+                                        style: .init(backgroundColor: .init(red: randomRedValue, green: randomGreenValue, blue: randomBlueValue, alpha: randomAlphaValue), borderColor: nil, borderWidth: nil))
+        return randomRectangle
+    }
+
 
     private func makeButtonConfigure(title: String, imageName: String) -> UIButton.Configuration {
         var config = UIButton.Configuration.plain()

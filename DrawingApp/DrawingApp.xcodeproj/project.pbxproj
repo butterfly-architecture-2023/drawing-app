@@ -31,6 +31,7 @@
 		B4E31CE12AF792550030DD44 /* DrawingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE02AF792550030DD44 /* DrawingUseCase.swift */; };
 		B4E31CE32AF7927C0030DD44 /* DrawingUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE22AF7927C0030DD44 /* DrawingUseCaseImpl.swift */; };
 		B4E31CE52AF798D90030DD44 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE42AF798D90030DD44 /* ButtonType.swift */; };
+		B4E31CE82AF79C080030DD44 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE72AF79C080030DD44 /* DrawingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		B4E31CE02AF792550030DD44 /* DrawingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCase.swift; sourceTree = "<group>"; };
 		B4E31CE22AF7927C0030DD44 /* DrawingUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCaseImpl.swift; sourceTree = "<group>"; };
 		B4E31CE42AF798D90030DD44 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		B4E31CE72AF79C080030DD44 /* DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E31CD62AF7545A0030DD44 /* Square */,
+				B4E31CE62AF79BFC0030DD44 /* Drawing */,
 				B4E31C952AF63D620030DD44 /* DrawingAppTests.swift */,
 			);
 			path = DrawingAppTests;
@@ -300,6 +303,14 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		B4E31CE62AF79BFC0030DD44 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				B4E31CE72AF79C080030DD44 /* DrawingTests.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E31CE82AF79C080030DD44 /* DrawingTests.swift in Sources */,
 				B4E31CDA2AF757C90030DD44 /* SquareSelectionTests.swift in Sources */,
 				B4E31C962AF63D620030DD44 /* DrawingAppTests.swift in Sources */,
 				B4E31CD82AF754690030DD44 /* SquareManagementTests.swift in Sources */,

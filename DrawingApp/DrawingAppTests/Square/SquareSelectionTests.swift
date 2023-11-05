@@ -22,7 +22,7 @@ final class SquareSelectionTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_사각형_선택_테스트() {
+    func test_사각형_선택() {
         var square = Square(id: 1, color: .cyan, position: Position(x: 100, y: 100))
         useCase.selectSquare(&square)
 
@@ -32,7 +32,7 @@ final class SquareSelectionTests: XCTestCase {
         XCTAssertEqual(selectedSquare?.id, square.id)
     }
 
-    func test_사각형_선택_해제_테스트() {
+    func test_사각형_선택_해제() {
         var square = Square(id: 1, color: .cyan, position: Position(x: 100, y: 100))
         useCase.selectSquare(&square)
         useCase.deselectSquare(&square)

@@ -12,6 +12,7 @@ protocol DrawingUseCase {
     func continueDrawing(to point: CGPoint)
     func endDrawing()
 
+    func readDrawings() -> [Drawing]
     func readCurrentColor() -> ColorType?
     func readCurrentCoordinates() -> [CGPoint]
 }

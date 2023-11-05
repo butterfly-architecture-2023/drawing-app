@@ -40,6 +40,10 @@ final class DrawingUseCaseImpl: DrawingUseCase {
         currentCoordinates = []
     }
 
+    func readDrawings() -> [Drawing] {
+        return drawings
+    }
+
     func readCurrentColor() -> ColorType? {
         return currentColor
     }

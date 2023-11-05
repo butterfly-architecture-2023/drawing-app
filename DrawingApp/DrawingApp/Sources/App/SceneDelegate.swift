@@ -25,10 +25,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .yellow
+        let canvasVC = CanvasViewController(viewModel: .init())
         
-        window?.rootViewController = viewController
+        window?.rootViewController = canvasVC
         window?.makeKeyAndVisible()
     }
     

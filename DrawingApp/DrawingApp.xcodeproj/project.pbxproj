@@ -30,6 +30,7 @@
 		B4E31CDC2AF765B60030DD44 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CDB2AF765B60030DD44 /* Drawing.swift */; };
 		B4E31CE12AF792550030DD44 /* DrawingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE02AF792550030DD44 /* DrawingUseCase.swift */; };
 		B4E31CE32AF7927C0030DD44 /* DrawingUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE22AF7927C0030DD44 /* DrawingUseCaseImpl.swift */; };
+		B4E31CE52AF798D90030DD44 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31CE42AF798D90030DD44 /* ButtonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B4E31CDB2AF765B60030DD44 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		B4E31CE02AF792550030DD44 /* DrawingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCase.swift; sourceTree = "<group>"; };
 		B4E31CE22AF7927C0030DD44 /* DrawingUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCaseImpl.swift; sourceTree = "<group>"; };
+		B4E31CE42AF798D90030DD44 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			children = (
 				B4E31CC42AF683F00030DD44 /* ColorType.swift */,
 				B4E31CD22AF69C860030DD44 /* Constants.swift */,
+				B4E31CE42AF798D90030DD44 /* ButtonType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				B4E31CDC2AF765B60030DD44 /* Drawing.swift in Sources */,
 				B4E31CCA2AF685580030DD44 /* SquareSelectionUseCaseImpl.swift in Sources */,
 				B4E31CBD2AF67C0B0030DD44 /* SquareView.swift in Sources */,
+				B4E31CE52AF798D90030DD44 /* ButtonType.swift in Sources */,
 				B4E31CCD2AF6882F0030DD44 /* SquareSelectionUseCase.swift in Sources */,
 				B4E31C7F2AF63D600030DD44 /* AppDelegate.swift in Sources */,
 				B4E31C812AF63D600030DD44 /* SceneDelegate.swift in Sources */,

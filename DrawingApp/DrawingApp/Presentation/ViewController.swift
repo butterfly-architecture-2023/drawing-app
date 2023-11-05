@@ -11,6 +11,13 @@ final class ViewController: BaseViewController {
 
     // MARK: - Properties
 
+    private var selectedButtonType: ButtonType? {
+        didSet {
+            drawingContainerView.isUserInteractionEnabled = (selectedButtonType == .drawing) ?
+            true : false
+        }
+    }
+
     private let squareManagementUseCase: SquareManagementUseCase
     private let squareSelectionUseCase: SquareSelectionUseCase
     private let drawingUseCase: DrawingUseCase
@@ -149,6 +156,8 @@ extension ViewController {
 extension ViewController {
     @objc
     private func squareButtonDidTap() {
+        selectedButtonType = .square
+
         let maxPosition = Position(
             x: drawingContainerView.bounds.width - Constants.squareWidth,
             y: drawingContainerView.bounds.height - Constants.squareHeight
@@ -162,11 +171,12 @@ extension ViewController {
 
     @objc
     private func drawingButtonDidTap() {
-
+        selectedButtonType = .drawing
     }
 
     @objc
     private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
+        guard selectedButtonType == .drawing else { return }
         let location = sender.location(in: drawingContainerView)
 
         switch sender.state {

@@ -24,7 +24,7 @@ struct Square {
     }
 }
 
-extension Square {
+extension Square: Equatable {
     static func == (lhs: Square, rhs: Square) -> Bool {
         return lhs.id == rhs.id &&
         lhs.color == rhs.color &&

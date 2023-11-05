@@ -22,8 +22,12 @@ final class CanvasViewModel {
     private var canvas = Canvas()
     
     func didTapped(point: CGPoint) {
-        let rect = CGRect(center: point, size: .init(width: 100, height: 100))
-        canvas.update(Rectangle(rect: rect, borderColor: nil, fillColor: Color(uiColor: UIColor.random)))
+        guard let drawable = canvas.drawable(point: Point(cgPoint: point)) as? (any Selectable) else {
+            let rect = CGRect(center: point, size: .init(width: 100, height: 100))
+            canvas.update(Rectangle(rect: rect, borderColor: nil, fillColor: Color(uiColor: UIColor.random)))
+            return
+        }
+        canvas.toggle(drawable)
     }
     
     func didDrawBegan() {

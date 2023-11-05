@@ -11,7 +11,7 @@ import UIKit
 struct Path: MutatingDrawable {
     let id: UUID
     var points: [Point]
-    let foregroundColor: Color?
+    var foregroundColor: Color?
     
     init(id: UUID = UUID(), points: [Point], foregroundColor: Color?) {
         self.id = id
@@ -32,6 +32,10 @@ struct Path: MutatingDrawable {
     
     mutating func add(_ point: Point) {
         points.append(point)
+    }
+    
+    func contains(point: Point) -> Bool {
+        cgPath.contains(point.cgPoint)
     }
 }
 

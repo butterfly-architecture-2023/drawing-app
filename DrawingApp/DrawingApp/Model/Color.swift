@@ -21,6 +21,8 @@ struct Color: CustomDebugStringConvertible {
             Int(blue * 255)
         )
     }
+    
+    static let systemRed = Color(uiColor: .systemRed)
 }
 
 extension Color {

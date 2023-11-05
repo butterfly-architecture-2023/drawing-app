@@ -7,14 +7,24 @@
 
 import Foundation
 
-struct Rectangle: Shape {
-    let id: UUID = UUID()
+struct Rectangle: Shape, Selectable {
+    let id: UUID
+    private(set) var isSelected: Bool = false {
+        didSet {
+            foregroundColor = isSelected ? Color.systemRed : nil
+        }
+    }
     
-    let path: Path
+    private(set) var path: Path
     let fillColor: Color?
     
     var foregroundColor: Color? {
-        path.foregroundColor
+        get {
+            path.foregroundColor
+        }
+        set {
+            path.foregroundColor = newValue
+        }
     }
     
     init(rect: CGRect, borderColor: Color?, fillColor: Color?) {
@@ -25,8 +35,25 @@ struct Rectangle: Shape {
         )
     }
     
-    init(path: Path, fillColor: Color?) {
+    init(id: UUID = UUID(), path: Path, fillColor: Color?) {
+        self.id = id
         self.path = path
         self.fillColor = fillColor
+    }
+    
+    func copy() -> Self {
+        Rectangle(id: id, path: path, fillColor: fillColor)
+    }
+    
+    func selected() -> Self {
+        var rectangle = copy()
+        rectangle.isSelected = true
+        return rectangle
+    }
+    
+    func deselected() -> Self {
+        var rectangle = copy()
+        rectangle.isSelected = false
+        return rectangle
     }
 }

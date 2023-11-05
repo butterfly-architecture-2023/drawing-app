@@ -26,21 +26,26 @@ final class CanvasViewController: UIViewController {
     }
     
     private func bind() {
+        func shapeLayer(for element: some Drawable) -> CAShapeLayer {
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = element.path.cgPath
+            shapeLayer.fillColor = element.fillColor?.uiColor.cgColor
+            shapeLayer.strokeColor = element.foregroundColor?.uiColor.cgColor
+            shapeLayer.lineWidth = 5.0
+            return shapeLayer
+        }
+        
         viewModel.elements
             .sink { [weak self] elements in
                 self?.elementsLayer.sublayers?.forEach { $0.removeFromSuperlayer() }
                 for element in elements {
-                    let shapeLayer = CAShapeLayer()
-                    shapeLayer.path = element.path.cgPath
-                    shapeLayer.fillColor = element.fillColor?.uiColor.cgColor
-                    shapeLayer.strokeColor = element.foregroundColor?.uiColor.cgColor
-                    shapeLayer.lineWidth = 1.0
+                    let shapeLayer = shapeLayer(for: element)
                     self?.elementsLayer.addSublayer(shapeLayer)
                 }
-                print(elements)
             }
             .store(in: &cancellables)
     }
+    
 
     @objc
     private func didTapped(sender: UITapGestureRecognizer) {

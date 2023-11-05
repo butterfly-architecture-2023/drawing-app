@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-struct Path: Drawable {
-    let id: UUID = UUID()
-    
-    let points: [Point]
+struct Path: MutatingDrawable {
+    let id: UUID
+    var points: [Point]
     let foregroundColor: Color?
     
-    init(points: [Point], foregroundColor: Color? = nil) {
+    init(id: UUID = UUID(), points: [Point], foregroundColor: Color?) {
+        self.id = id
         self.points = points
         self.foregroundColor = foregroundColor
     }
@@ -29,10 +29,15 @@ struct Path: Drawable {
         ].map(Point.init)
         self.init(points: points, foregroundColor: foregroundColor)
     }
+    
+    mutating func add(_ point: Point) {
+        points.append(point)
+    }
 }
 
 extension Path {
     var path: Path { self }
+    var fillColor: Color? { nil }
 }
 
 extension Path {
@@ -43,7 +48,6 @@ extension Path {
         for point in points[1...] {
             path.addLine(to: point.cgPoint)
         }
-        path.close()
         return path.cgPath
     }
 }

@@ -8,10 +8,19 @@
 import Foundation
 import UIKit
 
-struct Color {
+struct Color: CustomDebugStringConvertible {
     let red: CGFloat
     let green: CGFloat
     let blue: CGFloat
+    
+    var debugDescription: String {
+        String(
+            format: "#%02X%02X%02X",
+            Int(red * 255),
+            Int(green * 255),
+            Int(blue * 255)
+        )
+    }
 }
 
 extension Color {

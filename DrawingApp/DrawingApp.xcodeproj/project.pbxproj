@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCB7489C2AF79159004BEF1F /* DrawingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB7489B2AF79159004BEF1F /* DrawingPath.swift */; };
+		CCB7489E2AF79611004BEF1F /* MutatingDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB7489D2AF79611004BEF1F /* MutatingDrawable.swift */; };
 		CCBD241F2AF60F9300B737C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD241E2AF60F9300B737C0 /* AppDelegate.swift */; };
 		CCBD24212AF60F9300B737C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24202AF60F9300B737C0 /* SceneDelegate.swift */; };
 		CCBD24232AF60F9300B737C0 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24222AF60F9300B737C0 /* CanvasViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CCB7489B2AF79159004BEF1F /* DrawingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPath.swift; sourceTree = "<group>"; };
+		CCB7489D2AF79611004BEF1F /* MutatingDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutatingDrawable.swift; sourceTree = "<group>"; };
 		CCBD241B2AF60F9300B737C0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBD241E2AF60F9300B737C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCBD24202AF60F9300B737C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				CCBD24552AF612C600B737C0 /* Point.swift */,
 				CCBD24572AF6150600B737C0 /* Color.swift */,
 				CCBD24642AF623D200B737C0 /* Canvas.swift */,
+				CCB7489B2AF79159004BEF1F /* DrawingPath.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				CCBD24512AF6113B00B737C0 /* Path.swift */,
 				CCBD24532AF611D300B737C0 /* Rectangle.swift */,
 				CCBD24612AF61E2000B737C0 /* Drawable.swift */,
+				CCB7489D2AF79611004BEF1F /* MutatingDrawable.swift */,
 			);
 			path = Drawable;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				CCBD241F2AF60F9300B737C0 /* AppDelegate.swift in Sources */,
 				CCBD246A2AF636AF00B737C0 /* CGRect+center.swift in Sources */,
 				CCBD24212AF60F9300B737C0 /* SceneDelegate.swift in Sources */,
+				CCB7489E2AF79611004BEF1F /* MutatingDrawable.swift in Sources */,
 				CCBD24652AF623D300B737C0 /* Canvas.swift in Sources */,
 				CCBD24542AF611D300B737C0 /* Rectangle.swift in Sources */,
 				CCBD24672AF6304100B737C0 /* CanvasViewModel.swift in Sources */,
@@ -275,6 +282,7 @@
 				CCBD24582AF6150700B737C0 /* Color.swift in Sources */,
 				CCBD24622AF61E2000B737C0 /* Drawable.swift in Sources */,
 				CCBD24522AF6113B00B737C0 /* Path.swift in Sources */,
+				CCB7489C2AF79159004BEF1F /* DrawingPath.swift in Sources */,
 				CCBD24502AF6113300B737C0 /* Shape.swift in Sources */,
 				CCBD246C2AF637A400B737C0 /* UIColor+random.swift in Sources */,
 			);

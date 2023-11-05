@@ -10,5 +10,6 @@ import Foundation
 protocol Drawable: Identifiable {
     var id: UUID { get }
     var path: Path { get }
+    var fillColor: Color? { get }
     var foregroundColor: Color? { get }
 }

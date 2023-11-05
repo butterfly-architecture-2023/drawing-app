@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Point: Equatable {
+struct Point: Equatable, CustomDebugStringConvertible {
     let x: CGFloat
     let y: CGFloat
     
@@ -23,5 +23,9 @@ struct Point: Equatable {
     
     var cgPoint: CGPoint {
         CGPoint(x: x, y: y)
+    }
+    
+    var debugDescription: String {
+        "(\(x), \(y))"
     }
 }

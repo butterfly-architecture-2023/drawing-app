@@ -76,6 +76,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		779F2BBD2AF902C70010818B /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				77EBA46D2AF8FDF30032B86B /* AppDelegate.swift */,
+				77EBA46F2AF8FDF30032B86B /* SceneDelegate.swift */,
+				77EBA4732AF8FDF30032B86B /* Main.storyboard */,
+				77EBA4762AF8FDF30032B86B /* Assets.xcassets */,
+				77EBA4782AF8FDF30032B86B /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		77EBA4612AF8FDF30032B86B = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +111,9 @@
 		77EBA46C2AF8FDF30032B86B /* SwiftDrawingApp */ = {
 			isa = PBXGroup;
 			children = (
-				77EBA46D2AF8FDF30032B86B /* AppDelegate.swift */,
-				77EBA46F2AF8FDF30032B86B /* SceneDelegate.swift */,
 				77EBA4712AF8FDF30032B86B /* ViewController.swift */,
-				77EBA4732AF8FDF30032B86B /* Main.storyboard */,
-				77EBA4762AF8FDF30032B86B /* Assets.xcassets */,
-				77EBA4782AF8FDF30032B86B /* LaunchScreen.storyboard */,
 				77EBA47B2AF8FDF30032B86B /* Info.plist */,
+				779F2BBD2AF902C70010818B /* SupportFiles */,
 			);
 			path = SwiftDrawingApp;
 			sourceTree = "<group>";

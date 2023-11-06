@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Color: CustomDebugStringConvertible {
+struct Color: CustomDebugStringConvertible, Equatable {
     let red: CGFloat
     let green: CGFloat
     let blue: CGFloat

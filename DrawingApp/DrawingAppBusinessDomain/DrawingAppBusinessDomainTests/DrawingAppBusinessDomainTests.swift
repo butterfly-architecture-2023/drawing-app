@@ -17,7 +17,7 @@ final class DrawingAppBusinessDomainTests: XCTestCase {
   func test_매니저_엔티티_생성_테스트() throws {
     for _ in 0..<3 {
       let _ = manager.addSquare()
-      let _ = manager.addVector()
+      let _ = manager.addVector(from: .init(x: 0, y: 0))
     }
     
     XCTAssertEqual(manager.squares.count, manager.vectors.count)
@@ -48,5 +48,25 @@ final class DrawingAppBusinessDomainTests: XCTestCase {
       XCTAssertTrue(result)
       XCTAssertEqual(square.position, mock)
     }
+  }
+  
+  func test_매니저_사각형_엔티티_랜덤_색상_테스트() throws {
+    for _ in 0..<50 {
+      let _ = manager.addSquare()
+    }
+    
+    XCTAssertEqual(manager.squares.count, Set(manager.squares).count)
+  }
+}
+
+extension Square: Hashable {
+  public static func == (lhs: Square, rhs: Square) -> Bool {
+    lhs.hexColor == rhs.hexColor
+  }
+  
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(colorSet.red)
+    hasher.combine(colorSet.green)
+    hasher.combine(colorSet.blue)
   }
 }

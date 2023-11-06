@@ -21,8 +21,8 @@ public struct CanvasRandomColor: Equatable {
     Scanner(string: colorString).scanHexInt64(&rgbValue)
     return (
       red: Double((rgbValue & 0xFF0000) >> 16) / 255.0,
-      green: Double((rgbValue & 0x00FF00) >> 16) / 255.0,
-      blue: Double((rgbValue & 0x0000FF) >> 16) / 255.0,
+      green: Double((rgbValue & 0x00FF00) >> 8) / 255.0,
+      blue: Double((rgbValue & 0x0000FF) >> 0) / 255.0,
       alpha: 1.0
     )
   }

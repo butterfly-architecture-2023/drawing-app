@@ -10,16 +10,22 @@ import Foundation
 /// 사각형을 표현하는데 필요한 모델
 public class Square {
   // Size
-  private(set) var width: Float = 100
-  private(set) var height: Float = 100
+  private(set) var width: Double = 100
+  private(set) var height: Double = 100
+  public var canvasSize: CanvasSize {
+    CanvasSize(width: width, height: height)
+  }
   
   // Color(Hex)
   private(set) var hexColor: CanvasRandomColor = .init()
+  public var colorSet: (red: Double, green: Double, blue: Double) {
+    (hexColor.colorSet.red, hexColor.colorSet.green, hexColor.colorSet.blue)
+  }
   
   // Position
   var x: Double
   var y: Double
-  var position: GesturePosition {
+  public var position: GesturePosition {
     GesturePosition(x: x, y: y)
   }
   

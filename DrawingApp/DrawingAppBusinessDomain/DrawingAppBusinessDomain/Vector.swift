@@ -8,8 +8,29 @@
 import Foundation
 
 /// 자유로운 선을 표현하는데 필요한 뷰의 모델
-class Vector {
-  // Color(Hex). hexPrefix+hexInfix+hexPostfix 로 컬러 값을 16진수로 반환.
-  var hexColor: String = "#".hexColor
-  var data: Data?
+public class Vector {
+  
+  // Color(Hex)
+  private(set) var hexColor: CanvasRandomColor = .init()
+  
+  // Size
+  private(set) var width: Double = 100
+  private(set) var height: Double = 100
+  public var canvasSize: CanvasSize {
+    CanvasSize(width: width, height: height)
+  }
+  
+  // Position
+  var x: Double
+  var y: Double
+  public var position: GesturePosition {
+    GesturePosition(x: x, y: y)
+  }
+  
+  init(x: Double, y: Double) {
+    self.x = x
+    self.y = y
+  }
+  
+  public var data: Data?
 }

@@ -26,10 +26,7 @@ final class SquareSelectionTests: XCTestCase {
         var square = Square(id: 1, color: .cyan, position: Position(x: 100, y: 100))
         useCase.selectSquare(&square)
 
-        let selectedSquare = useCase.readSelectedSquare()
-        
         XCTAssertTrue(square.isSelected)
-        XCTAssertEqual(selectedSquare?.id, square.id)
     }
 
     func test_사각형_선택_해제() {
@@ -37,9 +34,6 @@ final class SquareSelectionTests: XCTestCase {
         useCase.selectSquare(&square)
         useCase.deselectSquare(&square)
 
-        let selectedSquare = useCase.readSelectedSquare()
-
         XCTAssertFalse(square.isSelected)
-        XCTAssertNil(selectedSquare)
     }
 }

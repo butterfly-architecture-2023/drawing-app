@@ -1,5 +1,5 @@
 //
-//  PaddingLabel.swift
+//  RoundedButton.swift
 //  drawing-app
 //
 //  Created by Jihee hwang on 2023/11/06.
@@ -7,16 +7,17 @@
 
 import UIKit
 
-final class PaddingButton: UIButton {
-    private var padding: UIEdgeInsets = .zero
+final class RoundedButton: UIButton {
+    
     private var imageSpacing: CGFloat = 10
     private var contentSize: CGSize = .zero
+    private var drawingType: DrawingType?
     
     // MARK: - Initializer
     
-    init(padding: UIEdgeInsets = .zero, imageSpacing: CGFloat = 10) {
-        self.padding = padding
+    init(imageSpacing: CGFloat = 10, drawingType: DrawingType) {
         self.imageSpacing = imageSpacing
+        self.drawingType = drawingType
         super.init(frame: .zero)
     }
     
@@ -27,26 +28,23 @@ final class PaddingButton: UIButton {
 
 }
 
-extension PaddingButton {
+extension RoundedButton {
     
     override func draw(_ rect: CGRect) {
         setRoundedCorners()
         setImageSpacing(spacing: 8)
         setBorder()
+        setupViews()
         
-        let paddingRect = rect.inset(by: padding)
-        super.draw(paddingRect)
+        super.draw(rect)
     }
 
-    override var intrinsicContentSize: CGSize {
-        guard contentSize == CGSize.zero else {
-            return contentSize
-        }
+    private func setupViews() {
+        guard let drawingType else { return }
         
-        contentSize = super.intrinsicContentSize
-        contentSize.height += padding.top + padding.bottom
-        contentSize.width += padding.left + padding.right
-        return contentSize
+        setTitleColor(.black, for: .normal)
+        setTitle(drawingType.title, for: .normal)
+        setImage(drawingType.icon, for: .normal)
     }
     
     private func setRoundedCorners() {

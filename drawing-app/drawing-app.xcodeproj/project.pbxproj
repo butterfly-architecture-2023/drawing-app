@@ -20,7 +20,7 @@
 		73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4CF2AF927DF009AE62D /* RxRelay */; };
 		73A5D4D22AF927DF009AE62D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4D12AF927DF009AE62D /* RxSwift */; };
 		73A5D4D52AF927F5009AE62D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4D42AF927F5009AE62D /* Then */; };
-		73A5D4D82AF92844009AE62D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D72AF92844009AE62D /* PaddingLabel.swift */; };
+		73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D72AF92844009AE62D /* RoundedButton.swift */; };
 		73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D92AF93231009AE62D /* DrawingType.swift */; };
 		73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4DB2AF9327F009AE62D /* UIImage+.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		73A5D4B42AF92211009AE62D /* drawing-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drawing-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A5D4B82AF92211009AE62D /* drawing_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITests.swift; sourceTree = "<group>"; };
 		73A5D4BA2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		73A5D4D72AF92844009AE62D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		73A5D4D72AF92844009AE62D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		73A5D4D92AF93231009AE62D /* DrawingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingType.swift; sourceTree = "<group>"; };
 		73A5D4DB2AF9327F009AE62D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,7 +186,7 @@
 		73A5D4E02AF932B4009AE62D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				73A5D4D72AF92844009AE62D /* PaddingLabel.swift */,
+				73A5D4D72AF92844009AE62D /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A5D4D82AF92844009AE62D /* PaddingLabel.swift in Sources */,
+				73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */,
 				73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */,
 				73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */,
 				73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */,

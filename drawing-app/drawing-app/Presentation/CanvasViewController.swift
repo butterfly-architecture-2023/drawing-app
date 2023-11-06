@@ -13,17 +13,8 @@ final class CanvasViewController: UIViewController {
     
     // MARK: - Views
     
-    private lazy var makeSquareButton = PaddingButton().then {
-        $0.setTitleColor(.black, for: .normal)
-        $0.setTitle(DrawingType.square.title, for: .normal)
-        $0.setImage(DrawingType.square.icon, for: .normal)
-    }
-    
-    private lazy var drawingButton = PaddingButton().then {
-        $0.setTitleColor(.black, for: .normal)
-        $0.setTitle(DrawingType.drawing.title, for: .normal)
-        $0.setImage(DrawingType.drawing.icon, for: .normal)
-    }
+    private lazy var makeSquareButton = RoundedButton(drawingType: .square)
+    private lazy var drawingButton = RoundedButton(drawingType: .drawing)
     
     // MARK: - Life Cycle
 

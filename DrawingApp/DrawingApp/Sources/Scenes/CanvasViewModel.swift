@@ -13,32 +13,43 @@ final class CanvasViewModel {
     // MARK: - input & output
     
     struct Input {
-        
+        let canvasViewRect: CurrentValueSubject<CGRect, Never>
+        let onTapRectangleItemButton: PassthroughSubject<Void, Never>
     }
     
     struct Output {
-        
+        let appendRectangleView: PassthroughSubject<Rectangle, Never>
     }
     
     // MARK: - property
     
-    private let input: Input
+    // INTERNAL
+    let input: Input
     private(set) var output: Output
+    
+    // PRIVATE
+    private var cancellables: Set<AnyCancellable> = .init()
+    
+    // PRIVATE - INPUT
+    private let canvasViewRect: CurrentValueSubject<CGRect, Never> = .init(.zero)
+    private let onTapRectangleItemButton: PassthroughSubject<Void, Never> = .init()
+    
+    // PRIVATE - OUTPUT
+    private let appendRectangleView: PassthroughSubject<Rectangle, Never> = .init()
     
     // MARK: - initialize
     
     init() {
-        self.input = .init()
-        self.output = .init()
+        self.input = .init(
+            canvasViewRect: canvasViewRect,
+            onTapRectangleItemButton: onTapRectangleItemButton
+        )
+        self.output = .init(
+            appendRectangleView: appendRectangleView
+        )
         
         transform()
     }
-    
-    deinit {
-        
-    }
-    
-    
 }
 
 // MARK: - transform
@@ -46,5 +57,32 @@ final class CanvasViewModel {
 extension CanvasViewModel {
     private func transform() {
         
+        onTapRectangleItemButton
+            .sink(receiveValue: { [weak self] in
+                guard let self else { return }
+                
+                let canvasRect = self.canvasViewRect.value
+                let rectangleEdge = 100
+                
+                let rectangleX = Int(canvasRect.minX)...(Int(canvasRect.maxX)-rectangleEdge)
+                let rectangleY = Int(canvasRect.minY)...(Int(canvasRect.maxY)-rectangleEdge)
+                
+                if let randomX = rectangleX.randomElement(),
+                   let randomY = rectangleY.randomElement() {
+                    
+                    let newRectangle = Rectangle.init(
+                        rect: .init(x: randomX, y: randomY, width: rectangleEdge, height: rectangleEdge),
+                        backgroundColor: SystemColor.random,
+                        isSelected: false
+                    )
+                    
+                    appendRectangleView.send(newRectangle)
+                }
+            })
+            .store(in: &cancellables)
     }
+}
+
+extension CanvasViewModel {
+    
 }

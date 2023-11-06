@@ -19,6 +19,10 @@
 		7699C0572AF7C25D00C7E491 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C0562AF7C25D00C7E491 /* AppConfig.swift */; };
 		7699C05A2AF7C28F00C7E491 /* AppConfig+BuildSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C0592AF7C28F00C7E491 /* AppConfig+BuildSetting.swift */; };
 		7699C05C2AF7C2FA00C7E491 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C05B2AF7C2FA00C7E491 /* ToolbarView.swift */; };
+		7699C0612AF7D3D400C7E491 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C0602AF7D3D400C7E491 /* CanvasView.swift */; };
+		7699C0632AF7D59B00C7E491 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C0622AF7D59B00C7E491 /* RectangleView.swift */; };
+		7699C0652AF7E69800C7E491 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C0642AF7E69800C7E491 /* Rectangle.swift */; };
+		76D2DEFD2AF9226C006A0B3A /* SystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2DEFC2AF9226C006A0B3A /* SystemColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		7699C0562AF7C25D00C7E491 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		7699C0592AF7C28F00C7E491 /* AppConfig+BuildSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConfig+BuildSetting.swift"; sourceTree = "<group>"; };
 		7699C05B2AF7C2FA00C7E491 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		7699C0602AF7D3D400C7E491 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		7699C0622AF7D59B00C7E491 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		7699C0642AF7E69800C7E491 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		76D2DEFC2AF9226C006A0B3A /* SystemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +186,9 @@
 		7699C0582AF7C26000C7E491 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7699C0562AF7C25D00C7E491 /* AppConfig.swift */,
-				7699C0592AF7C28F00C7E491 /* AppConfig+BuildSetting.swift */,
+				76D2DEFA2AF91F1B006A0B3A /* AppConfig */,
+				76D2DEFB2AF91F22006A0B3A /* Entity */,
+				76D2DEFC2AF9226C006A0B3A /* SystemColor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -187,9 +196,28 @@
 		7699C05D2AF7C2FE00C7E491 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				7699C0602AF7D3D400C7E491 /* CanvasView.swift */,
 				7699C05B2AF7C2FA00C7E491 /* ToolbarView.swift */,
+				7699C0622AF7D59B00C7E491 /* RectangleView.swift */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		76D2DEFA2AF91F1B006A0B3A /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				7699C0562AF7C25D00C7E491 /* AppConfig.swift */,
+				7699C0592AF7C28F00C7E491 /* AppConfig+BuildSetting.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		76D2DEFB2AF91F22006A0B3A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7699C0642AF7E69800C7E491 /* Rectangle.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,10 +350,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D2DEFD2AF9226C006A0B3A /* SystemColor.swift in Sources */,
 				7699C0552AF7AEEF00C7E491 /* CanvasViewModel.swift in Sources */,
 				7699C0572AF7C25D00C7E491 /* AppConfig.swift in Sources */,
+				7699C0612AF7D3D400C7E491 /* CanvasView.swift in Sources */,
 				764CDA222AD9696300527094 /* CanvasViewController.swift in Sources */,
 				764CDA1E2AD9696300527094 /* AppDelegate.swift in Sources */,
+				7699C0652AF7E69800C7E491 /* Rectangle.swift in Sources */,
+				7699C0632AF7D59B00C7E491 /* RectangleView.swift in Sources */,
 				764CDA202AD9696300527094 /* SceneDelegate.swift in Sources */,
 				7699C05A2AF7C28F00C7E491 /* AppConfig+BuildSetting.swift in Sources */,
 				7699C05C2AF7C2FA00C7E491 /* ToolbarView.swift in Sources */,

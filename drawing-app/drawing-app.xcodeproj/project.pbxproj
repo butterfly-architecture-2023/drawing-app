@@ -15,6 +15,14 @@
 		73A5D4AF2AF92211009AE62D /* drawing_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4AE2AF92211009AE62D /* drawing_appTests.swift */; };
 		73A5D4B92AF92211009AE62D /* drawing_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4B82AF92211009AE62D /* drawing_appUITests.swift */; };
 		73A5D4BB2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4BA2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift */; };
+		73A5D4CB2AF927C8009AE62D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4CA2AF927C8009AE62D /* SnapKit */; };
+		73A5D4CE2AF927DF009AE62D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4CD2AF927DF009AE62D /* RxCocoa */; };
+		73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4CF2AF927DF009AE62D /* RxRelay */; };
+		73A5D4D22AF927DF009AE62D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4D12AF927DF009AE62D /* RxSwift */; };
+		73A5D4D52AF927F5009AE62D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4D42AF927F5009AE62D /* Then */; };
+		73A5D4D82AF92844009AE62D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D72AF92844009AE62D /* PaddingLabel.swift */; };
+		73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D92AF93231009AE62D /* DrawingType.swift */; };
+		73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4DB2AF9327F009AE62D /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,9 @@
 		73A5D4B42AF92211009AE62D /* drawing-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drawing-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A5D4B82AF92211009AE62D /* drawing_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITests.swift; sourceTree = "<group>"; };
 		73A5D4BA2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		73A5D4D72AF92844009AE62D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		73A5D4D92AF93231009AE62D /* DrawingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingType.swift; sourceTree = "<group>"; };
+		73A5D4DB2AF9327F009AE62D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D4D52AF927F5009AE62D /* Then in Frameworks */,
+				73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */,
+				73A5D4CE2AF927DF009AE62D /* RxCocoa in Frameworks */,
+				73A5D4D22AF927DF009AE62D /* RxSwift in Frameworks */,
+				73A5D4CB2AF927C8009AE62D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				73A5D4C82AF9231C009AE62D /* Application */,
-				73A5D49B2AF92210009AE62D /* CanvasViewController.swift */,
+				73A5D4DD2AF93289009AE62D /* Presentation */,
+				73A5D4DF2AF932A9009AE62D /* Common */,
+				73A5D4DE2AF9329C009AE62D /* Extension */,
 				73A5D4C72AF922AC009AE62D /* Resources */,
 			);
 			path = "drawing-app";
@@ -140,6 +158,39 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		73A5D4DD2AF93289009AE62D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D49B2AF92210009AE62D /* CanvasViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		73A5D4DE2AF9329C009AE62D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4DB2AF9327F009AE62D /* UIImage+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		73A5D4DF2AF932A9009AE62D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4D92AF93231009AE62D /* DrawingType.swift */,
+				73A5D4E02AF932B4009AE62D /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		73A5D4E02AF932B4009AE62D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4D72AF92844009AE62D /* PaddingLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,6 +207,13 @@
 			dependencies = (
 			);
 			name = "drawing-app";
+			packageProductDependencies = (
+				73A5D4CA2AF927C8009AE62D /* SnapKit */,
+				73A5D4CD2AF927DF009AE62D /* RxCocoa */,
+				73A5D4CF2AF927DF009AE62D /* RxRelay */,
+				73A5D4D12AF927DF009AE62D /* RxSwift */,
+				73A5D4D42AF927F5009AE62D /* Then */,
+			);
 			productName = "drawing-app";
 			productReference = 73A5D4942AF92210009AE62D /* drawing-app.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +286,11 @@
 				Base,
 			);
 			mainGroup = 73A5D48B2AF92210009AE62D;
+			packageReferences = (
+				73A5D4C92AF927C7009AE62D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				73A5D4D32AF927F5009AE62D /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 73A5D4952AF92210009AE62D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,7 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D4D82AF92844009AE62D /* PaddingLabel.swift in Sources */,
+				73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */,
 				73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */,
+				73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */,
 				73A5D4982AF92210009AE62D /* AppDelegate.swift in Sources */,
 				73A5D49A2AF92210009AE62D /* SceneDelegate.swift in Sources */,
 			);
@@ -604,6 +670,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		73A5D4C92AF927C7009AE62D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		73A5D4D32AF927F5009AE62D /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		73A5D4CA2AF927C8009AE62D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4C92AF927C7009AE62D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		73A5D4CD2AF927DF009AE62D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		73A5D4CF2AF927DF009AE62D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		73A5D4D12AF927DF009AE62D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		73A5D4D42AF927F5009AE62D /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4D32AF927F5009AE62D /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73A5D48C2AF92210009AE62D /* Project object */;
 }

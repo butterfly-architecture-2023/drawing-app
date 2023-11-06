@@ -41,10 +41,6 @@ struct Rectangle: Shape, Selectable {
         self.fillColor = fillColor
     }
     
-    func copy() -> Self {
-        Rectangle(id: id, path: path, fillColor: fillColor)
-    }
-    
     func selected() -> Self {
         var rectangle = copy()
         rectangle.isSelected = true
@@ -55,5 +51,9 @@ struct Rectangle: Shape, Selectable {
         var rectangle = copy()
         rectangle.isSelected = false
         return rectangle
+    }
+    
+    private func copy() -> Self {
+        Rectangle(id: id, path: path, fillColor: fillColor)
     }
 }

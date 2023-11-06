@@ -18,15 +18,15 @@ struct Rectangle: Hashable {
 }
 
 struct RectangleStyle: Hashable {
-    let backgroundColor: RGBA
-    let borderColor: RGBA?
+    let backgroundRGBA: RGBA
+    let borderRGBA: RGBA?
     let borderWidth: Double?
 }
 
 struct RGBA: Hashable {
-    let red: Int
-    let green: Int
-    let blue: Int
+    let red: Double
+    let green: Double
+    let blue: Double
     let alpha: Double
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DAF27FA2AF7D5B6003103AF /* AddRectangleButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF27F92AF7D5B6003103AF /* AddRectangleButtonViewModel.swift */; };
+		8DAF27FC2AF7DC0D003103AF /* AddShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */; };
 		8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EC2AF624A60003CC95 /* AppDelegate.swift */; };
 		8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */; };
 		8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149F02AF624A60003CC95 /* DrawingViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DAF27F92AF7D5B6003103AF /* AddRectangleButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRectangleButtonViewModel.swift; sourceTree = "<group>"; };
+		8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShapeButton.swift; sourceTree = "<group>"; };
 		8DB149E92AF624A60003CC95 /* drawing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drawing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB149EC2AF624A60003CC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DAF27FD2AF928A1003103AF /* AddRectangle */ = {
+			isa = PBXGroup;
+			children = (
+				8DAF27F92AF7D5B6003103AF /* AddRectangleButtonViewModel.swift */,
+				8DB14A1F2AF668F10003CC95 /* Rectangle.swift */,
+			);
+			path = AddRectangle;
+			sourceTree = "<group>";
+		};
 		8DB149E02AF624A60003CC95 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +96,8 @@
 				8DB149EC2AF624A60003CC95 /* AppDelegate.swift */,
 				8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */,
 				8DB149F02AF624A60003CC95 /* DrawingViewController.swift */,
-				8DB14A1F2AF668F10003CC95 /* Rectangle.swift */,
+				8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */,
+				8DAF27FD2AF928A1003103AF /* AddRectangle */,
 				8DB149F52AF624A70003CC95 /* Assets.xcassets */,
 				8DB149F72AF624A70003CC95 /* LaunchScreen.storyboard */,
 				8DB149FA2AF624A70003CC95 /* Info.plist */,
@@ -206,6 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */,
+				8DAF27FC2AF7DC0D003103AF /* AddShapeButton.swift in Sources */,
+				8DAF27FA2AF7D5B6003103AF /* AddRectangleButtonViewModel.swift in Sources */,
 				8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */,
 				8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */,
 				8DB14A202AF668F10003CC95 /* Rectangle.swift in Sources */,

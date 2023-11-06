@@ -11,6 +11,7 @@
 		CCB7489E2AF79611004BEF1F /* MutatingDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB7489D2AF79611004BEF1F /* MutatingDrawable.swift */; };
 		CCB748A02AF7998C004BEF1F /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB7489F2AF7998C004BEF1F /* Selectable.swift */; };
 		CCB748A32AF92B1D004BEF1F /* RectangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB748A22AF92B1D004BEF1F /* RectangleTests.swift */; };
+		CCB748A52AF92CE9004BEF1F /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB748A42AF92CE9004BEF1F /* CanvasTests.swift */; };
 		CCBD241F2AF60F9300B737C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD241E2AF60F9300B737C0 /* AppDelegate.swift */; };
 		CCBD24212AF60F9300B737C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24202AF60F9300B737C0 /* SceneDelegate.swift */; };
 		CCBD24232AF60F9300B737C0 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD24222AF60F9300B737C0 /* CanvasViewController.swift */; };
@@ -46,6 +47,7 @@
 		CCB7489D2AF79611004BEF1F /* MutatingDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutatingDrawable.swift; sourceTree = "<group>"; };
 		CCB7489F2AF7998C004BEF1F /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
 		CCB748A22AF92B1D004BEF1F /* RectangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTests.swift; sourceTree = "<group>"; };
+		CCB748A42AF92CE9004BEF1F /* CanvasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasTests.swift; sourceTree = "<group>"; };
 		CCBD241B2AF60F9300B737C0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBD241E2AF60F9300B737C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCBD24202AF60F9300B737C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				CCB748A12AF92B0D004BEF1F /* Drawable */,
 				CCBD245D2AF61BCB00B737C0 /* ColorTests.swift */,
 				CCBD245F2AF61BE200B737C0 /* PathTests.swift */,
+				CCB748A42AF92CE9004BEF1F /* CanvasTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				CCB748A32AF92B1D004BEF1F /* RectangleTests.swift in Sources */,
 				CCBD24602AF61BE200B737C0 /* PathTests.swift in Sources */,
 				CCBD245E2AF61BCB00B737C0 /* ColorTests.swift in Sources */,
+				CCB748A52AF92CE9004BEF1F /* CanvasTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

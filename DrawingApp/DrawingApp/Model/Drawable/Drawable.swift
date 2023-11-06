@@ -13,3 +13,9 @@ protocol Drawable: Identifiable {
     var fillColor: Color? { get }
     var foregroundColor: Color? { get }
 }
+
+extension Drawable {
+    func contains(point: Point) -> Bool {
+        path.contains(point: point)
+    }
+}

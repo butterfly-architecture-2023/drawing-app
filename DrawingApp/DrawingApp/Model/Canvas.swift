@@ -21,21 +21,23 @@ final class Canvas {
     }
     
     func drawable(point: Point) -> (any Drawable)? {
-        elements.values.first { $0.path.contains(point: point) }
+        elements.values.first { $0.contains(point: point) }
     }
     
     func toggle(_ drawable: some Selectable) {
         guard let element = elements[drawable.id] as? (any Selectable) else { return }
         guard element.isSelected else {
-            elements.values
-                .lazy
-                .compactMap { $0 as? (any Selectable) }
-                .filter { $0.id != element.id && $0.isSelected }
-                .forEach { [weak self] in self?.update($0.deselected()) }
+            deselectAll()
             update(element.selected())
             return
         }
         
         update(element.deselected())
+    }
+    
+    private func deselectAll() {
+        elements.values
+            .compactMap { $0 as? (any Selectable) }
+            .forEach { [weak self] in self?.update($0.deselected()) }
     }
 }

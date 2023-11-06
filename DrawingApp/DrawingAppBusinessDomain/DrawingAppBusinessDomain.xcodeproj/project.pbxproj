@@ -17,6 +17,16 @@
 		1BEFF6162AF6692F00F737DF /* DrawingResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */; };
 		1BEFF6172AF6693200F737DF /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310042AF6651D0036F6CE /* Square.swift */; };
 		1BEFF6182AF6693200F737DF /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310062AF665270036F6CE /* Vector.swift */; };
+		1BEFF61D2AF7988600F737DF /* CanvasSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61C2AF7988600F737DF /* CanvasSize.swift */; };
+		1BEFF6232AF79C8D00F737DF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6222AF79C8D00F737DF /* Array+Extensions.swift */; };
+		1BEFF6252AF79E1700F737DF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6242AF79E1700F737DF /* String+Extensions.swift */; };
+		1BEFF6292AF8538A00F737DF /* GesturePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6282AF8538A00F737DF /* GesturePosition.swift */; };
+		1BEFF62A2AF876A200F737DF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6242AF79E1700F737DF /* String+Extensions.swift */; };
+		1BEFF62B2AF876B100F737DF /* CanvasSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61C2AF7988600F737DF /* CanvasSize.swift */; };
+		1BEFF62C2AF876B600F737DF /* GesturePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6282AF8538A00F737DF /* GesturePosition.swift */; };
+		1BEFF62D2AF876D200F737DF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6222AF79C8D00F737DF /* Array+Extensions.swift */; };
+		1BEFF62F2AF87D6500F737DF /* CanvasRandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF62E2AF87D6500F737DF /* CanvasRandomColor.swift */; };
+		1BEFF6302AF8868000F737DF /* CanvasRandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF62E2AF87D6500F737DF /* CanvasRandomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +48,11 @@
 		1B3310062AF665270036F6CE /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		1BEFF60C2AF6691500F737DF /* DrawingAppBusinessDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppBusinessDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEFF60E2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppBusinessDomainTests.swift; sourceTree = "<group>"; };
+		1BEFF61C2AF7988600F737DF /* CanvasSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasSize.swift; sourceTree = "<group>"; };
+		1BEFF6222AF79C8D00F737DF /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		1BEFF6242AF79E1700F737DF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		1BEFF6282AF8538A00F737DF /* GesturePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturePosition.swift; sourceTree = "<group>"; };
+		1BEFF62E2AF87D6500F737DF /* CanvasRandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasRandomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +98,12 @@
 				1B330FEB2AF664C40036F6CE /* DrawingAppBusinessDomain.h */,
 				1B330FEC2AF664C40036F6CE /* DrawingAppBusinessDomain.docc */,
 				1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */,
+				1BEFF61C2AF7988600F737DF /* CanvasSize.swift */,
+				1BEFF62E2AF87D6500F737DF /* CanvasRandomColor.swift */,
 				1B3310042AF6651D0036F6CE /* Square.swift */,
+				1BEFF6282AF8538A00F737DF /* GesturePosition.swift */,
 				1B3310062AF665270036F6CE /* Vector.swift */,
+				1BEFF6212AF79C7500F737DF /* Extensions */,
 			);
 			path = DrawingAppBusinessDomain;
 			sourceTree = "<group>";
@@ -95,6 +114,15 @@
 				1BEFF60E2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift */,
 			);
 			path = DrawingAppBusinessDomainTests;
+			sourceTree = "<group>";
+		};
+		1BEFF6212AF79C7500F737DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BEFF6222AF79C8D00F737DF /* Array+Extensions.swift */,
+				1BEFF6242AF79E1700F737DF /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3310052AF6651D0036F6CE /* Square.swift in Sources */,
+				1BEFF6252AF79E1700F737DF /* String+Extensions.swift in Sources */,
+				1BEFF6232AF79C8D00F737DF /* Array+Extensions.swift in Sources */,
+				1BEFF61D2AF7988600F737DF /* CanvasSize.swift in Sources */,
+				1BEFF6292AF8538A00F737DF /* GesturePosition.swift in Sources */,
 				1B3310032AF6650C0036F6CE /* DrawingResourceManager.swift in Sources */,
 				1B3310072AF665270036F6CE /* Vector.swift in Sources */,
+				1BEFF62F2AF87D6500F737DF /* CanvasRandomColor.swift in Sources */,
 				1B330FED2AF664C40036F6CE /* DrawingAppBusinessDomain.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,9 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEFF62B2AF876B100F737DF /* CanvasSize.swift in Sources */,
+				1BEFF62A2AF876A200F737DF /* String+Extensions.swift in Sources */,
 				1BEFF6172AF6693200F737DF /* Square.swift in Sources */,
+				1BEFF62D2AF876D200F737DF /* Array+Extensions.swift in Sources */,
+				1BEFF62C2AF876B600F737DF /* GesturePosition.swift in Sources */,
 				1BEFF6162AF6692F00F737DF /* DrawingResourceManager.swift in Sources */,
 				1BEFF6182AF6693200F737DF /* Vector.swift in Sources */,
+				1BEFF6302AF8868000F737DF /* CanvasRandomColor.swift in Sources */,
 				1BEFF60F2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

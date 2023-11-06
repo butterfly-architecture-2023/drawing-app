@@ -15,6 +15,7 @@
 		1B330FDB2AF65F420036F6CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B330FDA2AF65F420036F6CE /* README.md */; };
 		1BEFF6062AF6685600F737DF /* DrawingAppBusinessDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; };
 		1BEFF6072AF6685600F737DF /* DrawingAppBusinessDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		1B330FB82AF65F320036F6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B330FDA2AF65F420036F6CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1B3310292AF668140036F6CE /* DrawingAppBusinessDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrawingAppBusinessDomain.xcodeproj; path = DrawingAppBusinessDomain/DrawingAppBusinessDomain.xcodeproj; sourceTree = "<group>"; };
+		1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		1B330FA92AF65F310036F6CE /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
+				1BEFF61E2AF799BF00F737DF /* Extensions */,
 				1B330FDC2AF65F9B0036F6CE /* Supports */,
 				1B330FDD2AF65FD50036F6CE /* Feature */,
 			);
@@ -134,6 +137,14 @@
 				1BEFF61B2AF6699700F737DF /* DrawingAppBusinessDomainTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BEFF61E2AF799BF00F737DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B330FAF2AF65F310036F6CE /* ViewController.swift in Sources */,
+				1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */,
 				1B330FAB2AF65F310036F6CE /* AppDelegate.swift in Sources */,
 				1B330FAD2AF65F310036F6CE /* SceneDelegate.swift in Sources */,
 			);

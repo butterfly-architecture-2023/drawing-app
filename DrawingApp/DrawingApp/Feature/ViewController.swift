@@ -9,7 +9,9 @@ import UIKit
 import DrawingAppBusinessDomain
 
 class ViewController: UIViewController {
-  let manager = DrawingResourceManager()
+  let manager = DrawingResourceManager(CanvasSize(
+    width: UIScreen.screenWidth,
+    height: UIScreen.screenHeight))
   
   let label: UILabel = {
     let label = UILabel()

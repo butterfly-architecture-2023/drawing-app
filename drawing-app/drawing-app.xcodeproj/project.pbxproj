@@ -12,6 +12,7 @@
 		8DAF28002AFA74C7003103AF /* RandomRectangleFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF27FF2AFA74C7003103AF /* RandomRectangleFactoryTest.swift */; };
 		8DAF28012AFA74E0003103AF /* RandomRectangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF27F92AF7D5B6003103AF /* RandomRectangleFactory.swift */; };
 		8DAF28022AFA74E6003103AF /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB14A1F2AF668F10003CC95 /* Rectangle.swift */; };
+		8DAF28042AFA838D003103AF /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF28032AFA838D003103AF /* RectangleView.swift */; };
 		8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EC2AF624A60003CC95 /* AppDelegate.swift */; };
 		8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */; };
 		8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149F02AF624A60003CC95 /* DrawingViewController.swift */; };
@@ -36,6 +37,7 @@
 		8DAF27F92AF7D5B6003103AF /* RandomRectangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRectangleFactory.swift; sourceTree = "<group>"; };
 		8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShapeButton.swift; sourceTree = "<group>"; };
 		8DAF27FF2AFA74C7003103AF /* RandomRectangleFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRectangleFactoryTest.swift; sourceTree = "<group>"; };
+		8DAF28032AFA838D003103AF /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		8DB149E92AF624A60003CC95 /* drawing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drawing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB149EC2AF624A60003CC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB14A1F2AF668F10003CC95 /* Rectangle.swift */,
+				8DAF28032AFA838D003103AF /* RectangleView.swift */,
 			);
 			path = AddRectangle;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */,
+				8DAF28042AFA838D003103AF /* RectangleView.swift in Sources */,
 				8DAF27FC2AF7DC0D003103AF /* AddShapeButton.swift in Sources */,
 				8DAF27FA2AF7D5B6003103AF /* RandomRectangleFactory.swift in Sources */,
 				8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */,

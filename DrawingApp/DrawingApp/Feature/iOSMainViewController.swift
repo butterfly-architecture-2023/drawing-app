@@ -1,20 +1,20 @@
 //
-//  iPadMainViewController.swift
+//  iOSMainViewController.swift
 //  DrawingApp
 //
-//  Created by 백상휘 on 2023/11/04.
+//  Created by 백상휘 on 2023/11/07.
 //
 
 import UIKit
 
-class iPadMainViewController: UIViewController {
+class iOSMainViewController: UIViewController {
   private let factory = MainViewFactory(
     width: UIScreen.screenWidth,
-    height: UIScreen.screenHeight)
+    height: UIScreen.screenWidth)
   
-  private lazy var squareButton: UIButton = factory.getSquareMakeButton(as: .iPad)
-  private lazy var vectorButton: UIButton = factory.getVectorMakeButton(as: .iPad)
-  private lazy var buttonsLayer: UIStackView = factory.getButtonStackView(as: .iPad)
+  private lazy var squareButton: UIButton = factory.getSquareMakeButton(as: .iOS)
+  private lazy var vectorButton: UIButton = factory.getVectorMakeButton(as: .iOS)
+  private lazy var buttonsLayer: UIStackView = factory.getButtonStackView(as: .iOS)
   
   override func loadView() {
     super.loadView()

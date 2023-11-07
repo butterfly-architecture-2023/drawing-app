@@ -23,6 +23,10 @@
 		73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D72AF92844009AE62D /* RoundedButton.swift */; };
 		73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4D92AF93231009AE62D /* DrawingType.swift */; };
 		73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4DB2AF9327F009AE62D /* UIImage+.swift */; };
+		73A5D4E32AFA6667009AE62D /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E22AFA6667009AE62D /* Square.swift */; };
+		73A5D4E52AFA6B16009AE62D /* SystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E42AFA6B16009AE62D /* SystemColor.swift */; };
+		73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E62AFA6D9C009AE62D /* Point.swift */; };
+		73A5D4E92AFA7A5F009AE62D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		73A5D4D72AF92844009AE62D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		73A5D4D92AF93231009AE62D /* DrawingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingType.swift; sourceTree = "<group>"; };
 		73A5D4DB2AF9327F009AE62D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		73A5D4E22AFA6667009AE62D /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		73A5D4E42AFA6B16009AE62D /* SystemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColor.swift; sourceTree = "<group>"; };
+		73A5D4E62AFA6D9C009AE62D /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				73A5D4C82AF9231C009AE62D /* Application */,
+				73A5D4E12AFA6656009AE62D /* Model */,
 				73A5D4DD2AF93289009AE62D /* Presentation */,
 				73A5D4DF2AF932A9009AE62D /* Common */,
 				73A5D4DE2AF9329C009AE62D /* Extension */,
@@ -162,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				73A5D49B2AF92210009AE62D /* CanvasViewController.swift */,
+				73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -189,6 +199,16 @@
 				73A5D4D72AF92844009AE62D /* RoundedButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		73A5D4E12AFA6656009AE62D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4E22AFA6667009AE62D /* Square.swift */,
+				73A5D4E42AFA6B16009AE62D /* SystemColor.swift */,
+				73A5D4E62AFA6D9C009AE62D /* Point.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D4E92AFA7A5F009AE62D /* CanvasViewModel.swift in Sources */,
+				73A5D4E52AFA6B16009AE62D /* SystemColor.swift in Sources */,
 				73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */,
 				73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */,
 				73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */,
+				73A5D4E32AFA6667009AE62D /* Square.swift in Sources */,
+				73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */,
 				73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */,
 				73A5D4982AF92210009AE62D /* AppDelegate.swift in Sources */,
 				73A5D49A2AF92210009AE62D /* SceneDelegate.swift in Sources */,

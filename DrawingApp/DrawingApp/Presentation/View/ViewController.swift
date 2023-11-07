@@ -118,7 +118,7 @@ final class ViewController: BaseViewController {
 // MARK: - Bind
 extension ViewController {
     private func bind() {
-        output.square
+        output.createdSquare
             .asSignal()
             .emit(onNext: { [weak self] square in
                 guard let self = self else { return }

@@ -19,9 +19,9 @@ final class ViewModel {
         let squareViewDidTap: Signal<Int>
     }
     struct Output {
-        let square = PublishRelay<Square>()
-        let changedState = PublishRelay<(currentColor: ColorType?, currentCoordinates: [CGPoint])>()
+        let createdSquare = PublishRelay<Square>()
         let squareViewSelectedState = PublishRelay<Bool>()
+        let changedState = PublishRelay<(currentColor: ColorType?, currentCoordinates: [CGPoint])>()
         let currentColor = BehaviorRelay<ColorType?>(value: nil)
         let currentCoordinates = BehaviorRelay<[CGPoint]>(value: [])
     }
@@ -53,7 +53,7 @@ final class ViewModel {
                 self.selectedButtonType = .square
 
                 let square = squareManagementUseCase.createSquare(within: maxPosition)
-                output.square.accept(square)
+                output.createdSquare.accept(square)
             })
             .disposed(by: disposeBag)
 

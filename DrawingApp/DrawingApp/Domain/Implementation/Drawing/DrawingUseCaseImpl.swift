@@ -7,48 +7,52 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 final class DrawingUseCaseImpl: DrawingUseCase {
 
-    private var currentColor: ColorType?
-    private var currentCoordinates: [CGPoint] = []
-    private var drawings: [Drawing] = []
+    private let currentColor = BehaviorRelay<ColorType?>(value: nil)
+    private let currentCoordinates = BehaviorRelay<[CGPoint]>(value: [])
+    private let drawings = BehaviorRelay<[Drawing]>(value: [])
 
     func startDrawing(at point: CGPoint) {
         let allCases = ColorType.allCases
         let randomIndex = Int.random(in: 0..<allCases.count)
         let randomColor = allCases[randomIndex]
-        currentColor = randomColor
 
-        currentCoordinates = [point]
+        currentColor.accept(randomColor)
+        currentCoordinates.accept([point])
     }
 
     func continueDrawing(to point: CGPoint) {
-        currentCoordinates.append(point)
+        let oldDatas = currentCoordinates.value
+        currentCoordinates.accept(oldDatas + [point])
     }
 
-    func endDrawing() {
-        if let color = currentColor {
+    func endDrawing(color: ColorType?, coordinates: [CGPoint]) {
+        if let color = color {
             let drawing = Drawing(
                 id: UUID().hashValue,
                 color: color,
-                coordinates: currentCoordinates
+                coordinates: coordinates
             )
-            drawings.append(drawing)
+            drawings.accept([drawing])
         }
 
-        currentColor = nil
-        currentCoordinates = []
+        currentColor.accept(nil)
+        currentCoordinates.accept([])
     }
 
-    func readDrawings() -> [Drawing] {
-        return drawings
-    }
-
-    func readCurrentColor() -> ColorType? {
+    func readCurrentColor() -> BehaviorRelay<ColorType?> {
         return currentColor
     }
 
-    func readCurrentCoordinates() -> [CGPoint] {
+    func readCurrentCoordinates() -> BehaviorRelay<[CGPoint]> {
         return currentCoordinates
+    }
+
+    func readDrawings() -> BehaviorRelay<[Drawing]> {
+        return drawings
     }
 }

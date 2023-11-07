@@ -33,8 +33,10 @@ final class DrawingTests: XCTestCase {
 
         useCase.startDrawing(at: startingPoint)
 
-        XCTAssertEqual(useCase.readCurrentCoordinates().count, 1)
-        XCTAssertEqual(useCase.readCurrentCoordinates().first, startingPoint)
+        let currentCoordinates = useCase.readCurrentCoordinates().value
+
+        XCTAssertEqual(currentCoordinates.count, 1)
+        XCTAssertEqual(currentCoordinates.first, startingPoint)
     }
 
     func test_드로잉_다음_좌표가_일치하는지() {
@@ -44,7 +46,9 @@ final class DrawingTests: XCTestCase {
         useCase.startDrawing(at: startPoint)
         useCase.continueDrawing(to: nextPoint)
 
-        XCTAssertEqual(useCase.readCurrentCoordinates(), [startPoint, nextPoint])
+        let currentCoordinates = useCase.readCurrentCoordinates().value
+
+        XCTAssertEqual(currentCoordinates, [startPoint, nextPoint])
     }
 
     func test_드로잉_끝났을_경우_값이_저장_이후에_초기화되는지() {
@@ -53,11 +57,16 @@ final class DrawingTests: XCTestCase {
 
         useCase.startDrawing(at: startPoint)
         useCase.continueDrawing(to: endPoint)
-        useCase.endDrawing()
+        useCase.endDrawing(
+            color: useCase.readCurrentColor().value,
+            coordinates: useCase.readCurrentCoordinates().value
+        )
 
-        XCTAssertEqual(useCase.readDrawings().count, 1)
-        XCTAssertEqual(useCase.readDrawings().first?.coordinates, [startPoint, endPoint])
-        XCTAssertNil(useCase.readCurrentColor())
-        XCTAssertEqual(useCase.readCurrentCoordinates(), [])
+        let drawings = useCase.readDrawings().value
+
+        XCTAssertEqual(drawings.count, 1)
+        XCTAssertEqual(drawings.first?.coordinates, [startPoint, endPoint])
+        XCTAssertNil(useCase.readCurrentColor().value)
+        XCTAssertEqual(useCase.readCurrentCoordinates().value, [])
     }
 }

@@ -20,8 +20,10 @@ final class ViewModel {
     }
     struct Output {
         let square = PublishRelay<Square>()
-        let changedState = PublishRelay<(currentColor: ColorType, currentCoordinates: [CGPoint])>()
+        let changedState = PublishRelay<(currentColor: ColorType?, currentCoordinates: [CGPoint])>()
         let squareViewSelectedState = PublishRelay<Bool>()
+        let currentColor = BehaviorRelay<ColorType?>(value: nil)
+        let currentCoordinates = BehaviorRelay<[CGPoint]>(value: [])
     }
     var disposeBag = DisposeBag()
 
@@ -70,6 +72,9 @@ final class ViewModel {
                       selectedButtonType == .drawing
                 else { return }
 
+                let color = output.currentColor.value
+                let coordinates = output.currentCoordinates.value
+
                 switch gestureState {
                 case .began:
                     drawingUseCase.startDrawing(at: location)
@@ -77,15 +82,15 @@ final class ViewModel {
                 case .changed:
                     drawingUseCase.continueDrawing(to: location)
 
-                    let currentCoordinates = drawingUseCase.readCurrentCoordinates()
-                    guard let currentColor = drawingUseCase.readCurrentColor(),
-                          currentCoordinates.count >= 2
-                    else { return }
-
-                    output.changedState.accept((currentColor, currentCoordinates))
+                    if output.currentCoordinates.value.count >= 2 {
+                        output.changedState.accept((color, coordinates))
+                    }
 
                 case .ended:
-                    drawingUseCase.endDrawing()
+                    drawingUseCase.endDrawing(
+                        color: color,
+                        coordinates: coordinates
+                    )
                 }
             })
             .disposed(by: disposeBag)
@@ -107,6 +112,16 @@ final class ViewModel {
                 squareManagementUseCase.updateSquare(square)
                 output.squareViewSelectedState.accept(square.isSelected)
             })
+            .disposed(by: disposeBag)
+
+        drawingUseCase.readCurrentColor()
+            .asDriver()
+            .drive(output.currentColor)
+            .disposed(by: disposeBag)
+
+        drawingUseCase.readCurrentCoordinates()
+            .asDriver()
+            .drive(output.currentCoordinates)
             .disposed(by: disposeBag)
 
         return output

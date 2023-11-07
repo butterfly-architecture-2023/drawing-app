@@ -135,11 +135,13 @@ extension ViewController {
 
         output.changedState
             .asSignal()
-            .emit(onNext: { [weak self] colorType, coordinates in
-                guard let self = self else { return }
+            .emit(onNext: { [weak self] color, coordinates in
+                guard let self = self,
+                      let color = color
+                else { return }
 
                 self.drawCurrentPath(
-                    currentColor: colorType,
+                    currentColor: color,
                     currentCoordinates: coordinates
                 )
             })

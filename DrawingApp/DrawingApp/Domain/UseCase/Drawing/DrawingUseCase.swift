@@ -7,12 +7,15 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 protocol DrawingUseCase {
     func startDrawing(at point: CGPoint)
     func continueDrawing(to point: CGPoint)
-    func endDrawing()
+    func endDrawing(color: ColorType?, coordinates: [CGPoint])
 
-    func readDrawings() -> [Drawing]
-    func readCurrentColor() -> ColorType?
-    func readCurrentCoordinates() -> [CGPoint]
+    func readCurrentColor() -> BehaviorRelay<ColorType?>
+    func readCurrentCoordinates() -> BehaviorRelay<[CGPoint]>
+    func readDrawings() -> BehaviorRelay<[Drawing]>
 }

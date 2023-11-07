@@ -7,15 +7,12 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 final class ViewController: BaseViewController {
 
-    // MARK: - Properties
-
-    private var selectedButtonType: ButtonType?
-
-    private let squareManagementUseCase: SquareManagementUseCase
-    private let squareSelectionUseCase: SquareSelectionUseCase
-    private let drawingUseCase: DrawingUseCase
+    // MARK: - UI
 
     private lazy var drawingContainerView: UIView = {
         let view = UIView()
@@ -38,15 +35,7 @@ final class ViewController: BaseViewController {
         )
         return button
     }()
-    private lazy var createDrawingButton: CreateButton = {
-        let button = CreateButton(text: "드로잉")
-        button.addTarget(
-            self,
-            action: #selector(drawingButtonDidTap),
-            for: .touchUpInside
-        )
-        return button
-    }()
+    private lazy var createDrawingButton = CreateButton(text: "드로잉")
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(
             arrangedSubviews: [createSquareButton, createDrawingButton]
@@ -58,16 +47,29 @@ final class ViewController: BaseViewController {
         return stackView
     }()
 
+    // MARK: - Properties
+
+    private let viewModel: ViewModel
+
+    private lazy var input = ViewModel.Input(
+        createSquareButtonDidTap: createSquareButtonDidTap.asSignal(),
+        createDrawingButtonDidTap: createDrawingButton.rx.tap.asSignal(),
+        drawingViewPanGesture: drawingViewPanGesture.asSignal(),
+        squareViewDidTap: squareViewDidTap.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    private let disposeBag = DisposeBag()
+
+    private let createSquareButtonDidTap = PublishRelay<Position>()
+    private let drawingViewPanGesture = PublishRelay<(location: CGPoint, gesture: GestureState)>()
+    private let squareViewDidTap = PublishRelay<Int>()
+
+    private var selectedSquareView: SquareView?
+
     // MARK: - Init
 
-    init(
-        squareAddingUseCase: SquareManagementUseCase,
-        squareSelectionUseCase: SquareSelectionUseCase,
-        drawingManagementUseCase: DrawingUseCase
-    ) {
-        self.squareManagementUseCase = squareAddingUseCase
-        self.squareSelectionUseCase = squareSelectionUseCase
-        self.drawingUseCase = drawingManagementUseCase
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -79,7 +81,7 @@ final class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bind()
     }
 
     // MARK: - Helpers
@@ -113,15 +115,52 @@ final class ViewController: BaseViewController {
     }
 }
 
+// MARK: - Bind
+extension ViewController {
+    private func bind() {
+        output.square
+            .asSignal()
+            .emit(onNext: { [weak self] square in
+                guard let self = self else { return }
+
+                let squareView = SquareView(
+                    id: square.id,
+                    position: square.position,
+                    color: square.color
+                )
+                squareView.delegate = self
+                drawingContainerView.addSubview(squareView)
+            })
+            .disposed(by: disposeBag)
+
+        output.changedState
+            .asSignal()
+            .emit(onNext: { [weak self] colorType, coordinates in
+                guard let self = self else { return }
+
+                self.drawCurrentPath(
+                    currentColor: colorType,
+                    currentCoordinates: coordinates
+                )
+            })
+            .disposed(by: disposeBag)
+
+        output.squareViewSelectedState
+            .asSignal()
+            .emit(onNext: { [weak self] isSelected in
+                guard let self = self,
+                      let selectedSquareView = selectedSquareView
+                else { return }
+
+                selectedSquareView.updateBorderColor(isSelected: isSelected)
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
 // MARK: - Drawing Helpers
 extension ViewController {
-    private func drawCurrentPath() {
-        let currentCoordinates = drawingUseCase.readCurrentCoordinates()
-
-        guard let currentColor = drawingUseCase.readCurrentColor(),
-              currentCoordinates.count >= 2
-        else { return }
-
+    private func drawCurrentPath(currentColor: ColorType, currentCoordinates: [CGPoint]) {
         let path = setBezierPath(currentCoordinates: currentCoordinates)
         let lineLayer = setLineLayer(path: path, currentColor: currentColor)
         drawingContainerView.layer.addSublayer(lineLayer)
@@ -151,62 +190,37 @@ extension ViewController {
 extension ViewController {
     @objc
     private func squareButtonDidTap() {
-        selectedButtonType = .square
-
         let maxPosition = Position(
             x: drawingContainerView.bounds.width - Constants.squareWidth,
             y: drawingContainerView.bounds.height - Constants.squareHeight
         )
-
-        let square = squareManagementUseCase.createSquare(within: maxPosition)
-        let squareView = SquareView(id: square.id, position: square.position, color: square.color)
-        squareView.delegate = self
-        drawingContainerView.addSubview(squareView)
-    }
-
-    @objc
-    private func drawingButtonDidTap() {
-        selectedButtonType = .drawing
+        createSquareButtonDidTap.accept(maxPosition)
     }
 
     @objc
     private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
-        guard selectedButtonType == .drawing else { return }
-
         let location = sender.location(in: drawingContainerView)
 
+        var gestureState: GestureState
         switch sender.state {
         case .began:
-            drawingUseCase.startDrawing(at: location)
-
+            gestureState = .began
         case .changed:
-            drawingUseCase.continueDrawing(to: location)
-            drawCurrentPath()
-
+            gestureState = .changed
         case .ended:
-            drawingUseCase.endDrawing()
-
+            gestureState = .ended
         default:
             return
         }
+
+        drawingViewPanGesture.accept((location, gestureState))
     }
 }
 
 // MARK: - SquareViewDelegate
 extension ViewController: SquareViewDelegate {
     func squareViewTapped(_ squareView: SquareView, square id: Int) {
-        guard selectedButtonType == .square else { return }
-
-        if var square = squareManagementUseCase.readSquare(id: id) {
-
-            if square.isSelected {
-                squareSelectionUseCase.deselectSquare(&square)
-            } else {
-                squareSelectionUseCase.selectSquare(&square)
-            }
-
-            squareManagementUseCase.updateSquare(square)
-            squareView.updateBorderColor(isSelected: square.isSelected)
-        }
+        self.selectedSquareView = squareView
+        squareViewDidTap.accept(id)
     }
 }

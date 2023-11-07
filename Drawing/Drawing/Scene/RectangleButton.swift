@@ -25,15 +25,13 @@ class RectangleButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func basicSetUI() {
-        layer.borderColor = UIColor.systemRed.cgColor
-    }
-    
     func clear() {
+        layer.borderColor = UIColor.clear.cgColor
         layer.borderWidth = 0
     }
     
     func active() {
+        layer.borderColor = UIColor.systemRed.cgColor
         layer.borderWidth = 2
     }
 }

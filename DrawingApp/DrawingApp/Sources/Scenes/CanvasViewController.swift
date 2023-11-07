@@ -18,6 +18,8 @@ final class CanvasViewController: UIViewController {
                                        category: "CanvasViewController")
     private let viewModel: CanvasViewModel
     
+    private var selectedRectangleView: RectangleView?
+    
     // MARK: - ui component property
     
     private let canvasView: CanvasView = .init()
@@ -54,6 +56,15 @@ extension CanvasViewController {
                 guard let self else { return }
                 
                 canvasView.append(rectangle: rectangle)
+            })
+            .store(in: &cancellables)
+        
+        viewModel.output.updateRectangleView
+            .sink(receiveValue: { [weak self] rectangle in
+                guard let self else { return }
+                
+                selectedRectangleView?.bind(with: rectangle)
+                selectedRectangleView = nil
             })
             .store(in: &cancellables)
     }
@@ -96,7 +107,12 @@ extension CanvasViewController {
     }
     
     private func setUpComponents() {
+        setUpCanvasView()
         setUpToolbarView()
+    }
+    
+    private func setUpCanvasView() {
+        canvasView.delegate = self
     }
     
     private func setUpToolbarView() {
@@ -115,5 +131,15 @@ extension CanvasViewController: ToolbarViewDelegate {
     
     func onTapDrawingItemButton() {
         logger.info("tapped drawing button")
+    }
+}
+
+// MARK: - RectangleViewDelegate
+
+extension CanvasViewController: CanvasViewDelegate {
+    func onTapRectangleView(_ view: RectangleView, rectangle: Rectangle) {
+        /* NOTE: 사각형 클릭 이벤트 처리 로직 임시 방편, 추후 고칠 예정 */
+        selectedRectangleView = view
+        viewModel.input.onTapRectangleView.send(rectangle)
     }
 }

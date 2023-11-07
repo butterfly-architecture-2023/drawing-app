@@ -15,10 +15,12 @@ final class CanvasViewModel {
     struct Input {
         let canvasViewRect: CurrentValueSubject<CGRect, Never>
         let onTapRectangleItemButton: PassthroughSubject<Void, Never>
+        let onTapRectangleView: PassthroughSubject<Rectangle, Never>
     }
     
     struct Output {
         let appendRectangleView: PassthroughSubject<Rectangle, Never>
+        let updateRectangleView: PassthroughSubject<Rectangle, Never>
     }
     
     // MARK: - property
@@ -33,19 +35,23 @@ final class CanvasViewModel {
     // PRIVATE - INPUT
     private let canvasViewRect: CurrentValueSubject<CGRect, Never> = .init(.zero)
     private let onTapRectangleItemButton: PassthroughSubject<Void, Never> = .init()
+    private let onTapRectangleView: PassthroughSubject<Rectangle, Never> = .init()
     
     // PRIVATE - OUTPUT
     private let appendRectangleView: PassthroughSubject<Rectangle, Never> = .init()
+    private let updateRectangleView: PassthroughSubject<Rectangle, Never> = .init()
     
     // MARK: - initialize
     
     init() {
         self.input = .init(
             canvasViewRect: canvasViewRect,
-            onTapRectangleItemButton: onTapRectangleItemButton
+            onTapRectangleItemButton: onTapRectangleItemButton,
+            onTapRectangleView: onTapRectangleView
         )
         self.output = .init(
-            appendRectangleView: appendRectangleView
+            appendRectangleView: appendRectangleView,
+            updateRectangleView: updateRectangleView
         )
         
         transform()
@@ -78,6 +84,16 @@ extension CanvasViewModel {
                     
                     appendRectangleView.send(newRectangle)
                 }
+            })
+            .store(in: &cancellables)
+        
+        onTapRectangleView
+            .sink(receiveValue: { [weak self] rectangle in
+                guard let self else { return }
+                
+                var _rectangle = rectangle
+                _rectangle.isSelected.toggle()
+                updateRectangleView.send(_rectangle)
             })
             .store(in: &cancellables)
     }

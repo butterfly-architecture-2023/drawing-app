@@ -7,10 +7,19 @@
 
 import UIKit
 
+protocol RectangleViewDelegate: AnyObject {
+    func onTapRectangleView(_ view: RectangleView, rectangle: Rectangle)
+}
+
 final class RectangleView: UIView {
     
     // MARK: - property
     
+    // INTERNAL
+    weak var delegate: RectangleViewDelegate?
+    
+    // PRIVATE
+    private var rectangle: Rectangle?
     
     // MARK: - life cycle
     
@@ -27,6 +36,38 @@ final class RectangleView: UIView {
     }
 }
 
+// MARK: - internal method
+
+extension RectangleView {
+    
+    func bind(with state: Rectangle) {
+        self.rectangle = state
+        
+        backgroundColor = state.backgroundColor.uiColor
+        
+        if state.isSelected {
+            layer.borderWidth = 5
+            layer.borderColor = UIColor.systemRed.cgColor
+        } else {
+            layer.borderWidth = 0
+            layer.borderColor = UIColor.clear.cgColor
+        }
+    }
+}
+
+// MARK: - action
+
+extension RectangleView {
+    @objc
+    private func handleTapGesture() {
+        guard let rectangle else { return }
+        
+        delegate?.onTapRectangleView(self, rectangle: rectangle)
+    }
+}
+
+// MARK: - set up UI
+
 extension RectangleView {
     private func setUpUI() {
         setUpView()
@@ -36,6 +77,9 @@ extension RectangleView {
     
     private func setUpView() {
         backgroundColor = .white
+        let gesture = UITapGestureRecognizer(target: self, 
+                                             action: #selector(handleTapGesture))
+        self.addGestureRecognizer(gesture)
     }
     
     private func setUpLayout() {

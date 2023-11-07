@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol CanvasViewDelegate: AnyObject {
+    func onTapRectangleView(_ view: RectangleView, rectangle: Rectangle)
+}
+
 final class CanvasView: UIView {
     
     // MARK: - property
+    
+    // INTERNAL
+    weak var delegate: CanvasViewDelegate?
     
     private var path = UIBezierPath()
     private var lines: [UIBezierPath] = []
@@ -43,7 +50,8 @@ final class CanvasView: UIView {
 extension CanvasView {
     func append(rectangle: Rectangle) {
         let rectangleView = RectangleView(frame: rectangle.rect)
-        rectangleView.backgroundColor = rectangle.backgroundColor.uiColor
+        rectangleView.bind(with: rectangle)
+        rectangleView.delegate = self
         
         addSubview(rectangleView)
     }
@@ -94,5 +102,13 @@ extension CanvasView {
     
     private func setUpComponents() {
         
+    }
+}
+
+// MARK: - RectangleViewDelegate
+
+extension CanvasView: RectangleViewDelegate {
+    func onTapRectangleView(_ view: RectangleView, rectangle: Rectangle) {
+        delegate?.onTapRectangleView(view, rectangle: rectangle)
     }
 }

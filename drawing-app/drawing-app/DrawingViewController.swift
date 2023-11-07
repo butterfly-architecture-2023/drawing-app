@@ -9,7 +9,9 @@ import UIKit
 import SnapKit
 
 class DrawingViewController: UIViewController {
-    private let addRectangleModel = AddRectangleButtonViewModel()
+    private let randomRecangleFactory = RandomRectangleFactory()
+    
+    private var addedRectangleViews: [RectangleView] = []
 
     private var firstTouchPoint: CGPoint?
     private var endTouchPoint: CGPoint?
@@ -35,6 +37,8 @@ class DrawingViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.touchPoints = []
+        guard let point = touches.first?.location(in: self.view) else { return }
+
         self.firstTouchPoint = touches.first?.location(in: self.view)
     }
 
@@ -47,23 +51,15 @@ class DrawingViewController: UIViewController {
     }
 
     @objc private func addRectangle() {
-        let rectangle = addRectangleModel.makeRandomRectangle(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
-        let rectangleView = makeRectangleView(rectangle)
+        let rectangle = randomRecangleFactory.make(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
+        let rectangleView = RectangleView(rectangle)
+        rectangleView.delegate = self
+        addedRectangleViews.append(rectangleView)
         self.view.addSubview(rectangleView)
     }
 
     @objc private func startDrawing() {
         print("Tapped drawing button!")
-    }
-
-    private func makeRectangleView(_ rectangle: Rectangle) -> UIView {
-        let rectangleStyle = rectangle.style
-        let rectangleView = UIImageView(frame: .init(origin: .init(x: rectangle.x, y: rectangle.y), size: .init(width: rectangle.width, height: rectangle.height)))
-        rectangleView.backgroundColor = .init(red: rectangleStyle.backgroundRGBA.red,
-                                              green: rectangleStyle.backgroundRGBA.green,
-                                              blue: rectangleStyle.backgroundRGBA.blue,
-                                              alpha: rectangle.style.backgroundRGBA.alpha)
-        return rectangleView
     }
 
     private func addButtonStackView() {
@@ -79,4 +75,49 @@ class DrawingViewController: UIViewController {
             $0.centerX.equalToSuperview()
         }
     }
+}
+
+extension DrawingViewController: RectangleDelegate {
+    func tap(_ id: Int) {
+        print(id)
+    }
+}
+
+final class RectangleView: UIView {
+    let ID: Int
+    var isSelected: Bool = false
+
+    weak var delegate: RectangleDelegate?
+
+    init(_ rectangle: Rectangle) {
+        self.ID = rectangle.hashValue
+
+        super.init(frame: .zero)
+        configure(rectangle)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func configure(_ rectangle: Rectangle) {
+        self.frame = .init(origin: .init(x: rectangle.x, y: rectangle.y),
+                                  size: .init(width: rectangle.width, height: rectangle.height))
+        self.backgroundColor = .init(red: rectangle.style.backgroundRGBA.red,
+                                              green: rectangle.style.backgroundRGBA.green,
+                                              blue: rectangle.style.backgroundRGBA.blue,
+                                              alpha: rectangle.style.backgroundRGBA.alpha)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tap))
+        self.addGestureRecognizer(tap)
+    }
+
+    @objc private func tap() {
+        delegate?.tap(ID)
+    }
+}
+
+protocol RectangleDelegate: AnyObject {
+    func tap(_ id: Int)
 }

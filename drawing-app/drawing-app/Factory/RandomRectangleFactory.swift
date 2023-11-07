@@ -20,7 +20,11 @@ struct RandomRectangleFactory {
         let randomAlphaValue = Double.random(in: 0...1)
         let randomRectangle = Rectangle(width: width, height: height,
                                         x: randomXPosition, y: randomYPosition,
-                                        style: .init(backgroundRGBA: .init(red: randomRedValue, green: randomGreenValue, blue: randomBlueValue, alpha: randomAlphaValue), borderRGBA: nil, borderWidth: nil))
+                                        style: .init(backgroundRGBA: .init(
+                                            red: randomRedValue,
+                                            green: randomGreenValue,
+                                            blue: randomBlueValue,
+                                            alpha: randomAlphaValue), borderRGBA: nil, borderWidth: nil))
         return randomRectangle
     }
 

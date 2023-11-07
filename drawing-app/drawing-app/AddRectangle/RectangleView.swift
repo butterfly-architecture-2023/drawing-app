@@ -12,7 +12,7 @@ protocol RectangleViewDelegate: AnyObject {
 }
 
 final class RectangleView: UIView {
-    let ID: Int
+    private let ID: Int
 
     weak var delegate: RectangleViewDelegate?
 

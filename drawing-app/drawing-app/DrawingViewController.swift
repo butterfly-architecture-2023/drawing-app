@@ -11,7 +11,7 @@ import SnapKit
 class DrawingViewController: UIViewController {
     private let randomRectangleFactory = RandomRectangleFactory()
     
-    private var addedRectangleViews: [RectangleView] = []
+    private var addedRectangleViewDic: [Int: RectangleView] = [:]
 
     private var firstTouchPoint: CGPoint?
     private var endTouchPoint: CGPoint?
@@ -53,8 +53,10 @@ class DrawingViewController: UIViewController {
     @objc private func addRectangle() {
         let rectangle = randomRectangleFactory.make(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
         let rectangleView = RectangleView(rectangle)
+        let rectangleID = rectangle.hashValue
+        addedRectangleViewDic[rectangleID] = rectangleView
+
         rectangleView.delegate = self
-        addedRectangleViews.append(rectangleView)
         self.view.addSubview(rectangleView)
     }
 
@@ -79,8 +81,8 @@ class DrawingViewController: UIViewController {
 
 extension DrawingViewController: RectangleViewDelegate {
     func tap(_ id: Int) {
-        self.addedRectangleViews.forEach { $0.resetBorder() }
-        guard let selectedRectangle = self.addedRectangleViews.first(where: { $0.ID == id }) else { return }
-        selectedRectangle.changeBorder()
+        self.addedRectangleViewDic.values.forEach { $0.resetBorder() }
+        let selectedRectangle = addedRectangleViewDic[id]
+        selectedRectangle?.changeBorder()
     }
 }

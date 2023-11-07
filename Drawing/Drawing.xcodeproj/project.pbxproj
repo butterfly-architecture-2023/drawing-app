@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		68B7E9F82AF74722005CAB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7E9F72AF74722005CAB62 /* AppDelegate.swift */; };
-		68B7E9FA2AF74722005CAB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7E9F92AF74722005CAB62 /* SceneDelegate.swift */; };
 		68B7E9FC2AF74722005CAB62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7E9FB2AF74722005CAB62 /* ViewController.swift */; };
-		68B7E9FF2AF74722005CAB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B7E9FD2AF74722005CAB62 /* Main.storyboard */; };
 		68B7EA012AF74723005CAB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B7EA002AF74723005CAB62 /* Assets.xcassets */; };
 		68B7EA042AF74723005CAB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B7EA022AF74723005CAB62 /* LaunchScreen.storyboard */; };
 		68B7EA0F2AF74723005CAB62 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA0E2AF74723005CAB62 /* DrawingTests.swift */; };
 		68B7EA192AF74723005CAB62 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA182AF74723005CAB62 /* DrawingUITests.swift */; };
 		68B7EA1B2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA1A2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift */; };
+		68B7EA282AF74928005CAB62 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */; };
+		68B7EA2A2AF90F54005CAB62 /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA292AF90F54005CAB62 /* DrawingManager.swift */; };
+		68B7EA2C2AF93506005CAB62 /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */; };
+		68B7EA332AFA67CE005CAB62 /* RectangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */; };
+		74C3C8B42AF9C0B600E8DF78 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3C8B32AF9C0B600E8DF78 /* Shape.swift */; };
+		74C3C8B82AF9C43C00E8DF78 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3C8B72AF9C43C00E8DF78 /* Define.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +42,7 @@
 /* Begin PBXFileReference section */
 		68B7E9F42AF74722005CAB62 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B7E9F72AF74722005CAB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68B7E9F92AF74722005CAB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		68B7E9FB2AF74722005CAB62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		68B7E9FE2AF74722005CAB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68B7EA002AF74723005CAB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68B7EA032AF74723005CAB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68B7EA052AF74723005CAB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,12 @@
 		68B7EA142AF74723005CAB62 /* DrawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B7EA182AF74723005CAB62 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 		68B7EA1A2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		68B7EA292AF90F54005CAB62 /* DrawingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingManager.swift; sourceTree = "<group>"; };
+		68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
+		68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RectangleTests.swift; path = ../../../../../Documents/RectangleTests.swift; sourceTree = "<group>"; };
+		74C3C8B32AF9C0B600E8DF78 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		74C3C8B72AF9C43C00E8DF78 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,11 @@
 		68B7E9F62AF74722005CAB62 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				68B7E9F72AF74722005CAB62 /* AppDelegate.swift */,
-				68B7E9F92AF74722005CAB62 /* SceneDelegate.swift */,
-				68B7E9FB2AF74722005CAB62 /* ViewController.swift */,
-				68B7E9FD2AF74722005CAB62 /* Main.storyboard */,
+				68B7EA312AFA6725005CAB62 /* Scene */,
+				68B7EA302AFA6719005CAB62 /* Manager */,
+				68B7EA2F2AFA670A005CAB62 /* Model */,
+				74C3C8B62AF9C23200E8DF78 /* AppDelegate */,
+				74C3C8B52AF9C22400E8DF78 /* Extensions */,
 				68B7EA002AF74723005CAB62 /* Assets.xcassets */,
 				68B7EA022AF74723005CAB62 /* LaunchScreen.storyboard */,
 				68B7EA052AF74723005CAB62 /* Info.plist */,
@@ -114,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				68B7EA0E2AF74723005CAB62 /* DrawingTests.swift */,
+				68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */,
 			);
 			path = DrawingTests;
 			sourceTree = "<group>";
@@ -125,6 +135,48 @@
 				68B7EA1A2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift */,
 			);
 			path = DrawingUITests;
+			sourceTree = "<group>";
+		};
+		68B7EA2F2AFA670A005CAB62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74C3C8B72AF9C43C00E8DF78 /* Define.swift */,
+				74C3C8B32AF9C0B600E8DF78 /* Shape.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68B7EA302AFA6719005CAB62 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				68B7EA292AF90F54005CAB62 /* DrawingManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		68B7EA312AFA6725005CAB62 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				68B7E9FB2AF74722005CAB62 /* ViewController.swift */,
+				68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		74C3C8B52AF9C22400E8DF78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		74C3C8B62AF9C23200E8DF78 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				68B7E9F72AF74722005CAB62 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +285,6 @@
 			files = (
 				68B7EA042AF74723005CAB62 /* LaunchScreen.storyboard in Resources */,
 				68B7EA012AF74723005CAB62 /* Assets.xcassets in Resources */,
-				68B7E9FF2AF74722005CAB62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B7E9FC2AF74722005CAB62 /* ViewController.swift in Sources */,
+				74C3C8B82AF9C43C00E8DF78 /* Define.swift in Sources */,
+				68B7EA2C2AF93506005CAB62 /* RectangleButton.swift in Sources */,
 				68B7E9F82AF74722005CAB62 /* AppDelegate.swift in Sources */,
-				68B7E9FA2AF74722005CAB62 /* SceneDelegate.swift in Sources */,
+				68B7EA2A2AF90F54005CAB62 /* DrawingManager.swift in Sources */,
+				68B7EA282AF74928005CAB62 /* UIColor+Extension.swift in Sources */,
+				74C3C8B42AF9C0B600E8DF78 /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B7EA0F2AF74723005CAB62 /* DrawingTests.swift in Sources */,
+				68B7EA332AFA67CE005CAB62 /* RectangleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		68B7E9FD2AF74722005CAB62 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68B7E9FE2AF74722005CAB62 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		68B7EA022AF74723005CAB62 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -441,7 +489,7 @@
 				INFOPLIST_FILE = Drawing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +516,7 @@
 				INFOPLIST_FILE = Drawing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,7 +540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ann.beckwon.DrawingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,7 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ann.beckwon.DrawingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

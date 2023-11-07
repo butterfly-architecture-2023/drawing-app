@@ -11,6 +11,7 @@ import DrawingAppBusinessDomain
 class MainViewFactory {
   private(set) var squareViews: [UIView] = []
   private(set) var vectors: [Data] = []
+  private(set) var stackView: UIStackView?
   let manager: DrawingResourceManager
   
   init(width: CGFloat, height: CGFloat) {
@@ -29,6 +30,7 @@ class MainViewFactory {
     result.distribution = .fillEqually
     result.layoutMargins = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
     result.isLayoutMarginsRelativeArrangement = true
+    self.stackView = result
     return result
   }
   
@@ -60,6 +62,16 @@ class MainViewFactory {
   
   func addSquare() -> UIView {
     let square = manager.addSquare()
+    
+    if let stackView {
+      let size = square.canvasSize
+      let frame = stackView.frame
+      while ((frame.minX - size.width) ..< (frame.maxX + size.width) ~= square.position.x
+             &&
+             (frame.minY - size.height) ..< (frame.maxY + size.height) ~= square.position.y) {
+        square.random(manager.canvasSize)
+      }
+    }
     
     let squareView = UIView(frame: CGRect(
       x: square.position.x,

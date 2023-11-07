@@ -57,6 +57,16 @@ final class DrawingAppBusinessDomainTests: XCTestCase {
     
     XCTAssertEqual(manager.squares.count, Set(manager.squares).count)
   }
+  
+  func test_매니저_사각형_엔티티_위치_지정_테스트() throws {
+    let square = manager.addSquare()
+    
+    for _ in 0..<20 {
+      let position = square.position
+      square.random(manager.canvasSize)
+      XCTAssertNotEqual(position, square.position)
+    }
+  }
 }
 
 extension Square: Hashable {

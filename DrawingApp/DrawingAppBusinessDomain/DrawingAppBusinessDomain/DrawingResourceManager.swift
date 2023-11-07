@@ -10,7 +10,7 @@ import Foundation
 public class DrawingResourceManager {
   public var squares = [Square]()
   public var vectors = [Vector]()
-  private let canvasSize: CanvasSize
+  public let canvasSize: CanvasSize
   
   public init(_ size: CanvasSize) {
     self.canvasSize = size
@@ -33,8 +33,7 @@ public class DrawingResourceManager {
       return false
     }
     
-    square.x = position.x
-    square.y = position.y
+    square.setPosition(at: position)
     return true
   }
   

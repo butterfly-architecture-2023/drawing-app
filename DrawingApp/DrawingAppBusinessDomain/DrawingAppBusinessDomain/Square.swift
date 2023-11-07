@@ -23,8 +23,8 @@ public class Square {
   }
   
   // Position
-  var x: Double
-  var y: Double
+  private(set) var x: Double
+  private(set) var y: Double
   public var position: GesturePosition {
     GesturePosition(x: x, y: y)
   }
@@ -34,10 +34,21 @@ public class Square {
     self.y = y
   }
   
+  public func setPosition(at position: GesturePosition) {
+    x = position.x
+    y = position.y
+  }
+  
   static func random(_ canvas: CanvasSize) -> Square {
-    let result = Square(
-      x: Double.random(in: 0...(canvas.width - 100)),
-      y: Double.random(in: 0...(canvas.height - 100)))
+    let result = Square(x: 0, y: 0)
+    result.setPosition(at: GesturePosition(
+      x: Double.random(in: 0...(canvas.width - result.width)),
+      y: Double.random(in: 0...(canvas.height - result.height))))
     return result
+  }
+  
+  public func random(_ canvas: CanvasSize) {
+    x = Double.random(in: 0...(canvas.width - width))
+    y = Double.random(in: 0...(canvas.height - height))
   }
 }

@@ -17,6 +17,13 @@
 		9006966F2AF68B0900ED167C /* drawing_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006966E2AF68B0900ED167C /* drawing_appUITests.swift */; };
 		900696712AF68B0900ED167C /* drawing_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696702AF68B0900ED167C /* drawing_appUITestsLaunchTests.swift */; };
 		900696802AF68C1A00ED167C /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006967F2AF68C1A00ED167C /* DrawingViewModel.swift */; };
+		900696822AF9226700ED167C /* CanvasButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696812AF9226700ED167C /* CanvasButton.swift */; };
+		900696862AF929B700ED167C /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696852AF929B700ED167C /* Square.swift */; };
+		9006968A2AFA7CFD00ED167C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696892AFA7CFD00ED167C /* Color.swift */; };
+		9006968C2AFA81E900ED167C /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006968B2AFA81E900ED167C /* SquareFactory.swift */; };
+		900696932AFA91C200ED167C /* SquareFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696922AFA91C200ED167C /* SquareFactoryImpl.swift */; };
+		900696952AFA929D00ED167C /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696942AFA929D00ED167C /* Drawable.swift */; };
+		900696972AFA960500ED167C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696962AFA960500ED167C /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		9006966E2AF68B0900ED167C /* drawing_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITests.swift; sourceTree = "<group>"; };
 		900696702AF68B0900ED167C /* drawing_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9006967F2AF68C1A00ED167C /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
+		900696812AF9226700ED167C /* CanvasButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasButton.swift; sourceTree = "<group>"; };
+		900696852AF929B700ED167C /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		900696892AFA7CFD00ED167C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9006968B2AFA81E900ED167C /* SquareFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactory.swift; sourceTree = "<group>"; };
+		900696922AFA91C200ED167C /* SquareFactoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactoryImpl.swift; sourceTree = "<group>"; };
+		900696942AFA929D00ED167C /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		900696962AFA960500ED167C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				9006967E2AF68B7C00ED167C /* Application */,
-				900696512AF68B0800ED167C /* DrawingViewController.swift */,
-				9006967F2AF68C1A00ED167C /* DrawingViewModel.swift */,
+				900696902AFA912000ED167C /* Domain */,
+				9006968D2AFA90F300ED167C /* Presentation */,
 				9006967D2AF68B6100ED167C /* Resource */,
 				9006965B2AF68B0800ED167C /* Info.plist */,
 			);
@@ -144,6 +158,61 @@
 				9006964F2AF68B0800ED167C /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		900696872AF92AC800ED167C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				900696892AFA7CFD00ED167C /* Color.swift */,
+				900696942AFA929D00ED167C /* Drawable.swift */,
+				900696852AF929B700ED167C /* Square.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9006968D2AFA90F300ED167C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9006968E2AFA910E00ED167C /* View */,
+				9006968F2AFA911200ED167C /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9006968E2AFA910E00ED167C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				900696812AF9226700ED167C /* CanvasButton.swift */,
+				900696962AFA960500ED167C /* CanvasView.swift */,
+				900696512AF68B0800ED167C /* DrawingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9006968F2AFA911200ED167C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9006967F2AF68C1A00ED167C /* DrawingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		900696902AFA912000ED167C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				900696872AF92AC800ED167C /* Entity */,
+				900696912AFA917C00ED167C /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		900696912AFA917C00ED167C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9006968B2AFA81E900ED167C /* SquareFactory.swift */,
+				900696922AFA91C200ED167C /* SquareFactoryImpl.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,10 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9006968C2AFA81E900ED167C /* SquareFactory.swift in Sources */,
 				900696522AF68B0800ED167C /* DrawingViewController.swift in Sources */,
 				900696802AF68C1A00ED167C /* DrawingViewModel.swift in Sources */,
+				900696822AF9226700ED167C /* CanvasButton.swift in Sources */,
+				900696862AF929B700ED167C /* Square.swift in Sources */,
+				9006968A2AFA7CFD00ED167C /* Color.swift in Sources */,
 				9006964E2AF68B0800ED167C /* AppDelegate.swift in Sources */,
+				900696932AFA91C200ED167C /* SquareFactoryImpl.swift in Sources */,
+				900696972AFA960500ED167C /* CanvasView.swift in Sources */,
 				900696502AF68B0800ED167C /* SceneDelegate.swift in Sources */,
+				900696952AFA929D00ED167C /* Drawable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

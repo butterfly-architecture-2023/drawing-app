@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = DrawingViewController(viewModel: .init())
+        let squareFactory: SquareFactory = SquareFactoryImpl()
+        window?.rootViewController = DrawingViewController(viewModel: .init(squareFactory: squareFactory))
         window?.makeKeyAndVisible()
     }
 }

@@ -21,7 +21,6 @@ final class DrawingManager {
         let id = UUID().uuidString
         let shape = Shape(id: id, type: .drawing, color: makeRandomColor(), frame: path.bounds)
         drawingShapes.append(shape)
-        
     }
     
     func makeRectangle(canvasBounds: CGRect) -> RectangleButton {
@@ -34,7 +33,6 @@ final class DrawingManager {
     func makeRectangleFrame(canvasBounds: CGRect) -> CGRect {
         let maxWidth = canvasBounds.width - 100
         let maxHeight = canvasBounds.height - 100
-        
         let originX = CGFloat.random(in: 0...maxWidth)
         let originY = CGFloat.random(in: 0...maxHeight)
         let origin = CGPoint(x: originX, y: originY)

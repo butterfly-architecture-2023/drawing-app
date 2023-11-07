@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class DrawingViewController: UIViewController {
-    private let randomRecangleFactory = RandomRectangleFactory()
+    private let randomRectangleFactory = RandomRectangleFactory()
     
     private var addedRectangleViews: [RectangleView] = []
 
@@ -51,7 +51,7 @@ class DrawingViewController: UIViewController {
     }
 
     @objc private func addRectangle() {
-        let rectangle = randomRecangleFactory.make(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
+        let rectangle = randomRectangleFactory.make(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
         let rectangleView = RectangleView(rectangle)
         rectangleView.delegate = self
         addedRectangleViews.append(rectangleView)
@@ -79,7 +79,9 @@ class DrawingViewController: UIViewController {
 
 extension DrawingViewController: RectangleDelegate {
     func tap(_ id: Int) {
-        print(id)
+        self.addedRectangleViews.forEach { $0.resetBorder() }
+        guard let selectedRectangle = self.addedRectangleViews.first(where: { $0.ID == id }) else { return }
+        selectedRectangle.changeBorder()
     }
 }
 
@@ -116,6 +118,17 @@ final class RectangleView: UIView {
     @objc private func tap() {
         delegate?.tap(ID)
     }
+
+    func changeBorder() {
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 2.0
+    }
+
+    func resetBorder() {
+        self.layer.borderColor = nil
+        self.layer.borderWidth = 0
+    }
+
 }
 
 protocol RectangleDelegate: AnyObject {

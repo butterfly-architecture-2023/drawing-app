@@ -27,6 +27,8 @@
 		73A5D4E52AFA6B16009AE62D /* SystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E42AFA6B16009AE62D /* SystemColor.swift */; };
 		73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E62AFA6D9C009AE62D /* Point.swift */; };
 		73A5D4E92AFA7A5F009AE62D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */; };
+		73A5D4EB2AFBBA17009AE62D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4EA2AFBBA17009AE62D /* SquareView.swift */; };
+		73A5D4EE2AFBBC33009AE62D /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4ED2AFBBC33009AE62D /* RxGesture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		73A5D4E42AFA6B16009AE62D /* SystemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColor.swift; sourceTree = "<group>"; };
 		73A5D4E62AFA6D9C009AE62D /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		73A5D4EA2AFBBA17009AE62D /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */,
 				73A5D4CE2AF927DF009AE62D /* RxCocoa in Frameworks */,
 				73A5D4D22AF927DF009AE62D /* RxSwift in Frameworks */,
+				73A5D4EE2AFBBC33009AE62D /* RxGesture in Frameworks */,
 				73A5D4CB2AF927C8009AE62D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +174,7 @@
 		73A5D4DD2AF93289009AE62D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				73A5D4EF2AFBC052009AE62D /* Views */,
 				73A5D49B2AF92210009AE62D /* CanvasViewController.swift */,
 				73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */,
 			);
@@ -211,6 +216,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		73A5D4EF2AFBC052009AE62D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4EA2AFBBA17009AE62D /* SquareView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +246,7 @@
 				73A5D4CF2AF927DF009AE62D /* RxRelay */,
 				73A5D4D12AF927DF009AE62D /* RxSwift */,
 				73A5D4D42AF927F5009AE62D /* Then */,
+				73A5D4ED2AFBBC33009AE62D /* RxGesture */,
 			);
 			productName = "drawing-app";
 			productReference = 73A5D4942AF92210009AE62D /* drawing-app.app */;
@@ -310,6 +324,7 @@
 				73A5D4C92AF927C7009AE62D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */,
 				73A5D4D32AF927F5009AE62D /* XCRemoteSwiftPackageReference "Then" */,
+				73A5D4EC2AFBBC33009AE62D /* XCRemoteSwiftPackageReference "RxGesture" */,
 			);
 			productRefGroup = 73A5D4952AF92210009AE62D /* Products */;
 			projectDirPath = "";
@@ -357,6 +372,7 @@
 				73A5D4E52AFA6B16009AE62D /* SystemColor.swift in Sources */,
 				73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */,
 				73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */,
+				73A5D4EB2AFBBA17009AE62D /* SquareView.swift in Sources */,
 				73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */,
 				73A5D4E32AFA6667009AE62D /* Square.swift in Sources */,
 				73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */,
@@ -720,6 +736,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		73A5D4EC2AFBBC33009AE62D /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -747,6 +771,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 73A5D4D32AF927F5009AE62D /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		73A5D4ED2AFBBC33009AE62D /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4EC2AFBBC33009AE62D /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

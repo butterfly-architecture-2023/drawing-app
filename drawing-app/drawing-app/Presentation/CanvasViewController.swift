@@ -66,16 +66,15 @@ final class CanvasViewController: UIViewController {
             .showSquare
             .asDriver(onErrorDriveWith: .empty())
             .drive(with: self, onNext: { owner, square in
-                owner.addSquareView(at: square.rect, color: square.color.uicolor)
+                owner.addSquareView(square)
             })
             .disposed(by: disposeBag)
     }
     
     // MARK: - Function
     
-    private func addSquareView(at: CGRect, color: UIColor) {
-        let view = UIView(frame: at)
-        view.backgroundColor = color
+    private func addSquareView(_ square: Square) {
+        let view = SquareView(with: square)
         canvasView.addSubview(view)
     }
 

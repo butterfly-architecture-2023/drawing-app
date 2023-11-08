@@ -12,10 +12,10 @@ class SquareFactoryImpl: SquareFactory {
     init() { }
     
     func makeComponent(in rect: CGRect) -> Drawable? {
-        let minX = CGFloat.random(in: rect.origin.x..<rect.width-100)
-        let minY = CGFloat.random(in: rect.origin.y..<rect.height-100)
+        let minX = CGFloat.random(in: rect.origin.x..<rect.width-Constants.squareWidth)
+        let minY = CGFloat.random(in: rect.origin.y..<rect.height-Constants.squareHeight)
         
-        let points: [CGPoint] = [CGPoint(x: minX, y: minY), CGPoint(x: minX + 100, y: minY), CGPoint(x: minX + 100, y: minY + 100), CGPoint(x: minX, y: minY + 100)]
+        let points: [CGPoint] = [CGPoint(x: minX, y: minY), CGPoint(x: minX + Constants.squareWidth, y: minY), CGPoint(x: minX + Constants.squareWidth, y: minY + Constants.squareHeight), CGPoint(x: minX, y: minY + Constants.squareHeight)]
         
         return Square(points: points)
     }

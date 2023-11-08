@@ -99,6 +99,15 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		8DAF28152AFBE86E003103AF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8DB149EC2AF624A60003CC95 /* AppDelegate.swift */,
+				8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		8DB149E02AF624A60003CC95 = {
 			isa = PBXGroup;
 			children = (
@@ -120,14 +129,13 @@
 		8DB149EB2AF624A60003CC95 /* drawing-app */ = {
 			isa = PBXGroup;
 			children = (
-				8DB149EC2AF624A60003CC95 /* AppDelegate.swift */,
-				8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */,
 				8DB149F02AF624A60003CC95 /* DrawingViewController.swift */,
-				8DAF28142AFBE59C003103AF /* Drawing */,
 				8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */,
 				8DAF28072AFBB159003103AF /* Boundary.swift */,
-				8DAF27FE2AFA7462003103AF /* Factory */,
 				8DAF27FD2AF928A1003103AF /* AddRectangle */,
+				8DAF28142AFBE59C003103AF /* Drawing */,
+				8DAF27FE2AFA7462003103AF /* Factory */,
+				8DAF28152AFBE86E003103AF /* SupportingFiles */,
 				8DB149F52AF624A70003CC95 /* Assets.xcassets */,
 				8DB149F72AF624A70003CC95 /* LaunchScreen.storyboard */,
 				8DB149FA2AF624A70003CC95 /* Info.plist */,

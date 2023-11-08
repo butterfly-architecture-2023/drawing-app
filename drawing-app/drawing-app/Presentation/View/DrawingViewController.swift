@@ -52,7 +52,7 @@ class DrawingViewController: UIViewController {
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64),
             buttonStackView.widthAnchor.constraint(equalToConstant: 300),
             buttonStackView.heightAnchor.constraint(equalToConstant: 50)
         ])

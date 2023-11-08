@@ -14,6 +14,7 @@ class CanvasView: UIView {
     init(touchesBegan: @escaping ((CGPoint) -> ())) {
         self.touchesBegan = touchesBegan
         super.init(frame: .zero)
+        configUI()
     }
     
     required init?(coder: NSCoder) {
@@ -28,5 +29,11 @@ class CanvasView: UIView {
     
     func draw(_ shape: CAShapeLayer) {
         self.layer.addSublayer(shape)
+    }
+    
+    private func configUI() {
+        layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
     }
 }

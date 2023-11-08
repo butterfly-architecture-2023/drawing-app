@@ -11,7 +11,7 @@ class SquareFactoryImpl: SquareFactory {
 
     init() { }
     
-    func makeComponent(in rect: CGRect) -> Drawable? {
+    func makeSquare(in rect: CGRect) -> Drawable? {
         let minX = CGFloat.random(in: rect.origin.x..<rect.width-Constants.squareWidth)
         let minY = CGFloat.random(in: rect.origin.y..<rect.height-Constants.squareHeight)
         

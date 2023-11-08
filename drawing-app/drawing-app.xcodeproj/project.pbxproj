@@ -121,9 +121,8 @@
 				900696902AFA912000ED167C /* Domain */,
 				900696982AFBC6DF00ED167C /* Extension */,
 				9006968D2AFA90F300ED167C /* Presentation */,
-				9006969B2AFBC8AB00ED167C /* Util */,
 				9006967D2AF68B6100ED167C /* Resource */,
-				9006965B2AF68B0800ED167C /* Info.plist */,
+				9006969B2AFBC8AB00ED167C /* Util */,
 			);
 			path = "drawing-app";
 			sourceTree = "<group>";
@@ -151,6 +150,7 @@
 				900696562AF68B0800ED167C /* Assets.xcassets */,
 				900696582AF68B0800ED167C /* LaunchScreen.storyboard */,
 				900696532AF68B0800ED167C /* Main.storyboard */,
+				9006965B2AF68B0800ED167C /* Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C5Y2CH62YY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "drawing-app/Info.plist";
+				INFOPLIST_FILE = "drawing-app/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -583,7 +583,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C5Y2CH62YY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "drawing-app/Info.plist";
+				INFOPLIST_FILE = "drawing-app/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

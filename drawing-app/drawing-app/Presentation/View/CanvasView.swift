@@ -31,6 +31,10 @@ class CanvasView: UIView {
         self.layer.addSublayer(shape)
     }
     
+    func drawStroke(_ strokeLayer: CAShapeLayer, above shape: CAShapeLayer) {
+        self.layer.insertSublayer(strokeLayer, above: shape)
+    }
+    
     private func configUI() {
         layer.cornerRadius = 10
         layer.borderWidth = 1

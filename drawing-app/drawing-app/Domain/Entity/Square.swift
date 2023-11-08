@@ -13,40 +13,48 @@ struct Square: Drawable {
     let id: String
     var points: [CGPoint] = []
     var foregroundColor: UIColor
+    var shapeLayer: CAShapeLayer?
 
     init(points: [CGPoint]) {
         self.id = UUID().uuidString
         self.points = points
         self.foregroundColor = UIColor.randomSystemColor
+        initShapeLayer()
     }
     
-    func makeShapeLayer() -> CAShapeLayer {
-        let path = CGMutablePath()
-        
-        path.move(to: points[0])
-        path.addLine(to: points[1])
-        path.addLine(to: points[2])
-        path.addLine(to: points[3])
-        
-        let shape = CAShapeLayer()
-        shape.path = path
-        shape.fillColor = foregroundColor.cgColor
-        return shape
+    func getShapeLayer() -> CAShapeLayer? {
+        return shapeLayer
     }
     
     func makeStroke() -> CAShapeLayer {
-        let path = CGMutablePath()
-        
+        let path = UIBezierPath()
         path.move(to: points[0])
         path.addLine(to: points[1])
         path.addLine(to: points[2])
         path.addLine(to: points[3])
+        path.close()
         
         let shape = CAShapeLayer()
-        shape.path = path
+        shape.path = path.cgPath
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeColor = UIColor.red.cgColor
         shape.lineWidth = 3
         return shape
     }
+    
+    private mutating func initShapeLayer() {
+        let path = UIBezierPath()
+        path.move(to: points[0])
+        path.addLine(to: points[1])
+        path.addLine(to: points[2])
+        path.addLine(to: points[3])
+        path.close()
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = foregroundColor.cgColor
+        
+        self.shapeLayer = shapeLayer
+    }
+    
 }

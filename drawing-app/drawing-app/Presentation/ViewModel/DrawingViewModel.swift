@@ -9,10 +9,11 @@ import Combine
 import Foundation
 
 class DrawingViewModel {
-    private let squareFactory: SquareFactory
     @Published private(set) var components: [Drawable] = []
     @Published private(set) var selectedComponents: Drawable?
     
+    private let squareFactory: SquareFactory
+
     var cancellables: Set<AnyCancellable> = []
 
     init(squareFactory: SquareFactory) {
@@ -21,7 +22,7 @@ class DrawingViewModel {
     
     func tappedSquareButton(with canvas: CGRect?) {
         guard let canvas = canvas else { return }
-        if let square = squareFactory.makeComponent(in: canvas) {
+        if let square = squareFactory.makeSquare(in: canvas) {
             components.append(square)
         }
     }

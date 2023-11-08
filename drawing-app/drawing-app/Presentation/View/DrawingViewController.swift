@@ -85,8 +85,7 @@ class DrawingViewController: UIViewController {
     
     private func draw(by drawable: [Drawable]) {
         drawable.forEach {
-            if let square = $0 as? Square {
-                let layer = square.makeShapeLayer()
+            if let square = $0 as? Square, let layer = square.getShapeLayer() {
                 canvasView.draw(layer)
             }
         }
@@ -96,9 +95,9 @@ class DrawingViewController: UIViewController {
         if drawble == nil {
             
         } else {
-            if let square = drawble as? Square {
-                let layer = square.makeStroke()
-                canvasView.draw(layer)
+            if let square = drawble as? Square, let layer = square.getShapeLayer() {
+                let stroke = square.makeStroke()
+                canvasView.drawStroke(stroke, above: layer)
             }
         }
     }

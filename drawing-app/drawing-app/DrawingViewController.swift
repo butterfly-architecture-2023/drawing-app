@@ -7,15 +7,13 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class DrawingViewController: UIViewController {
-    private let randomRectangleFactory = RandomRectangleFactory()
-    
-    private var addedRectangleViewDic: [Int: RectangleView] = [:]
+    private let rectangleViewModel = RectangleViewModel()
+    private var rectangleSubscriber: AnyCancellable?
 
-    private var firstTouchPoint: CGPoint?
-    private var endTouchPoint: CGPoint?
-    private var touchPoints: [CGPoint?] = []
+    private var addedRectangleViewDic: [Int: RectangleView] = [:]
 
     private var addRectangleButton: AddShapeButton {
         let button = AddShapeButton(title: "사각형", imageName: "square")
@@ -33,31 +31,20 @@ class DrawingViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         addButtonStackView()
+        subscribeAddedRectangle()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.touchPoints = []
-        guard let point = touches.first?.location(in: self.view) else { return }
-
-        self.firstTouchPoint = touches.first?.location(in: self.view)
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.endTouchPoint = touches.first?.location(in: self.view)
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.touchPoints.append(touches.first?.location(in: self.view))
+    private func subscribeAddedRectangle() {
+        rectangleSubscriber = rectangleViewModel.addedRectangleSubject
+            .sink(receiveValue: { newRectangle in
+                let rectangleView = RectangleView(newRectangle)
+                self.view.addSubview(rectangleView)
+        })
     }
 
     @objc private func addRectangle() {
-        let rectangle = randomRectangleFactory.make(maxXPosition: self.view.frame.width, maxYPosition: self.view.frame.height)
-        let rectangleView = RectangleView(rectangle)
-        let rectangleID = rectangle.hashValue
-        addedRectangleViewDic[rectangleID] = rectangleView
-
-        rectangleView.delegate = self
-        self.view.addSubview(rectangleView)
+        let boundary = Boundary(maxXPosition: self.view.frame.width, maxYPostiion: self.view.frame.height)
+        rectangleViewModel.addRandomRectanlge(in: boundary)
     }
 
     @objc private func startDrawing() {

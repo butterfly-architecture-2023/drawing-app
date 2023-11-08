@@ -7,13 +7,13 @@
 
 struct RandomRectangleFactory {
 
-    func make(maxXPosition: Double, maxYPosition: Double) -> Rectangle {
+    func make(in boundary: Boundary) -> Rectangle {
         let width = 100.0
         let height = 100.0
-        let maxXPosition = maxXPosition - width
-        let maxYPosition = maxYPosition - height
-        let randomXPosition = Double.random(in: 0...maxXPosition)
-        let randomYPosition = Double.random(in: 0...maxYPosition)
+        let maxXPosition = boundary.maxXPosition - width
+        let maxYPosition = boundary.maxYPostiion - height
+        let randomXPosition = Double.random(in: 0...boundary.maxXPosition)
+        let randomYPosition = Double.random(in: 0...boundary.maxYPostiion)
         let randomRedValue = Double(Int.random(in: 0...255)) / 255
         let randomGreenValue = Double(Int.random(in: 0...255)) / 255
         let randomBlueValue = Double(Int.random(in: 0...255)) / 255

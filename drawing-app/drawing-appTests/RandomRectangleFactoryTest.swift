@@ -12,10 +12,10 @@ final class RandomRectangleFactoryTest: XCTestCase {
 
     func test_정해진_바운더리에_사이즈가_100인_사각형이_생기는가() throws {
         sut = .init()
-        let rectangle_1 = sut.make(maxXPosition: 100, maxYPosition: 100)
-        let rectangle_2 = sut.make(maxXPosition: 200, maxYPosition: 200)
-        let rectangle_3 = sut.make(maxXPosition: 300, maxYPosition: 300)
-        let rectangle_4 = sut.make(maxXPosition: 400, maxYPosition: 400)
+        let rectangle_1 = sut.make(in: .init(maxXPosition: 100, maxYPostiion: 100))
+        let rectangle_2 = sut.make(in: .init(maxXPosition: 200, maxYPostiion: 200))
+        let rectangle_3 = sut.make(in: .init(maxXPosition: 300, maxYPostiion: 300))
+        let rectangle_4 = sut.make(in: .init(maxXPosition: 400, maxYPostiion: 400))
 
         [rectangle_1, rectangle_2, rectangle_3, rectangle_4].forEach {
             XCTAssertTrue($0.width == 100)

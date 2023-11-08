@@ -9,9 +9,10 @@ import UIKit
 
 final class AddShapeButton: UIButton {
 
-    init(title: String, imageName: String) {
+    init(title: String, imageName: String, _ selector: Selector) {
         super.init(frame: .zero)
         self.configure(title: title, imageName: imageName)
+        self.addTarget(self.superview, action: selector, for: .touchUpInside)
     }
 
     @available(*, unavailable)

@@ -5,24 +5,28 @@
 //  Created by 박진섭 on 11/8/23.
 //
 
-import Foundation
 import Combine
 
 final class RectangleViewModel {
-    let addedRectangleSubject = PassthroughSubject<Rectangle, Never>()
-    private var selectedRectangle = PassthroughSubject<Rectangle, Never>()
-
     private let randomRectangleFactory = RandomRectangleFactory()
+    private var currentSelectedRectangleID: Int?
+    private let redBorderRGBA = RGBA(red: 1, green: 0, blue: 0, alpha: 1)
+    private let emptyBorderRGBA = RGBA(red: 0, green: 0, blue: 0, alpha: 0)
+    let addedRectangle = PassthroughSubject<Rectangle, Never>()
+    let selectedRectangleBorderColor = PassthroughSubject<RGBA, Never>()
 
-    func addRandomRectanlge(in boundary: Boundary) {
+    func addRandomRectangle(in boundary: Boundary) {
         let rectangle = randomRectangleFactory.make(in: boundary)
-        addedRectangleSubject.send(rectangle)
-    }
-}
-
-extension RectangleViewModel: RectangleViewDelegate {
-    func tap(_ id: Int) {
-
+        addedRectangle.send(rectangle)
     }
 
+    func changeSelectedRectangleRGBA(_ newSelectedID: Int) {
+        if newSelectedID != currentSelectedRectangleID {
+            selectedRectangleBorderColor.send(redBorderRGBA)
+            self.currentSelectedRectangleID = newSelectedID
+        } else {
+            selectedRectangleBorderColor.send(emptyBorderRGBA)
+            self.currentSelectedRectangleID = nil
+        }
+    }
 }

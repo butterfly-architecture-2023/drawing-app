@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import drawing_app
 
 final class RandomRectangleFactoryTest: XCTestCase {
     var sut: RandomRectangleFactory!

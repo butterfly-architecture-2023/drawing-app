@@ -44,13 +44,13 @@ final class RectangleView: UIView {
         delegate?.tap(ID)
     }
 
-    func changeBorder() {
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 2.0
-    }
-
     func resetBorder() {
         self.layer.borderColor = nil
         self.layer.borderWidth = 0
+    }
+
+    func changeBorder(rgba: RGBA) {
+        self.layer.borderColor = UIColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha).cgColor
+        self.layer.borderWidth = 2.0
     }
 }

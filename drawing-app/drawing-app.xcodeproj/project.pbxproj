@@ -14,6 +14,7 @@
 		8DAF28062AFBAD1E003103AF /* RectangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF28052AFBAD1E003103AF /* RectangleViewModel.swift */; };
 		8DAF28082AFBB159003103AF /* Boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF28072AFBB159003103AF /* Boundary.swift */; };
 		8DAF280F2AFBD0E0003103AF /* RectangleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF280E2AFBD0E0003103AF /* RectangleViewModelTest.swift */; };
+		8DAF28132AFBE57F003103AF /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF28122AFBE57F003103AF /* DrawableView.swift */; };
 		8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EC2AF624A60003CC95 /* AppDelegate.swift */; };
 		8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */; };
 		8DB149F12AF624A60003CC95 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB149F02AF624A60003CC95 /* DrawingViewController.swift */; };
@@ -41,6 +42,7 @@
 		8DAF28052AFBAD1E003103AF /* RectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModel.swift; sourceTree = "<group>"; };
 		8DAF28072AFBB159003103AF /* Boundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boundary.swift; sourceTree = "<group>"; };
 		8DAF280E2AFBD0E0003103AF /* RectangleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModelTest.swift; sourceTree = "<group>"; };
+		8DAF28122AFBE57F003103AF /* DrawableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		8DB149E92AF624A60003CC95 /* drawing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drawing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB149EC2AF624A60003CC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		8DAF28142AFBE59C003103AF /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				8DAF28122AFBE57F003103AF /* DrawableView.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
 		8DB149E02AF624A60003CC95 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 				8DB149EC2AF624A60003CC95 /* AppDelegate.swift */,
 				8DB149EE2AF624A60003CC95 /* SceneDelegate.swift */,
 				8DB149F02AF624A60003CC95 /* DrawingViewController.swift */,
+				8DAF28142AFBE59C003103AF /* Drawing */,
 				8DAF27FB2AF7DC0D003103AF /* AddShapeButton.swift */,
 				8DAF28072AFBB159003103AF /* Boundary.swift */,
 				8DAF27FE2AFA7462003103AF /* Factory */,
@@ -246,6 +257,7 @@
 				8DAF28062AFBAD1E003103AF /* RectangleViewModel.swift in Sources */,
 				8DB149ED2AF624A60003CC95 /* AppDelegate.swift in Sources */,
 				8DB149EF2AF624A60003CC95 /* SceneDelegate.swift in Sources */,
+				8DAF28132AFBE57F003103AF /* DrawableView.swift in Sources */,
 				8DAF28082AFBB159003103AF /* Boundary.swift in Sources */,
 				8DB14A202AF668F10003CC95 /* Rectangle.swift in Sources */,
 			);

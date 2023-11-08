@@ -15,6 +15,7 @@ class DrawingViewController: UIViewController {
     private var selectedRectangleSubscriber: AnyCancellable?
     private var addedRectangleViewDic: [Int: RectangleView]
     private var selectedRectangleView: RectangleView?
+    private var drawAbleView: DrawableView = .init(frame: .zero)
 
     init(rectangleViewModel: RectangleViewModel, addedRectangleViewDic: [Int : RectangleView]) {
         self.addedRectangleViewDic = addedRectangleViewDic
@@ -25,6 +26,14 @@ class DrawingViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        drawAbleView.touchesBegan(touches, with: event)
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        drawAbleView.touchesMoved(touches, with: event)
     }
 
     private var addRectangleButton: AddShapeButton {
@@ -39,22 +48,23 @@ class DrawingViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         addButtonStackView()
+        addDrawableView()
         subscribeNewRectangle()
         subscribeSelectedRectangle()
     }
-    
+
+    private func addDrawableView() {
+        self.drawAbleView.frame = .init(origin: self.view.frame.origin, size: self.view.frame.size)
+        self.view.addSubview(drawAbleView)
+    }
+
     private func subscribeNewRectangle() {
         newRectangleSubscriber = rectangleViewModel.addedRectangle
             .sink(receiveValue: { newRectangle in
                 let rectangleView = RectangleView(newRectangle)
                 self.addRectangleViewToDic(id: newRectangle.hashValue, rectangleView)
                 self.view.addSubview(rectangleView)
-        })
-    }
-
-    private func addRectangleViewToDic(id: Int, _ rectangleView: RectangleView) {
-        self.addedRectangleViewDic[id] = rectangleView
-        rectangleView.delegate = self
+            })
     }
 
     private func subscribeSelectedRectangle() {
@@ -71,7 +81,12 @@ class DrawingViewController: UIViewController {
     }
 
     @objc private func startDrawing() {
-        print(self.view.subviews)
+        drawAbleView.startDraw = drawAbleView.startDraw == true ? false : true
+    }
+
+    private func addRectangleViewToDic(id: Int, _ rectangleView: RectangleView) {
+        self.addedRectangleViewDic[id] = rectangleView
+        rectangleView.delegate = self
     }
 
     private func addButtonStackView() {

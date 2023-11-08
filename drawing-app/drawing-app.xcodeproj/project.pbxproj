@@ -25,6 +25,9 @@
 		900696952AFA929D00ED167C /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696942AFA929D00ED167C /* Drawable.swift */; };
 		900696972AFA960500ED167C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696962AFA960500ED167C /* CanvasView.swift */; };
 		9006969A2AFBC78600ED167C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696992AFBC78600ED167C /* Constants.swift */; };
+		9006969F2AFBDC4B00ED167C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006969E2AFBDC4B00ED167C /* Line.swift */; };
+		900696A12AFBE52000ED167C /* LineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A02AFBE52000ED167C /* LineFactory.swift */; };
+		900696A32AFBE52600ED167C /* LineFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A22AFBE52600ED167C /* LineFactoryImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		900696942AFA929D00ED167C /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		900696962AFA960500ED167C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		900696992AFBC78600ED167C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9006969E2AFBDC4B00ED167C /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		900696A02AFBE52000ED167C /* LineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFactory.swift; sourceTree = "<group>"; };
+		900696A22AFBE52600ED167C /* LineFactoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFactoryImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 			children = (
 				900696942AFA929D00ED167C /* Drawable.swift */,
 				900696852AF929B700ED167C /* Square.swift */,
+				9006969E2AFBDC4B00ED167C /* Line.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -214,6 +221,8 @@
 			children = (
 				9006968B2AFA81E900ED167C /* SquareFactory.swift */,
 				900696922AFA91C200ED167C /* SquareFactoryImpl.swift */,
+				900696A02AFBE52000ED167C /* LineFactory.swift */,
+				900696A22AFBE52600ED167C /* LineFactoryImpl.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -372,8 +381,11 @@
 				900696862AF929B700ED167C /* Square.swift in Sources */,
 				9006968A2AFA7CFD00ED167C /* Color.swift in Sources */,
 				9006964E2AF68B0800ED167C /* AppDelegate.swift in Sources */,
+				9006969F2AFBDC4B00ED167C /* Line.swift in Sources */,
 				900696932AFA91C200ED167C /* SquareFactoryImpl.swift in Sources */,
 				900696972AFA960500ED167C /* CanvasView.swift in Sources */,
+				900696A32AFBE52600ED167C /* LineFactoryImpl.swift in Sources */,
+				900696A12AFBE52000ED167C /* LineFactory.swift in Sources */,
 				900696502AF68B0800ED167C /* SceneDelegate.swift in Sources */,
 				900696952AFA929D00ED167C /* Drawable.swift in Sources */,
 				9006969A2AFBC78600ED167C /* Constants.swift in Sources */,

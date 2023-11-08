@@ -10,9 +10,17 @@ import UIKit
 class CanvasView: UIView {
     
     private var touchesBegan: ((CGPoint) -> ())
-    
-    init(touchesBegan: @escaping ((CGPoint) -> ())) {
+    private var touchesMoved: ((CGPoint) -> ())
+    private var touchesEnded: (() -> ())
+
+    init(
+        touchesBegan: @escaping ((CGPoint) -> ()),
+        touchesMoved: @escaping ((CGPoint) -> ()),
+        touchesEnded: @escaping (() -> ())
+    ) {
         self.touchesBegan = touchesBegan
+        self.touchesMoved = touchesMoved
+        self.touchesEnded = touchesEnded
         super.init(frame: .zero)
         configUI()
     }
@@ -25,6 +33,16 @@ class CanvasView: UIView {
         if let point = touches.first?.location(in: self) {
             touchesBegan(point)
         }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let point = touches.first?.location(in: self) {
+            touchesMoved(point)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesEnded()
     }
     
     func draw(_ shape: CAShapeLayer) {

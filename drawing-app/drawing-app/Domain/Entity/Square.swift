@@ -6,20 +6,19 @@
 //
 
 import UIKit
-import QuartzCore
 
 struct Square: Drawable {
     
     let id: String
     var points: [CGPoint] = []
-    var foregroundColor: UIColor
+    let foregroundColor: UIColor
     var shapeLayer: CAShapeLayer?
     var strokeLayer: CAShapeLayer?
 
-    init(points: [CGPoint]) {
-        self.id = UUID().uuidString
+    init(id: String = UUID().uuidString, points: [CGPoint], foregroundColor: UIColor = UIColor.randomSystemColor) {
+        self.id = id
         self.points = points
-        self.foregroundColor = UIColor.randomSystemColor
+        self.foregroundColor = foregroundColor
         initShapeLayer()
     }
     

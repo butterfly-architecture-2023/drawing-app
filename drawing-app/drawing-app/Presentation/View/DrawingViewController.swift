@@ -13,12 +13,17 @@ class DrawingViewController: UIViewController {
         self?.viewModel.tappedSquareButton(with: self?.canvasView.frame)
     }
     private lazy var lineAddButton: UIButton = CanvasButton.init(title: "드로잉") { [weak self] in
-        self?.viewModel.tappedDrawingButton()
+        self?.viewModel.tappedLineButton()
     }
     
-    private lazy var canvasView: CanvasView = .init { [weak self] touchPoint in
+    private lazy var canvasView: CanvasView = .init(
+        touchesBegan: { [weak self] touchPoint in
         self?.viewModel.tappedCanvas(with: touchPoint)
-    }
+    }, touchesMoved: { [weak self] touchPoint in
+        self?.viewModel.movedCanvas(with: touchPoint)
+    }, touchesEnded: { [weak self] in
+        self?.viewModel.touchesEnded()
+    })
     
     private lazy var buttonStackView: UIStackView = {
         let stackView: UIStackView = .init(arrangedSubviews: [squareAddButton, lineAddButton])
@@ -78,13 +83,20 @@ class DrawingViewController: UIViewController {
         viewModel
             .$oldSelectedComponent
             .sink { [weak self] component in
-                self?.didSelect(component)
+                self?.deselect(component)
             }.store(in: &viewModel.cancellables)
         
         viewModel
             .$selectedComponent
             .sink { [weak self] component in
                 self?.select(by: component)
+            }.store(in: &viewModel.cancellables)
+        
+        viewModel
+            .$currentLine
+            .compactMap({ $0 })
+            .sink { [weak self] line in
+                self?.updateLine(line)
             }.store(in: &viewModel.cancellables)
     }
     
@@ -93,6 +105,15 @@ class DrawingViewController: UIViewController {
             if let square = $0 as? Square, let layer = square.getShapeLayer() {
                 canvasView.draw(layer)
             }
+            if let line = $0 as? Line {
+                canvasView.draw(line.getLine())
+            }
+        }
+    }
+    
+    private func updateLine(_ drawable: Drawable) {
+        if let line = drawable as? Line {
+            canvasView.draw(line.getLine())
         }
     }
     
@@ -102,7 +123,7 @@ class DrawingViewController: UIViewController {
         canvasView.drawStroke(strokeLayer, above: squareLayer)
     }
     
-    private func didSelect(_ drawable: Drawable?) {
+    private func deselect(_ drawable: Drawable?) {
         guard let square = drawable as? Square else { return }
         guard let strokeLayer = square.getStrokeLayer() else { return }
         canvasView.removeStroke(strokeLayer)

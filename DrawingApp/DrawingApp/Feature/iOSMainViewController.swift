@@ -16,6 +16,10 @@ class iOSMainViewController: UIViewController {
   private lazy var vectorButton: UIButton = factory.getVectorMakeButton(as: .iOS)
   private lazy var buttonsLayer: UIStackView = factory.getButtonStackView(as: .iOS)
   
+  private lazy var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureHandler(_:)))
+  private var imageView: UIImageView?
+  private var lastPoint: CGPoint?
+  
   override func loadView() {
     super.loadView()
     
@@ -39,5 +43,60 @@ class iOSMainViewController: UIViewController {
   }
   
   @objc private func vectorButtonTapped(_ sender: UIButton) {
+    view.addGestureRecognizer(panGestureRecognizer)
+  }
+  
+  @objc private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
+    switch sender.state {
+    case .began:
+      imageView = UIImageView()
+      view.addSubview(imageView!)
+      lastPoint = CGPoint(x: sender.location(in: view).x, y: sender.location(in: view).y)
+    case .changed:
+      let currentPoint = CGPoint(x: sender.location(in: view).x, y: sender.location(in: view).y)
+      if let point = lastPoint {
+        drawLineFrom(fromPoint: point, toPoint: currentPoint)
+        lastPoint = currentPoint
+      }
+    case .ended:
+      if let imageView = imageView, let image = imageView.image {
+        factory.addVector(at: .init(x: imageView.frame.minX, y: imageView.frame.minY), image: image)
+      }
+      imageView = nil
+      lastPoint = nil
+      view.removeGestureRecognizer(panGestureRecognizer)
+      break
+    default:
+      return
+    }
+  }
+  
+  func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
+    guard let imageView = self.imageView else {
+      return
+    }
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1.0)
+    let context = UIGraphicsGetCurrentContext()
+    
+    imageView.image?.draw(in: view.frame)
+    
+    context?.move(to: fromPoint)
+    context?.addLine(to: toPoint)
+    
+    context?.setLineCap(.round)
+    context?.setLineWidth(2.5)
+    
+    let color = factory.currentVectorColor() ?? .black
+    context?.setStrokeColor(color.cgColor)
+    
+    context?.setBlendMode(.normal)
+    context?.strokePath()
+    
+    imageView.frame = view.frame
+    
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    imageView.image = newImage
+    UIGraphicsEndImageContext()
+    view.setNeedsLayout()
   }
 }

@@ -84,7 +84,7 @@ class iPadMainViewController: UIViewController {
     context?.addLine(to: toPoint)
     
     context?.setLineCap(.round)
-    context?.setLineWidth(5)
+    context?.setLineWidth(2.5)
     
     let color = factory.currentVectorColor() ?? .black
     context?.setStrokeColor(color.cgColor)

@@ -39,8 +39,5 @@ class iOSMainViewController: UIViewController {
   }
   
   @objc private func vectorButtonTapped(_ sender: UIButton) {
-    if let vector = factory.addVector() {
-      view.addSubview(UIImageView(image: vector))
-    }
   }
 }

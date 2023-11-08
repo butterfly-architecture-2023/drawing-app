@@ -18,6 +18,16 @@ class MainViewFactory {
     self.manager = DrawingResourceManager(CanvasSize(width: width, height: height))
   }
   
+  func currentVectorColor() -> UIColor? {
+    guard let vector = manager.vectors.last else {
+      return nil
+    }
+    
+    let set = vector.hexColor.colorSet
+    
+    return UIColor(red: set.red, green: set.green, blue: set.blue, alpha: 1)
+  }
+  
   func getButtonStackView(as os: OperatingSystem) -> UIStackView {
     let result = UIStackView()
     result.frame.size = CGSize(
@@ -88,12 +98,8 @@ class MainViewFactory {
     return squareView
   }
   
-  func addVector() -> UIImage? {
-    guard let data = manager.addVector(from: GesturePosition(x: 0, y: 0)).data else {
-      return nil
-    }
-    
-    return UIImage(data: data)
+  func addVector(at position: GesturePosition, image: UIImage) {
+    let _ = manager.addVector(from: position, data: image.pngData())
   }
   
   enum OperatingSystem {

@@ -22,8 +22,9 @@ public class DrawingResourceManager {
     return square
   }
   
-  public func addVector(from position: GesturePosition) -> Vector {
+  public func addVector(from position: GesturePosition, data: Data?) -> Vector {
     let vector = Vector(x: position.x, y: position.y)
+    vector.data = data
     self.vectors.append(vector)
     return vector
   }

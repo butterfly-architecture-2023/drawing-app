@@ -11,7 +11,10 @@ import Foundation
 public class Vector {
   
   // Color(Hex)
-  private(set) var hexColor: CanvasRandomColor = .init()
+  private(set) var _hexColor: CanvasRandomColor = .init()
+  public var hexColor: CanvasRandomColor {
+    _hexColor
+  }
   
   // Size
   private(set) var width: Double = 100

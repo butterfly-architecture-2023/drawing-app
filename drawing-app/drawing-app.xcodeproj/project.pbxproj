@@ -117,6 +117,7 @@
 			children = (
 				9006967E2AF68B7C00ED167C /* Application */,
 				900696902AFA912000ED167C /* Domain */,
+				900696982AFBC6DF00ED167C /* Extension */,
 				9006968D2AFA90F300ED167C /* Presentation */,
 				9006967D2AF68B6100ED167C /* Resource */,
 				9006965B2AF68B0800ED167C /* Info.plist */,
@@ -163,7 +164,6 @@
 		900696872AF92AC800ED167C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				900696892AFA7CFD00ED167C /* Color.swift */,
 				900696942AFA929D00ED167C /* Drawable.swift */,
 				900696852AF929B700ED167C /* Square.swift */,
 			);
@@ -213,6 +213,14 @@
 				900696922AFA91C200ED167C /* SquareFactoryImpl.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		900696982AFBC6DF00ED167C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				900696892AFA7CFD00ED167C /* Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

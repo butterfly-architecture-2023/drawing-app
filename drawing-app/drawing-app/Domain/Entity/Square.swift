@@ -17,7 +17,7 @@ struct Square: Drawable {
     init(points: [CGPoint]) {
         self.id = UUID().uuidString
         self.points = points
-        self.foregroundColor = Color.getRandomColor()
+        self.foregroundColor = UIColor.randomSystemColor
     }
     
     func makeShapeLayer() -> CAShapeLayer {
@@ -45,7 +45,7 @@ struct Square: Drawable {
         let shape = CAShapeLayer()
         shape.path = path
         shape.fillColor = UIColor.clear.cgColor
-        shape.strokeColor = Color.getBorderColor().cgColor
+        shape.strokeColor = UIColor.red.cgColor
         shape.lineWidth = 3
         return shape
     }

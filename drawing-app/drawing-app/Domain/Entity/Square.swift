@@ -14,6 +14,7 @@ struct Square: Drawable {
     var points: [CGPoint] = []
     var foregroundColor: UIColor
     var shapeLayer: CAShapeLayer?
+    var strokeLayer: CAShapeLayer?
 
     init(points: [CGPoint]) {
         self.id = UUID().uuidString
@@ -26,20 +27,8 @@ struct Square: Drawable {
         return shapeLayer
     }
     
-    func makeStroke() -> CAShapeLayer {
-        let path = UIBezierPath()
-        path.move(to: points[0])
-        path.addLine(to: points[1])
-        path.addLine(to: points[2])
-        path.addLine(to: points[3])
-        path.close()
-        
-        let shape = CAShapeLayer()
-        shape.path = path.cgPath
-        shape.fillColor = UIColor.clear.cgColor
-        shape.strokeColor = UIColor.red.cgColor
-        shape.lineWidth = 3
-        return shape
+    func getStrokeLayer() -> CAShapeLayer? {
+        return strokeLayer
     }
     
     private mutating func initShapeLayer() {
@@ -54,7 +43,14 @@ struct Square: Drawable {
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = foregroundColor.cgColor
         
+        let strokeLayer = CAShapeLayer()
+        strokeLayer.path = path.cgPath
+        strokeLayer.fillColor = UIColor.clear.cgColor
+        strokeLayer.strokeColor = UIColor.red.cgColor
+        strokeLayer.lineWidth = 3
+        
         self.shapeLayer = shapeLayer
+        self.strokeLayer = strokeLayer
     }
     
 }

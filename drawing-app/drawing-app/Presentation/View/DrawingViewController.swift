@@ -76,10 +76,15 @@ class DrawingViewController: UIViewController {
             }.store(in: &viewModel.cancellables)
         
         viewModel
-            .$selectedComponents
-            .dropFirst()
-            .sink { [weak self] components in
-                self?.stroke(by: components)
+            .$oldSelectedComponent
+            .sink { [weak self] component in
+                self?.didSelect(component)
+            }.store(in: &viewModel.cancellables)
+        
+        viewModel
+            .$selectedComponent
+            .sink { [weak self] component in
+                self?.select(by: component)
             }.store(in: &viewModel.cancellables)
     }
     
@@ -91,14 +96,15 @@ class DrawingViewController: UIViewController {
         }
     }
     
-    private func stroke(by drawble: Drawable?) {
-        if drawble == nil {
-            
-        } else {
-            if let square = drawble as? Square, let layer = square.getShapeLayer() {
-                let stroke = square.makeStroke()
-                canvasView.drawStroke(stroke, above: layer)
-            }
-        }
+    private func select(by drawable: Drawable?) {
+        guard let square = drawable as? Square else { return }
+        guard let squareLayer = square.getShapeLayer(), let strokeLayer = square.getStrokeLayer() else { return }
+        canvasView.drawStroke(strokeLayer, above: squareLayer)
+    }
+    
+    private func didSelect(_ drawable: Drawable?) {
+        guard let square = drawable as? Square else { return }
+        guard let strokeLayer = square.getStrokeLayer() else { return }
+        canvasView.removeStroke(strokeLayer)
     }
 }

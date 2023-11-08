@@ -10,7 +10,8 @@ import Foundation
 
 class DrawingViewModel {
     @Published private(set) var components: [Drawable] = []
-    @Published private(set) var selectedComponents: Drawable?
+    @Published private(set) var oldSelectedComponent: Drawable?
+    @Published private(set) var selectedComponent: Drawable?
     
     private let squareFactory: SquareFactory
 
@@ -28,8 +29,10 @@ class DrawingViewModel {
     }
     
     func tappedCanvas(with point: CGPoint) {
-        let selected = squareFactory.filteredClick(touchPoint: point, squares: components.compactMap({ $0 as? Square }))
-        self.selectedComponents = selected
+        if let selected = squareFactory.filteredClick(touchPoint: point, squares: components.compactMap({ $0 as? Square })) {
+            self.oldSelectedComponent = selectedComponent
+            self.selectedComponent = selected
+        }
     }
     
     func tappedDrawingButton() {

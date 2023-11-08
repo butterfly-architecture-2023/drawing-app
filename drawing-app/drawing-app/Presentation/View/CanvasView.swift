@@ -28,11 +28,15 @@ class CanvasView: UIView {
     }
     
     func draw(_ shape: CAShapeLayer) {
-        self.layer.addSublayer(shape)
+        layer.addSublayer(shape)
     }
     
     func drawStroke(_ strokeLayer: CAShapeLayer, above shape: CAShapeLayer) {
-        self.layer.insertSublayer(strokeLayer, above: shape)
+        layer.insertSublayer(strokeLayer, above: shape)
+    }
+    
+    func removeStroke(_ strokeLayer: CAShapeLayer) {
+        layer.sublayers?.first(where: { $0 == strokeLayer })?.removeFromSuperlayer()
     }
     
     private func configUI() {

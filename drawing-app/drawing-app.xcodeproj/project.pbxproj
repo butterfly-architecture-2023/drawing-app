@@ -20,14 +20,14 @@
 		900696822AF9226700ED167C /* CanvasButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696812AF9226700ED167C /* CanvasButton.swift */; };
 		900696862AF929B700ED167C /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696852AF929B700ED167C /* Square.swift */; };
 		9006968A2AFA7CFD00ED167C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696892AFA7CFD00ED167C /* Color.swift */; };
-		9006968C2AFA81E900ED167C /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006968B2AFA81E900ED167C /* SquareFactory.swift */; };
-		900696932AFA91C200ED167C /* SquareFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696922AFA91C200ED167C /* SquareFactoryImpl.swift */; };
+		9006968C2AFA81E900ED167C /* SquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006968B2AFA81E900ED167C /* SquareManager.swift */; };
+		900696932AFA91C200ED167C /* SquareManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696922AFA91C200ED167C /* SquareManagerImpl.swift */; };
 		900696952AFA929D00ED167C /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696942AFA929D00ED167C /* Drawable.swift */; };
 		900696972AFA960500ED167C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696962AFA960500ED167C /* CanvasView.swift */; };
 		9006969A2AFBC78600ED167C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696992AFBC78600ED167C /* Constants.swift */; };
 		9006969F2AFBDC4B00ED167C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9006969E2AFBDC4B00ED167C /* Line.swift */; };
-		900696A12AFBE52000ED167C /* LineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A02AFBE52000ED167C /* LineFactory.swift */; };
-		900696A32AFBE52600ED167C /* LineFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A22AFBE52600ED167C /* LineFactoryImpl.swift */; };
+		900696A12AFBE52000ED167C /* LineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A02AFBE52000ED167C /* LineManager.swift */; };
+		900696A32AFBE52600ED167C /* LineManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900696A22AFBE52600ED167C /* LineManagerImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,14 +65,14 @@
 		900696812AF9226700ED167C /* CanvasButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasButton.swift; sourceTree = "<group>"; };
 		900696852AF929B700ED167C /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		900696892AFA7CFD00ED167C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		9006968B2AFA81E900ED167C /* SquareFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactory.swift; sourceTree = "<group>"; };
-		900696922AFA91C200ED167C /* SquareFactoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactoryImpl.swift; sourceTree = "<group>"; };
+		9006968B2AFA81E900ED167C /* SquareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManager.swift; sourceTree = "<group>"; };
+		900696922AFA91C200ED167C /* SquareManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManagerImpl.swift; sourceTree = "<group>"; };
 		900696942AFA929D00ED167C /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		900696962AFA960500ED167C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		900696992AFBC78600ED167C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9006969E2AFBDC4B00ED167C /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		900696A02AFBE52000ED167C /* LineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFactory.swift; sourceTree = "<group>"; };
-		900696A22AFBE52600ED167C /* LineFactoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFactoryImpl.swift; sourceTree = "<group>"; };
+		900696A02AFBE52000ED167C /* LineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineManager.swift; sourceTree = "<group>"; };
+		900696A22AFBE52600ED167C /* LineManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineManagerImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,10 +219,10 @@
 		900696912AFA917C00ED167C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				9006968B2AFA81E900ED167C /* SquareFactory.swift */,
-				900696922AFA91C200ED167C /* SquareFactoryImpl.swift */,
-				900696A02AFBE52000ED167C /* LineFactory.swift */,
-				900696A22AFBE52600ED167C /* LineFactoryImpl.swift */,
+				9006968B2AFA81E900ED167C /* SquareManager.swift */,
+				900696922AFA91C200ED167C /* SquareManagerImpl.swift */,
+				900696A02AFBE52000ED167C /* LineManager.swift */,
+				900696A22AFBE52600ED167C /* LineManagerImpl.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9006968C2AFA81E900ED167C /* SquareFactory.swift in Sources */,
+				9006968C2AFA81E900ED167C /* SquareManager.swift in Sources */,
 				900696522AF68B0800ED167C /* DrawingViewController.swift in Sources */,
 				900696802AF68C1A00ED167C /* DrawingViewModel.swift in Sources */,
 				900696822AF9226700ED167C /* CanvasButton.swift in Sources */,
@@ -382,10 +382,10 @@
 				9006968A2AFA7CFD00ED167C /* Color.swift in Sources */,
 				9006964E2AF68B0800ED167C /* AppDelegate.swift in Sources */,
 				9006969F2AFBDC4B00ED167C /* Line.swift in Sources */,
-				900696932AFA91C200ED167C /* SquareFactoryImpl.swift in Sources */,
+				900696932AFA91C200ED167C /* SquareManagerImpl.swift in Sources */,
 				900696972AFA960500ED167C /* CanvasView.swift in Sources */,
-				900696A32AFBE52600ED167C /* LineFactoryImpl.swift in Sources */,
-				900696A12AFBE52000ED167C /* LineFactory.swift in Sources */,
+				900696A32AFBE52600ED167C /* LineManagerImpl.swift in Sources */,
+				900696A12AFBE52000ED167C /* LineManager.swift in Sources */,
 				900696502AF68B0800ED167C /* SceneDelegate.swift in Sources */,
 				900696952AFA929D00ED167C /* Drawable.swift in Sources */,
 				9006969A2AFBC78600ED167C /* Constants.swift in Sources */,

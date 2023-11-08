@@ -1,5 +1,5 @@
 //
-//  LineFactoryImpl.swift
+//  LineManagerImpl.swift
 //  drawing-app
 //
 //  Created by Jiyeon  on 2023/11/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LineFactoryImpl: LineFactory {
+class LineManagerImpl: LineManager {
         
     init() { }
     

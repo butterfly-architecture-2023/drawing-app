@@ -1,5 +1,5 @@
 //
-//  LineFactory.swift
+//  LineManager.swift
 //  drawing-app
 //
 //  Created by Jiyeon  on 2023/11/09.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol LineFactory {
+protocol LineManager {
     func startDraw(in point: CGPoint) -> Line?
 }

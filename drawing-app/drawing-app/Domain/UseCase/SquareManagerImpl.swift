@@ -1,5 +1,5 @@
 //
-//  SquareFactoryImpl.swift
+//  SquareManagerImpl.swift
 //  drawing-app
 //
 //  Created by Jiyeon  on 2023/11/08.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SquareFactoryImpl: SquareFactory {
+class SquareManagerImpl: SquareManager {
 
     init() { }
     

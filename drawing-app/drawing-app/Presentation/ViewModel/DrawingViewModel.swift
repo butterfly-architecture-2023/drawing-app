@@ -22,12 +22,12 @@ class DrawingViewModel {
     @Published private(set) var currentLine: Line?
     
     private var currentDrawing: CurrentDrawing?
-    private let squareFactory: SquareFactory
-    private let lineFactory: LineFactory
+    private let squareFactory: SquareManager
+    private let lineFactory: LineManager
 
     var cancellables: Set<AnyCancellable> = []
 
-    init(squareFactory: SquareFactory, lineFactory: LineFactory) {
+    init(squareFactory: SquareManager, lineFactory: LineManager) {
         self.squareFactory = squareFactory
         self.lineFactory = lineFactory
     }

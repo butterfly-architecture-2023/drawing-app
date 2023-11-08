@@ -16,7 +16,9 @@ class DrawingViewController: UIViewController {
         self?.viewModel.tappedDrawingButton()
     }
     
-    private lazy var canvasView: CanvasView = .init()
+    private lazy var canvasView: CanvasView = .init { [weak self] touchPoint in
+        self?.viewModel.tappedCanvas(with: touchPoint)
+    }
     
     private lazy var buttonStackView: UIStackView = {
         let stackView: UIStackView = .init(arrangedSubviews: [squareAddButton, lineAddButton])
@@ -72,12 +74,30 @@ class DrawingViewController: UIViewController {
             .sink { [weak self] drawable in
                 self?.draw(by: drawable)
             }.store(in: &viewModel.cancellables)
+        
+        viewModel
+            .$selectedComponents
+            .dropFirst()
+            .sink { [weak self] components in
+                self?.stroke(by: components)
+            }.store(in: &viewModel.cancellables)
     }
     
     private func draw(by drawable: [Drawable]) {
         drawable.forEach {
             if let square = $0 as? Square {
                 let layer = square.makeShapeLayer()
+                canvasView.draw(layer)
+            }
+        }
+    }
+    
+    private func stroke(by drawble: Drawable?) {
+        if drawble == nil {
+            
+        } else {
+            if let square = drawble as? Square {
+                let layer = square.makeStroke()
                 canvasView.draw(layer)
             }
         }

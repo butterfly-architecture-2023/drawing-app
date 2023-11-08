@@ -33,4 +33,20 @@ struct Square: Drawable {
         shape.fillColor = foregroundColor.cgColor
         return shape
     }
+    
+    func makeStroke() -> CAShapeLayer {
+        let path = CGMutablePath()
+        
+        path.move(to: points[0])
+        path.addLine(to: points[1])
+        path.addLine(to: points[2])
+        path.addLine(to: points[3])
+        
+        let shape = CAShapeLayer()
+        shape.path = path
+        shape.fillColor = UIColor.clear.cgColor
+        shape.strokeColor = Color.getBorderColor().cgColor
+        shape.lineWidth = 3
+        return shape
+    }
 }

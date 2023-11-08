@@ -9,4 +9,5 @@ import Foundation
 
 protocol SquareFactory {
     func makeComponent(in rect: CGRect) -> Drawable?
+    func filteredClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable?
 }

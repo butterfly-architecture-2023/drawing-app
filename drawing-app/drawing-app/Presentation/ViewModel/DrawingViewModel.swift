@@ -11,6 +11,7 @@ import Foundation
 class DrawingViewModel {
     private let squareFactory: SquareFactory
     @Published private(set) var components: [Drawable] = []
+    @Published private(set) var selectedComponents: Drawable?
     
     var cancellables: Set<AnyCancellable> = []
 
@@ -23,6 +24,11 @@ class DrawingViewModel {
         if let square = squareFactory.makeComponent(in: canvas) {
             components.append(square)
         }
+    }
+    
+    func tappedCanvas(with point: CGPoint) {
+        let selected = squareFactory.filteredClick(touchPoint: point, squares: components.compactMap({ $0 as? Square }))
+        self.selectedComponents = selected
     }
     
     func tappedDrawingButton() {

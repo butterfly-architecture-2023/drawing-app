@@ -19,4 +19,22 @@ class SquareFactoryImpl: SquareFactory {
         
         return Square(points: points)
     }
+    
+    func filteredClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable? {
+        var selectable: Drawable?
+        squares.forEach { square in
+            let x = square.points.map({ $0.x })
+            let y = square.points.map({ $0.y })
+            
+            let minX = x.min() ?? 0
+            let maxX = x.max() ?? 0
+            let minY = y.min() ?? 0
+            let maxY = y.max() ?? 0
+            
+            if (minX...maxX).contains(touchPoint.x) && (minY...maxY).contains(touchPoint.y) {
+                selectable = square
+            }
+        }
+        return selectable
+    }
 }

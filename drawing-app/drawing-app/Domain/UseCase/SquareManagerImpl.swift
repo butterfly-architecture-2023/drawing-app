@@ -25,7 +25,7 @@ class SquareManagerImpl: SquareManager {
         return Square(points: points)
     }
     
-    func filteredClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable? {
+    func validateClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable? {
         var drawable: Drawable?
         squares.forEach { square in
             let x = square.points.map({ $0.x })

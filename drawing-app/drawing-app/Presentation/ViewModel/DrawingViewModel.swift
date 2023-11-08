@@ -48,7 +48,7 @@ class DrawingViewModel {
         guard let currentDrawing = currentDrawing else { return }
         switch currentDrawing {
         case .square:
-            if let selected = squareFactory.filteredClick(touchPoint: point, squares: components.compactMap({ $0 as? Square })) {
+            if let selected = squareFactory.validateClick(touchPoint: point, squares: components.compactMap({ $0 as? Square })) {
                 self.oldSelectedComponent = selectedComponent
                 self.selectedComponent = selected
             }

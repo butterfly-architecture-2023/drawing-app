@@ -9,5 +9,5 @@ import Foundation
 
 protocol SquareManager {
     func makeSquare(in rect: CGRect) -> Drawable?
-    func filteredClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable?
+    func validateClick(touchPoint: CGPoint, squares: [Drawable]) -> Drawable?
 }

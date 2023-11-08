@@ -18,6 +18,9 @@
 		1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */; };
 		1BEFF6372AFA758100F737DF /* iOSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */; };
 		1BEFF63B2AFA762D00F737DF /* MainViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */; };
+		1BFB9E6F2AFC3605000E191A /* CanvasSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB9E6E2AFC3605000E191A /* CanvasSize+Extensions.swift */; };
+		1BFB9E712AFC3613000E191A /* CanvasColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB9E702AFC3613000E191A /* CanvasColor+Extensions.swift */; };
+		1BFB9E732AFC3743000E191A /* CanvasPosition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB9E722AFC3743000E191A /* CanvasPosition+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMainViewController.swift; sourceTree = "<group>"; };
 		1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFactory.swift; sourceTree = "<group>"; };
+		1BFB9E6E2AFC3605000E191A /* CanvasSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasSize+Extensions.swift"; sourceTree = "<group>"; };
+		1BFB9E702AFC3613000E191A /* CanvasColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasColor+Extensions.swift"; sourceTree = "<group>"; };
+		1BFB9E722AFC3743000E191A /* CanvasPosition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasPosition+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */,
+				1BFB9E6E2AFC3605000E191A /* CanvasSize+Extensions.swift */,
+				1BFB9E702AFC3613000E191A /* CanvasColor+Extensions.swift */,
+				1BFB9E722AFC3743000E191A /* CanvasPosition+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,10 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB9E6F2AFC3605000E191A /* CanvasSize+Extensions.swift in Sources */,
 				1B330FAF2AF65F310036F6CE /* iPadViewController.swift in Sources */,
+				1BFB9E732AFC3743000E191A /* CanvasPosition+Extensions.swift in Sources */,
 				1BEFF6372AFA758100F737DF /* iOSMainViewController.swift in Sources */,
 				1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */,
 				1B330FAB2AF65F310036F6CE /* AppDelegate.swift in Sources */,
+				1BFB9E712AFC3613000E191A /* CanvasColor+Extensions.swift in Sources */,
 				1BEFF63B2AFA762D00F737DF /* MainViewFactory.swift in Sources */,
 				1B330FAD2AF65F310036F6CE /* SceneDelegate.swift in Sources */,
 			);

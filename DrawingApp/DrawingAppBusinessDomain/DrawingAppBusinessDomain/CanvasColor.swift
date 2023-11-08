@@ -1,5 +1,5 @@
 //
-//  CanvasRandomColor.swift
+//  CanvasColor.swift
 //  DrawingAppBusinessDomain
 //
 //  Created by 백상휘 on 2023/11/06.
@@ -7,15 +7,17 @@
 
 import Foundation
 
-public struct CanvasRandomColor: Equatable {
+public struct CanvasColor: Equatable {
   private let prefixString = String.coupledHex
   private let infixString = String.coupledHex
   private let postfixString = String.coupledHex
   
+  /// hex
   private var colorString: String {
     prefixString + infixString + postfixString
   }
   
+  /// rgb
   public var colorSet: (red: Double, green: Double, blue: Double, alpha: Double) {
     var rgbValue: UInt64 = 0
     Scanner(string: colorString).scanHexInt64(&rgbValue)

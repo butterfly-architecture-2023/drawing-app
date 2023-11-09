@@ -18,9 +18,9 @@ extension CanvasViewModel {
     
     struct State {
         let rectDidMake: Observable<Rect>
-        let selectedRect: Observable<Rect>
+        let touchedRect: Observable<Rect>
         
-        fileprivate var rects = [Rect]()
+        fileprivate var rects = [UUID: Rect]()
     }
 }
 
@@ -38,13 +38,13 @@ final class CanvasViewModel: ViewModel {
         
         /// State
         let rectDidMakeSubject = PublishSubject<Rect>()
-        let selectedRectSubject = PublishSubject<Rect>()
+        let touchedRectSubject = PublishSubject<Rect>()
         
         self.rectMaker = rectMaker
         self.action = Action(clickDrawRect: clickDrawRectSubject.asObserver(),
                              touch: touchSubject.asObserver())
         self.state = State(rectDidMake: rectDidMakeSubject.asObservable(),
-                           selectedRect: selectedRectSubject.asObservable())
+                           touchedRect: touchedRectSubject.asObservable())
         
         let generatedRandomRect = clickDrawRectSubject
             .withUnretained(self)
@@ -58,16 +58,22 @@ final class CanvasViewModel: ViewModel {
         generatedRandomRect
             .withUnretained(self)
             .subscribe(onNext: { owner, rect in
-                owner.state.rects.append(rect)
+                owner.state.rects[rect.id] = rect
             })
             .disposed(by: self.disposeBag)
         
         touchSubject
             .withUnretained(self)
-            .compactMap({ owner, point in return owner.state.rects.filter({ $0.rect.contains(point) }).first })
-            .bind(to: selectedRectSubject)
+            .compactMap({ owner, point -> Rect? in
+                guard var rect = owner.state.rects.values.filter({ $0.cgRect.contains(point) }).first
+                else { return nil }
+                
+                rect.isSelected = !rect.isSelected
+                owner.state.rects[rect.id] = rect
+                return rect
+            })
+            .bind(to: touchedRectSubject)
             .disposed(by: self.disposeBag)
     }
-    
-    
+
 }

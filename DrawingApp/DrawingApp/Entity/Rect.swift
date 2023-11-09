@@ -7,17 +7,18 @@
 
 import UIKit
 
-struct Rect {
+struct Rect: Equatable {
     let size: CGSize
     let id: UUID
+    var isSelected: Bool = false
     private(set) var origin: CGPoint!
-    private(set) var rect: CGRect!
+    private(set) var cgRect: CGRect!
     
     init(window: CGRect, size: CGSize, id: UUID = UUID()) {
         self.size = size
         self.id = id
         self.origin = self.makeOrigin(window: window, rectSize: size)
-        self.rect = CGRect(origin: self.origin, size: self.size)
+        self.cgRect = CGRect(origin: self.origin, size: self.size)
     }
     
     private func makeOrigin(window: CGRect, rectSize size: CGSize) -> CGPoint {

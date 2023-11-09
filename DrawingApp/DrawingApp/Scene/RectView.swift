@@ -21,8 +21,12 @@ final class RectView: UIView {
     }
     
     func setSelected() {
-        self.layer.borderWidth = 2
+        self.layer.borderWidth = 10
         self.layer.borderColor = UIColor.systemRed.cgColor
     }
     
+    func setDeSelected() {
+        self.layer.borderWidth = 0
+        self.layer.borderColor = UIColor.clear.cgColor
+    }
 }

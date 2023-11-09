@@ -33,7 +33,7 @@ final class CanvasViewController: UIViewController {
     private func bindState() {
         self.viewModel.state
             .rectDidMake
-            .map({ RectView(id: $0.id, frame: $0.rect) })
+            .map({ RectView(id: $0.id, frame: $0.cgRect) })
             .withUnretained(self)
             .subscribe(onNext: { owner, rect in
                 owner.view.addSubview(rect)
@@ -41,15 +41,18 @@ final class CanvasViewController: UIViewController {
             .disposed(by: self.disposeBag)
         
         self.viewModel.state
-            .selectedRect
+            .touchedRect
             .withUnretained(self)
-            .compactMap({ owner, rect -> RectView? in
-                owner.view.subviews.filter({ ($0 as? RectView)?.id == rect.id }).first as? RectView
+            .map({ owner, rect in
+                let rectView = owner.view.subviews.filter({ ($0 as? RectView)?.id == rect.id }).first as? RectView
+                return (rectView, rect.isSelected)
             })
-            .subscribe(onNext: { rectView in
-                rectView.setSelected()
+            .subscribe(onNext: { rectView, isSelected in
+                guard let rectView else { return }
+                isSelected ? rectView.setSelected() : rectView.setDeSelected()
             })
             .disposed(by: self.disposeBag)
+
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

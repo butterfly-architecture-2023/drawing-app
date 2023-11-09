@@ -13,6 +13,14 @@ final class BoardViewController: UIViewController {
     private let addRectangleButton = UIButton(type: .system)
     private let addDrawingButton = UIButton(type: .system)
     
+    private var viewModel: BoardViewModel!
+    
+    static func create(with viewModel: BoardViewModel) -> BoardViewController {
+        let viewController = BoardViewController()
+        viewController.viewModel = viewModel
+        return viewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

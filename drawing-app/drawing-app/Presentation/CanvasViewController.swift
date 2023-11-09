@@ -92,15 +92,15 @@ extension CanvasViewController {
         view.addSubview(canvasView)
         
         makeSquareButton.snp.makeConstraints {
-            $0.width.equalTo(180)
-            $0.height.equalTo(50)
+            $0.width.equalTo(Layout.buttonWidth.size)
+            $0.height.equalTo(Layout.buttonHeigth.size)
             $0.right.equalTo(view.snp.centerX).offset(-10)
             $0.bottom.equalToSuperview().inset(50)
         }
         
         drawingButton.snp.makeConstraints {
-            $0.width.equalTo(180)
-            $0.height.equalTo(50)
+            $0.width.equalTo(Layout.buttonWidth.size)
+            $0.height.equalTo(Layout.buttonHeigth.size)
             $0.left.equalTo(view.snp.centerX).offset(10)
             $0.bottom.equalToSuperview().inset(50)
         }

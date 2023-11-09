@@ -19,7 +19,7 @@ struct Square {
     
     // MARK: - Initializer
     
-    init(id: UUID = .init(), size: CGSize = .init(width: 100, height: 100), point: Point, color: SystemColor) {
+    init(id: UUID = .init(), size: CGSize = .init(width: Layout.square.size, height: Layout.square.size), point: Point, color: SystemColor) {
         self.id = id
         self.size = size
         self.color = color

@@ -57,7 +57,7 @@ final class CanvasViewModel: CanvasViewModelProtocol {
     private func rxBind() {
         input.canvasSize
             .bind(with: self, onNext: { owner, canvas in
-                let squareSize = 100.0
+                let squareSize = Layout.square.size
                 owner.xRange = canvas.minX...canvas.maxX - squareSize
                 owner.yRange = canvas.minY...canvas.maxY - squareSize
             })

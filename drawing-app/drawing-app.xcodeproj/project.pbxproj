@@ -29,6 +29,7 @@
 		73A5D4E92AFA7A5F009AE62D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */; };
 		73A5D4EB2AFBBA17009AE62D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4EA2AFBBA17009AE62D /* SquareView.swift */; };
 		73A5D4EE2AFBBC33009AE62D /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4ED2AFBBC33009AE62D /* RxGesture */; };
+		73A5D4F12AFBC0BD009AE62D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F02AFBC0BD009AE62D /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		73A5D4E62AFA6D9C009AE62D /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		73A5D4EA2AFBBA17009AE62D /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		73A5D4F02AFBC0BD009AE62D /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		73A5D4DF2AF932A9009AE62D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				73A5D4F02AFBC0BD009AE62D /* Layout.swift */,
 				73A5D4D92AF93231009AE62D /* DrawingType.swift */,
 				73A5D4E02AF932B4009AE62D /* Views */,
 			);
@@ -373,6 +376,7 @@
 				73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */,
 				73A5D4DA2AF93231009AE62D /* DrawingType.swift in Sources */,
 				73A5D4EB2AFBBA17009AE62D /* SquareView.swift in Sources */,
+				73A5D4F12AFBC0BD009AE62D /* Layout.swift in Sources */,
 				73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */,
 				73A5D4E32AFA6667009AE62D /* Square.swift in Sources */,
 				73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */,

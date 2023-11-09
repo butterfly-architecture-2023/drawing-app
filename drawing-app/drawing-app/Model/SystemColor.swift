@@ -8,6 +8,7 @@
 import UIKit
 
 enum SystemColor: CaseIterable {
+    
     case systemBlue, systemBrown, systemCyan, systemGreen, systemIndigo, systemMint, systemOrange, systemPink, systemPurple, systemTeal, systemYellow, systemGray
     case black, blue, brown, cyan, darkGray, gray, green, lightGray, magenta, purple, red, yellow
     case random
@@ -67,4 +68,5 @@ enum SystemColor: CaseIterable {
             return Self.allCases.randomElement()?.uicolor ?? .black
         }
     }
+    
 }

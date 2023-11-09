@@ -27,4 +27,13 @@ final class RectangleTests: XCTestCase {
             CGPoint(x: 0.0, y: 100.0),
         ])
     }
+    
+    func test_rectangle_select() {
+        XCTAssertTrue(rectangle.setSelected())
+    }
+    
+    func test_rectangle_deselect() {
+        rectangle.setSelected()
+        XCTAssertFalse(rectangle.setSelected())
+    }
 }

@@ -12,6 +12,7 @@ protocol Shape {
     func moveToPoint() -> CGPoint
     func addLineToPoints() -> [CGPoint]
     func setFillColor()
+    mutating func setSelected() -> Bool
 }
 
 struct Rectangle: Shape {
@@ -19,6 +20,8 @@ struct Rectangle: Shape {
     private let origin: CGPoint
     private let size: CGSize
     private let fillColor: UIColor
+    
+    private var isSelected: Bool = false
     
     init(origin: CGPoint, size: CGSize, fillColor: UIColor) {
         self.origin = origin
@@ -44,5 +47,11 @@ struct Rectangle: Shape {
     
     func setFillColor() {
         fillColor.set()
+    }
+    
+    @discardableResult
+    mutating func setSelected() -> Bool {
+        isSelected.toggle()
+        return isSelected
     }
 }

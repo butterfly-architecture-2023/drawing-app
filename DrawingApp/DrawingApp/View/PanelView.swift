@@ -5,9 +5,17 @@
 //  Created by 안상희 on 11/5/23.
 //
 
+import Combine
 import UIKit
 
+protocol PanelViewDelegate: AnyObject {
+  func rectangleButtonDidTapped()
+  func drawingButtonDidTapped()
+}
+
 final class PanelView: UIView {
+  
+  weak var delegate: PanelViewDelegate?
   
   private let rectangleButton: PanelButton = {
     let button = PanelButton()
@@ -42,14 +50,15 @@ final class PanelView: UIView {
   }
   
   @objc private func rectangleButtonTapped() {
-    
+    delegate?.rectangleButtonDidTapped()
   }
   
   @objc private func drawingButtonTapped() {
-    
+    delegate?.drawingButtonDidTapped()
   }
   
   private func setLayout() {
+    backgroundColor = .white
     addSubviews([rectangleButton, drawingButton])
     
     NSLayoutConstraint.activate([

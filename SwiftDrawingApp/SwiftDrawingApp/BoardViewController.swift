@@ -67,8 +67,14 @@ final class BoardViewController: UIViewController {
         addDrawingButton.configuration = createButtonConfiguration(title: "드로잉", imageName: "hand.draw")
         
         addRectangleButton.addAction(
-            UIAction { _ in
-                // TODO: 사각형 추가 버튼 탭동작 추가
+            UIAction { [weak self] _ in
+                guard let self else { return }
+                let rectangle = self.viewModel.createRectangle(in: canvasView.frame)
+                let rectangleView = ShapeView(shape: rectangle)
+                rectangleView.addGestureRecognizer(
+                    UITapGestureRecognizer(target: self, action: #selector(didTapRectangle))
+                )
+                self.canvasView.addSubview(rectangleView)
             },
             for: .touchUpInside
         )
@@ -87,5 +93,9 @@ final class BoardViewController: UIViewController {
         config.imagePlacement = .top
         config.imagePadding = 5.0
         return config
+    }
+    
+    @objc private func didTapRectangle(_ sender: UITapGestureRecognizer) {
+        // TODO: 사각형 탭동작 추가
     }
 }

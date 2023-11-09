@@ -20,6 +20,7 @@
 		0C465D5C2AFC93DC0031D6DC /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D592AFC93DC0031D6DC /* Drawing.swift */; };
 		0C465D5D2AFC93DC0031D6DC /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D5A2AFC93DC0031D6DC /* Rectangle.swift */; };
 		0C465D622AFC96110031D6DC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D612AFC96110031D6DC /* UIColor.swift */; };
+		0C465D642AFC96350031D6DC /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D632AFC96350031D6DC /* Screen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0C465D592AFC93DC0031D6DC /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		0C465D5A2AFC93DC0031D6DC /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		0C465D612AFC96110031D6DC /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0C465D632AFC96350031D6DC /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				0C465D612AFC96110031D6DC /* UIColor.swift */,
+				0C465D632AFC96350031D6DC /* Screen.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				0C465D5D2AFC93DC0031D6DC /* Rectangle.swift in Sources */,
 				0C465D5B2AFC93DC0031D6DC /* Drawable.swift in Sources */,
 				0C465D5C2AFC93DC0031D6DC /* Drawing.swift in Sources */,
+				0C465D642AFC96350031D6DC /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    enum DrawingMode {
+        case none
+        case drawing
+        case rectangle
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

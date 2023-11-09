@@ -19,7 +19,6 @@ final class CanvasView: UIView {
   
   func append(rectangle: Rectangle) {
     let rectangleView = RectangleView(rectangle: rectangle)
-    rectangleView.frame = CGRect(x: rectangle.point.x, y: rectangle.point.y, width: 100, height: 100)
     addSubview(rectangleView)
   }
 }

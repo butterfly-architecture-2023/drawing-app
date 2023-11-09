@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-final class CanvasViewModel: ObservableObject {
+final class CanvasViewModel {
   enum Input {
     case rectangleButtonDidTapped
   }

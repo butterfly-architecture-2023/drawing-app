@@ -19,6 +19,7 @@
 		0C465D5B2AFC93DC0031D6DC /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D582AFC93DC0031D6DC /* Drawable.swift */; };
 		0C465D5C2AFC93DC0031D6DC /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D592AFC93DC0031D6DC /* Drawing.swift */; };
 		0C465D5D2AFC93DC0031D6DC /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D5A2AFC93DC0031D6DC /* Rectangle.swift */; };
+		0C465D622AFC96110031D6DC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C465D612AFC96110031D6DC /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0C465D582AFC93DC0031D6DC /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		0C465D592AFC93DC0031D6DC /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		0C465D5A2AFC93DC0031D6DC /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		0C465D612AFC96110031D6DC /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		0C465D262AFC93A20031D6DC /* drawing-app */ = {
 			isa = PBXGroup;
 			children = (
+				0C465D5E2AFC95D00031D6DC /* Extension */,
 				0C465D272AFC93A20031D6DC /* AppDelegate.swift */,
 				0C465D292AFC93A20031D6DC /* SceneDelegate.swift */,
 				0C465D572AFC93DC0031D6DC /* Model */,
@@ -142,6 +145,14 @@
 				0C465D5A2AFC93DC0031D6DC /* Rectangle.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C465D5E2AFC95D00031D6DC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0C465D612AFC96110031D6DC /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C465D2C2AFC93A20031D6DC /* ViewController.swift in Sources */,
+				0C465D622AFC96110031D6DC /* UIColor.swift in Sources */,
 				0C465D282AFC93A20031D6DC /* AppDelegate.swift in Sources */,
 				0C465D2A2AFC93A20031D6DC /* SceneDelegate.swift in Sources */,
 				0C465D5D2AFC93DC0031D6DC /* Rectangle.swift in Sources */,

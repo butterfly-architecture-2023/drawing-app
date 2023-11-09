@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VPb-3g-DrM">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Inf-ms-Ayw">
+            <objects>
+                <viewController id="VPb-3g-DrM" customClass="ViewController" customModule="drawing_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6x-Wh-rQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c4H-x8-HIo">
+                                <rect key="frame" x="10" y="24" width="994" height="1322"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qer-3i-1Vs">
+                                        <rect key="frame" x="0.0" y="0.0" width="994" height="1222"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KpP-Yd-m4w">
+                                        <rect key="frame" x="0.0" y="1222" width="994" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVd-tN-dxc">
+                                                <rect key="frame" x="0.0" y="0.0" width="497" height="100"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="사각형"/>
+                                                <connections>
+                                                    <action selector="onBtnDrawRectangle:" destination="VPb-3g-DrM" eventType="touchUpInside" id="UBa-9D-J2k"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU1-XW-edd">
+                                                <rect key="frame" x="497" y="0.0" width="497" height="100"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="드로잉"/>
+                                                <connections>
+                                                    <action selector="onBtnDrawing:" destination="VPb-3g-DrM" eventType="touchUpInside" id="b8p-fo-Gee"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="dVd-tN-dxc" firstAttribute="width" secondItem="cU1-XW-edd" secondAttribute="width" id="F0K-lv-Op2"/>
+                                            <constraint firstItem="dVd-tN-dxc" firstAttribute="leading" secondItem="KpP-Yd-m4w" secondAttribute="leading" id="HK4-Rp-l47"/>
+                                            <constraint firstItem="cU1-XW-edd" firstAttribute="top" secondItem="KpP-Yd-m4w" secondAttribute="top" id="lXs-w3-7CJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cU1-XW-edd" secondAttribute="trailing" id="u1y-o1-4Nr"/>
+                                            <constraint firstItem="dVd-tN-dxc" firstAttribute="top" secondItem="KpP-Yd-m4w" secondAttribute="top" id="vOZ-sY-Oqn"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQf-uD-eyi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PQf-uD-eyi" firstAttribute="trailing" secondItem="c4H-x8-HIo" secondAttribute="trailing" constant="20" id="8ra-dk-f4r"/>
+                            <constraint firstItem="c4H-x8-HIo" firstAttribute="leading" secondItem="PQf-uD-eyi" secondAttribute="leading" constant="10" id="HCM-5U-5Vy"/>
+                            <constraint firstItem="PQf-uD-eyi" firstAttribute="bottom" secondItem="c4H-x8-HIo" secondAttribute="bottom" id="T4x-eY-HFU"/>
+                            <constraint firstItem="c4H-x8-HIo" firstAttribute="top" secondItem="PQf-uD-eyi" secondAttribute="top" id="wVO-Nf-Zxy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="Qer-3i-1Vs" id="fVZ-nT-uru"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKd-tY-xe6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="-13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

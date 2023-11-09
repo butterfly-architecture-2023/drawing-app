@@ -37,6 +37,9 @@
                                                 <rect key="frame" x="502" y="0.0" width="502" height="119"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="드로잉"/>
+                                                <connections>
+                                                    <action selector="onBtnDrawing:" destination="VPb-3g-DrM" eventType="touchUpInside" id="XaG-BN-o3i"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

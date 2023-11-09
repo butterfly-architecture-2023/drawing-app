@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     var rectangles: [Rectangle] = []
     var layers: [UUID: CAShapeLayer] = [:]
     
+    var currentDrawing: Drawing?
+    var drawings: [Drawing] = []
+    
     enum DrawingMode {
         case none
         case drawing
@@ -65,6 +68,11 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func onBtnDrawing(_ sender: UIButton) {
+        currentMode = .drawing
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: view)
@@ -72,7 +80,12 @@ class ViewController: UIViewController {
             switch currentMode {
             case .none: break
                 
-            case .drawing: break
+            case .drawing:
+                let newPath = UIBezierPath()
+                newPath.move(to: location)
+                let color = UIColor.randomSystemColor()
+                // 현재 드로잉 객체 생성
+                currentDrawing = Drawing(path: newPath, color: color, lineWidth: 2.0)
                 
             case .rectangle:
                 // 선택 상태를 재설정. 기존에 선택된 사각형 해제
@@ -91,6 +104,41 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first, let currentDrawing = currentDrawing else { return }
+        let touchLocation = touch.location(in: view)
+        
+        // 현재 경로에 터치 포인트 추가
+        currentDrawing.path.addLine(to: touchLocation)
+        self.currentDrawing = currentDrawing
+        
+        //화면 다시
+        drawCurrentDrawing()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let currentDrawing = currentDrawing {
+            // 드로잉을 배열에 추가
+            drawings.append(currentDrawing)
+            self.currentDrawing = nil
+        }
+    }
+    
+    func drawCurrentDrawing() {
+        guard let currentDrawing = currentDrawing else { return }
+        
+        // 드로잉 레이어 생성
+        let drawingLayer = CAShapeLayer()
+        drawingLayer.path = currentDrawing.path.cgPath
+        drawingLayer.strokeColor = currentDrawing.color.cgColor
+        drawingLayer.fillColor = nil
+        drawingLayer.lineWidth = currentDrawing.lineWidth
+        
+        view.layer.addSublayer(drawingLayer)
+        //뷰의 컨텐츠가 변결될때 뷰를 다시 그려야함을 시스템에 알림
+        view.setNeedsDisplay()
     }
     
 }

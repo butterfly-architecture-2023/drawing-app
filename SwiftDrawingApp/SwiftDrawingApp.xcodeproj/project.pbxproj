@@ -16,7 +16,7 @@
 		77AB2B492AF9CA6400BB16A2 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB2B482AF9CA6400BB16A2 /* ShapeView.swift */; };
 		77EBA46E2AF8FDF30032B86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA46D2AF8FDF30032B86B /* AppDelegate.swift */; };
 		77EBA4702AF8FDF30032B86B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA46F2AF8FDF30032B86B /* SceneDelegate.swift */; };
-		77EBA4722AF8FDF30032B86B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA4712AF8FDF30032B86B /* ViewController.swift */; };
+		77EBA4722AF8FDF30032B86B /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA4712AF8FDF30032B86B /* BoardViewController.swift */; };
 		77EBA4772AF8FDF30032B86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EBA4762AF8FDF30032B86B /* Assets.xcassets */; };
 		77EBA47A2AF8FDF30032B86B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EBA4782AF8FDF30032B86B /* LaunchScreen.storyboard */; };
 		77EBA4852AF8FDF40032B86B /* SwiftDrawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA4842AF8FDF40032B86B /* SwiftDrawingAppTests.swift */; };
@@ -51,7 +51,7 @@
 		77EBA46A2AF8FDF30032B86B /* SwiftDrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EBA46D2AF8FDF30032B86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77EBA46F2AF8FDF30032B86B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77EBA4712AF8FDF30032B86B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77EBA4712AF8FDF30032B86B /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		77EBA4762AF8FDF30032B86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77EBA4792AF8FDF30032B86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77EBA47B2AF8FDF30032B86B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				77A16D622AFC837C0028A5B7 /* ColorPalette.swift */,
 				77A16D602AFC83550028A5B7 /* AddRectangleUseCase.swift */,
 				779B4ACE2AFBAEF500CAC3B8 /* BoardViewModel.swift */,
-				77EBA4712AF8FDF30032B86B /* ViewController.swift */,
+				77EBA4712AF8FDF30032B86B /* BoardViewController.swift */,
 				77EBA47B2AF8FDF30032B86B /* Info.plist */,
 				779F2BBD2AF902C70010818B /* SupportFiles */,
 			);
@@ -282,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A16D612AFC83550028A5B7 /* AddRectangleUseCase.swift in Sources */,
-				77EBA4722AF8FDF30032B86B /* ViewController.swift in Sources */,
+				77EBA4722AF8FDF30032B86B /* BoardViewController.swift in Sources */,
 				77EBA46E2AF8FDF30032B86B /* AppDelegate.swift in Sources */,
 				77A16D632AFC837C0028A5B7 /* ColorPalette.swift in Sources */,
 				77EBA4702AF8FDF30032B86B /* SceneDelegate.swift in Sources */,

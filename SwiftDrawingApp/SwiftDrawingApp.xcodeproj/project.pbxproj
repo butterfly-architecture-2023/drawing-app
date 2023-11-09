@@ -10,6 +10,7 @@
 		779B4AD22AFC653700CAC3B8 /* RectangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B4AD12AFC653700CAC3B8 /* RectangleTests.swift */; };
 		77A16D5F2AFC80050028A5B7 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A16D5E2AFC80050028A5B7 /* Rectangle.swift */; };
 		77A16D652AFC8E070028A5B7 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A16D5E2AFC80050028A5B7 /* Rectangle.swift */; };
+		77A16D612AFC83550028A5B7 /* AddRectangleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A16D602AFC83550028A5B7 /* AddRectangleUseCase.swift */; };
 		77A16D632AFC837C0028A5B7 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A16D622AFC837C0028A5B7 /* ColorPalette.swift */; };
 		77AB2B492AF9CA6400BB16A2 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB2B482AF9CA6400BB16A2 /* ShapeView.swift */; };
 		77EBA46E2AF8FDF30032B86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EBA46D2AF8FDF30032B86B /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		779B4AD12AFC653700CAC3B8 /* RectangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTests.swift; sourceTree = "<group>"; };
 		77A16D5E2AFC80050028A5B7 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		77A16D602AFC83550028A5B7 /* AddRectangleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRectangleUseCase.swift; sourceTree = "<group>"; };
 		77A16D622AFC837C0028A5B7 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		77AB2B482AF9CA6400BB16A2 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		77EBA46A2AF8FDF30032B86B /* SwiftDrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				77A16D5E2AFC80050028A5B7 /* Rectangle.swift */,
 				77AB2B482AF9CA6400BB16A2 /* ShapeView.swift */,
 				77A16D622AFC837C0028A5B7 /* ColorPalette.swift */,
+				77A16D602AFC83550028A5B7 /* AddRectangleUseCase.swift */,
 				77EBA4712AF8FDF30032B86B /* ViewController.swift */,
 				77EBA47B2AF8FDF30032B86B /* Info.plist */,
 				779F2BBD2AF902C70010818B /* SupportFiles */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A16D612AFC83550028A5B7 /* AddRectangleUseCase.swift in Sources */,
 				77EBA4722AF8FDF30032B86B /* ViewController.swift in Sources */,
 				77EBA46E2AF8FDF30032B86B /* AppDelegate.swift in Sources */,
 				77A16D632AFC837C0028A5B7 /* ColorPalette.swift in Sources */,

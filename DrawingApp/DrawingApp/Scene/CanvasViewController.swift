@@ -33,14 +33,28 @@ final class CanvasViewController: UIViewController {
     private func bindState() {
         self.viewModel.state
             .rectDidMake
-            .map({ return UIView(frame: CGRect(origin: $0.origin, size: $0.size)) })
-            .do(onNext: { $0.backgroundColor = UIColor.random() })
+            .map({ RectView(id: $0.id, frame: $0.rect) })
             .withUnretained(self)
             .subscribe(onNext: { owner, rect in
                 owner.view.addSubview(rect)
             })
             .disposed(by: self.disposeBag)
+        
+        self.viewModel.state
+            .selectedRect
+            .withUnretained(self)
+            .compactMap({ owner, rect -> RectView? in
+                owner.view.subviews.filter({ ($0 as? RectView)?.id == rect.id }).first as? RectView
+            })
+            .subscribe(onNext: { rectView in
+                rectView.setSelected()
+            })
+            .disposed(by: self.disposeBag)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: self.view) else { return }
+        self.viewModel.action.touch.onNext(location)
+    }
 }
 

@@ -9,11 +9,11 @@ import UIKit
 
 import RxSwift
 
-protocol RectangleManagerable {
+protocol RectangleMakerable {
     func makeRandomRect() -> Observable<Rect>
 }
 
-final class RectManager: RectangleManagerable {
+final class RectMaker: RectangleMakerable {
     private let window: CGRect
     private let rectSize: CGSize
     

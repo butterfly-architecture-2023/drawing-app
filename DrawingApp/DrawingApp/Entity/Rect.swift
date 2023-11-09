@@ -11,11 +11,13 @@ struct Rect {
     let size: CGSize
     let id: UUID
     private(set) var origin: CGPoint!
+    private(set) var rect: CGRect!
     
     init(window: CGRect, size: CGSize, id: UUID = UUID()) {
         self.size = size
         self.id = id
         self.origin = self.makeOrigin(window: window, rectSize: size)
+        self.rect = CGRect(origin: self.origin, size: self.size)
     }
     
     private func makeOrigin(window: CGRect, rectSize size: CGSize) -> CGPoint {

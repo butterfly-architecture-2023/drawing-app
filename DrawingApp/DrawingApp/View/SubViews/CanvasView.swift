@@ -16,8 +16,8 @@ class CanvasView: UIView {
     
     // MARK: - Properties
     
-    private var shapeInfoList: [ShapeInfo] = []
-    private var drawingInfoList: [DrawingInfo] = []
+    private(set) var shapeInfoList: [ShapeInfo] = []
+    private(set) var drawingInfoList: [DrawingInfo] = []
     private var mode: DrawingButtonType = .rectangle
     
     

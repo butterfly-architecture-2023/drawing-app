@@ -9,28 +9,25 @@ import XCTest
 @testable import DrawingApp
 
 final class DrawingAppTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_사각형_그리기() {
+        let canvasView = CanvasView()
+        canvasView.updateMode(.rectangle)
+        XCTAssertEqual(canvasView.shapeInfoList.isEmpty, false)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
+    // FIXME: - 터치를 받아서 그림을 그려야 drawingInfoList에 값이 들어가는데, 값을 임의로 넣으려 했으나 실패함..
+//    func test_그림_그리기() {
+//        let canvasView = CanvasView()
+//        canvasView.accessibilityIdentifier = "canvas_view"
+//        canvasView.updateMode(.drawing)
+//        
+//        let app = XCUIApplication()
+//        let canvasViewElements = app.otherElements["canvas_view"]
+//        let startCoordinate = canvasViewElements.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+//        let endCoordinate = canvasViewElements.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 1))
+//        startCoordinate.press(forDuration: 0, thenDragTo: endCoordinate)
+//        
+//        XCTAssertEqual(canvasView.drawingInfoList.isEmpty, false)
+//    }
 }

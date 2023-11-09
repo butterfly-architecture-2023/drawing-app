@@ -8,6 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var currentMode: DrawingMode = .none
+    
+    var rectangles: [Rectangle] = []
+    var layers: [UUID: CAShapeLayer] = [:]
     
     enum DrawingMode {
         case none

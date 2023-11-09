@@ -8,7 +8,7 @@
 import UIKit
 
 final class ShapeView: UIView {
-    private let shape: Shape
+    private var shape: Shape
     
     init(shape: Shape) {
         self.shape = shape
@@ -29,5 +29,13 @@ final class ShapeView: UIView {
         path.close()
         shape.setFillColor()
         path.fill()
+    }
+    
+    @discardableResult
+    func setSelected() -> Bool {
+        let selected = shape.setSelected()
+        layer.borderColor = selected ? UIColor.systemRed.cgColor : nil
+        layer.borderWidth = selected ? 5.0 : 0.0
+        return selected
     }
 }

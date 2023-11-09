@@ -96,6 +96,6 @@ final class BoardViewController: UIViewController {
     }
     
     @objc private func didTapRectangle(_ sender: UITapGestureRecognizer) {
-        // TODO: 사각형 탭동작 추가
+        (sender.view as? ShapeView)?.setSelected()
     }
 }

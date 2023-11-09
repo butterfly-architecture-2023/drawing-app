@@ -8,8 +8,8 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
-  - RxCocoa (= 6.0)
-  - RxSwift (= 6.0)
+  - RxCocoa
+  - RxSwift
   - SnapKit
 
 SPEC REPOS:
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: c63ac8d226ebd3a5ed93e743b6163abbfbda914a
+PODFILE CHECKSUM: 61c421e84d07637b45f0180cfad9eb2f362a9ebb
 
 COCOAPODS: 1.12.1

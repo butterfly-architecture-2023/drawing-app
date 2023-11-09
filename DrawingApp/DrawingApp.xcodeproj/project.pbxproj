@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		14998683281A5269B2D08ADD /* Pods_DrawingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC88845EBD1BAB229DA9E245 /* Pods_DrawingAppTests.framework */; };
 		6E9DB2E4330E3915047AA7DE /* Pods_DrawingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFDE4CFE73E81B46A76F210 /* Pods_DrawingApp.framework */; };
+		892E930F2AFCA34D0085A438 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E930E2AFCA34D0085A438 /* CanvasViewModel.swift */; };
+		892E93112AFCA3740085A438 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E93102AFCA3740085A438 /* ViewModel.swift */; };
+		892E931F2AFCBD900085A438 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E931E2AFCBD900085A438 /* UIColor+.swift */; };
+		892E93222AFCBD9D0085A438 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E93212AFCBD9D0085A438 /* CGFloat+.swift */; };
+		892E93292AFCBFC90085A438 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E93282AFCBFC90085A438 /* Rect.swift */; };
+		892E932B2AFCBFD20085A438 /* RectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E932A2AFCBFD20085A438 /* RectManager.swift */; };
 		8934ABE12AFCA1E90052CC2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934ABE02AFCA1E90052CC2C /* AppDelegate.swift */; };
 		8934ABE32AFCA1E90052CC2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934ABE22AFCA1E90052CC2C /* SceneDelegate.swift */; };
-		8934ABE52AFCA1E90052CC2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934ABE42AFCA1E90052CC2C /* ViewController.swift */; };
+		8934ABE52AFCA1E90052CC2C /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934ABE42AFCA1E90052CC2C /* CanvasViewController.swift */; };
 		8934ABE82AFCA1E90052CC2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934ABE62AFCA1E90052CC2C /* Main.storyboard */; };
 		8934ABEA2AFCA1EA0052CC2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8934ABE92AFCA1EA0052CC2C /* Assets.xcassets */; };
 		8934ABED2AFCA1EA0052CC2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8934ABEB2AFCA1EA0052CC2C /* LaunchScreen.storyboard */; };
@@ -45,10 +51,16 @@
 		2B019136559950F1B0E7144C /* Pods-DrawingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingApp.release.xcconfig"; path = "Target Support Files/Pods-DrawingApp/Pods-DrawingApp.release.xcconfig"; sourceTree = "<group>"; };
 		707F211676BEDCBB88E4471E /* Pods-DrawingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DrawingAppTests/Pods-DrawingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80D3C50F96C36881C5D2EF30 /* Pods_DrawingApp_DrawingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrawingApp_DrawingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		892E930E2AFCA34D0085A438 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		892E93102AFCA3740085A438 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		892E931E2AFCBD900085A438 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		892E93212AFCBD9D0085A438 /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
+		892E93282AFCBFC90085A438 /* Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
+		892E932A2AFCBFD20085A438 /* RectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectManager.swift; sourceTree = "<group>"; };
 		8934ABDD2AFCA1E90052CC2C /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8934ABE02AFCA1E90052CC2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8934ABE22AFCA1E90052CC2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8934ABE42AFCA1E90052CC2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8934ABE42AFCA1E90052CC2C /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		8934ABE72AFCA1E90052CC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8934ABE92AFCA1EA0052CC2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8934ABEC2AFCA1EA0052CC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +113,6 @@
 				707F211676BEDCBB88E4471E /* Pods-DrawingAppTests.debug.xcconfig */,
 				1874F32225BC23655CE987C0 /* Pods-DrawingAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +124,50 @@
 				AC88845EBD1BAB229DA9E245 /* Pods_DrawingAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		892E93132AFCA3D40085A438 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8934ABE42AFCA1E90052CC2C /* CanvasViewController.swift */,
+				892E930E2AFCA34D0085A438 /* CanvasViewModel.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		892E93142AFCA3E80085A438 /* ETC */ = {
+			isa = PBXGroup;
+			children = (
+				8934ABE02AFCA1E90052CC2C /* AppDelegate.swift */,
+				8934ABE22AFCA1E90052CC2C /* SceneDelegate.swift */,
+			);
+			path = ETC;
+			sourceTree = "<group>";
+		};
+		892E93172AFCAA430085A438 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				892E93102AFCA3740085A438 /* ViewModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		892E931D2AFCBD840085A438 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				892E931E2AFCBD900085A438 /* UIColor+.swift */,
+				892E93212AFCBD9D0085A438 /* CGFloat+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		892E93272AFCBFB50085A438 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				892E932A2AFCBFD20085A438 /* RectManager.swift */,
+				892E93282AFCBFC90085A438 /* Rect.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		8934ABD42AFCA1E90052CC2C = {
@@ -140,9 +195,11 @@
 		8934ABDF2AFCA1E90052CC2C /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
-				8934ABE02AFCA1E90052CC2C /* AppDelegate.swift */,
-				8934ABE22AFCA1E90052CC2C /* SceneDelegate.swift */,
-				8934ABE42AFCA1E90052CC2C /* ViewController.swift */,
+				892E93272AFCBFB50085A438 /* Entity */,
+				892E931D2AFCBD840085A438 /* Extension */,
+				892E93172AFCAA430085A438 /* Common */,
+				892E93142AFCA3E80085A438 /* ETC */,
+				892E93132AFCA3D40085A438 /* Scene */,
 				8934ABE62AFCA1E90052CC2C /* Main.storyboard */,
 				8934ABE92AFCA1EA0052CC2C /* Assets.xcassets */,
 				8934ABEB2AFCA1EA0052CC2C /* LaunchScreen.storyboard */,
@@ -407,7 +464,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8934ABE52AFCA1E90052CC2C /* ViewController.swift in Sources */,
+				892E931F2AFCBD900085A438 /* UIColor+.swift in Sources */,
+				892E932B2AFCBFD20085A438 /* RectManager.swift in Sources */,
+				892E93112AFCA3740085A438 /* ViewModel.swift in Sources */,
+				892E93222AFCBD9D0085A438 /* CGFloat+.swift in Sources */,
+				892E93292AFCBFC90085A438 /* Rect.swift in Sources */,
+				892E930F2AFCA34D0085A438 /* CanvasViewModel.swift in Sources */,
+				8934ABE52AFCA1E90052CC2C /* CanvasViewController.swift in Sources */,
 				8934ABE12AFCA1E90052CC2C /* AppDelegate.swift in Sources */,
 				8934ABE32AFCA1E90052CC2C /* SceneDelegate.swift in Sources */,
 			);
@@ -593,8 +656,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,9 +665,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = austin.kd.DrawingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -622,8 +688,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,9 +697,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = austin.kd.DrawingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

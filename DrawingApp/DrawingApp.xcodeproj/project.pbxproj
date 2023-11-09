@@ -16,6 +16,13 @@
 		5C5BFE162AF7D4AD00D6B5A0 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BFE152AF7D4AD00D6B5A0 /* PanelView.swift */; };
 		5C5BFE192AF7D59D00D6B5A0 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BFE182AF7D59D00D6B5A0 /* UIView+Extensions.swift */; };
 		5CCAD3482AF805C600EA1327 /* PanelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD3472AF805C600EA1327 /* PanelButton.swift */; };
+		5CCAD3722AFCAF9F00EA1327 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD3712AFCAF9F00EA1327 /* UIColor+Extensions.swift */; };
+		5CCAD3752AFCAFD500EA1327 /* RectangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD3742AFCAFD500EA1327 /* RectangleFactory.swift */; };
+		5CCAD3782AFCAFF000EA1327 /* Boundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD3772AFCAFF000EA1327 /* Boundary.swift */; };
+		5CCAD37A2AFCAFF300EA1327 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD3792AFCAFF300EA1327 /* Rectangle.swift */; };
+		5CCAD37C2AFCAFFD00EA1327 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD37B2AFCAFFD00EA1327 /* Point.swift */; };
+		5CCAD37E2AFCB00B00EA1327 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD37D2AFCB00B00EA1327 /* Drawable.swift */; };
+		5CCAD3802AFCB03800EA1327 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAD37F2AFCB03800EA1327 /* Drawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		5C5BFE152AF7D4AD00D6B5A0 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		5C5BFE182AF7D59D00D6B5A0 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		5CCAD3472AF805C600EA1327 /* PanelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelButton.swift; sourceTree = "<group>"; };
+		5CCAD3712AFCAF9F00EA1327 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		5CCAD3742AFCAFD500EA1327 /* RectangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleFactory.swift; sourceTree = "<group>"; };
+		5CCAD3772AFCAFF000EA1327 /* Boundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boundary.swift; sourceTree = "<group>"; };
+		5CCAD3792AFCAFF300EA1327 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		5CCAD37B2AFCAFFD00EA1327 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		5CCAD37D2AFCB00B00EA1327 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		5CCAD37F2AFCB03800EA1327 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,8 @@
 		5C5BFDF12AF7805F00D6B5A0 /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CCAD3762AFCAFEC00EA1327 /* Model */,
+				5CCAD3732AFCAFD000EA1327 /* Factory */,
 				5CCAD34A2AF8CFC500EA1327 /* View */,
 				5C5BFE172AF7D59400D6B5A0 /* Extension */,
 				5C5BFDF62AF7805F00D6B5A0 /* ViewController.swift */,
@@ -79,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				5C5BFE182AF7D59D00D6B5A0 /* UIView+Extensions.swift */,
+				5CCAD3712AFCAF9F00EA1327 /* UIColor+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -90,6 +107,26 @@
 				5C5BFE152AF7D4AD00D6B5A0 /* PanelView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5CCAD3732AFCAFD000EA1327 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				5CCAD3742AFCAFD500EA1327 /* RectangleFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		5CCAD3762AFCAFEC00EA1327 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CCAD3772AFCAFF000EA1327 /* Boundary.swift */,
+				5CCAD3792AFCAFF300EA1327 /* Rectangle.swift */,
+				5CCAD37B2AFCAFFD00EA1327 /* Point.swift */,
+				5CCAD37D2AFCB00B00EA1327 /* Drawable.swift */,
+				5CCAD37F2AFCB03800EA1327 /* Drawing.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +203,15 @@
 				5C5BFE192AF7D59D00D6B5A0 /* UIView+Extensions.swift in Sources */,
 				5C5BFDF72AF7805F00D6B5A0 /* ViewController.swift in Sources */,
 				5C5BFDF32AF7805F00D6B5A0 /* AppDelegate.swift in Sources */,
+				5CCAD37E2AFCB00B00EA1327 /* Drawable.swift in Sources */,
 				5C5BFDF52AF7805F00D6B5A0 /* SceneDelegate.swift in Sources */,
+				5CCAD3722AFCAF9F00EA1327 /* UIColor+Extensions.swift in Sources */,
+				5CCAD37A2AFCAFF300EA1327 /* Rectangle.swift in Sources */,
 				5CCAD3482AF805C600EA1327 /* PanelButton.swift in Sources */,
+				5CCAD37C2AFCAFFD00EA1327 /* Point.swift in Sources */,
+				5CCAD3802AFCB03800EA1327 /* Drawing.swift in Sources */,
+				5CCAD3752AFCAFD500EA1327 /* RectangleFactory.swift in Sources */,
+				5CCAD3782AFCAFF000EA1327 /* Boundary.swift in Sources */,
 				5C5BFE162AF7D4AD00D6B5A0 /* PanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

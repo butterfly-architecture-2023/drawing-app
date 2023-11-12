@@ -32,14 +32,15 @@
 		73A5D4F12AFBC0BD009AE62D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F02AFBC0BD009AE62D /* Layout.swift */; };
 		73A5D4F22AFCFF8B009AE62D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */; };
 		73A5D4F42B00D50C009AE62D /* BaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F32B00D50C009AE62D /* BaseUnitTest.swift */; };
-		73A5D4F72B00D53C009AE62D /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4F62B00D53C009AE62D /* RxTest */; };
-		73A5D50C2B00D927009AE62D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50B2B00D927009AE62D /* RxCocoa */; };
 		73A5D50E2B00D927009AE62D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50D2B00D927009AE62D /* RxSwift */; };
 		73A5D5102B00D927009AE62D /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50F2B00D927009AE62D /* RxTest */; };
 		73A5D5132B00DD04009AE62D /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E22AFA6667009AE62D /* Square.swift */; };
 		73A5D5152B00DE76009AE62D /* SystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E42AFA6B16009AE62D /* SystemColor.swift */; };
 		73A5D5162B00DE78009AE62D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E62AFA6D9C009AE62D /* Point.swift */; };
 		73A5D5172B00DE7D009AE62D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F02AFBC0BD009AE62D /* Layout.swift */; };
+		73A5D51C2B00F562009AE62D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D51B2B00F562009AE62D /* RxCocoa */; };
+		73CC06DF2B0108BF00C44A06 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC06DE2B0108BF00C44A06 /* Path.swift */; };
+		73CC06E12B01170A00C44A06 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC06E02B01170A00C44A06 /* Paths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		73A5D4EA2AFBBA17009AE62D /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		73A5D4F02AFBC0BD009AE62D /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		73A5D4F32B00D50C009AE62D /* BaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUnitTest.swift; sourceTree = "<group>"; };
+		73CC06DE2B0108BF00C44A06 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		73CC06E02B01170A00C44A06 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A5D4F72B00D53C009AE62D /* RxTest in Frameworks */,
 				73A5D4D52AF927F5009AE62D /* Then in Frameworks */,
 				73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */,
 				73A5D4CE2AF927DF009AE62D /* RxCocoa in Frameworks */,
@@ -103,9 +105,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D51C2B00F562009AE62D /* RxCocoa in Frameworks */,
 				73A5D50E2B00D927009AE62D /* RxSwift in Frameworks */,
 				73A5D5102B00D927009AE62D /* RxTest in Frameworks */,
-				73A5D50C2B00D927009AE62D /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				73A5D4C82AF9231C009AE62D /* Application */,
-				73A5D4E12AFA6656009AE62D /* Entity */,
+				73A5D5182B00ECC9009AE62D /* Domain */,
 				73A5D4DD2AF93289009AE62D /* Presentation */,
 				73A5D4DF2AF932A9009AE62D /* Common */,
 				73A5D4DE2AF9329C009AE62D /* Extension */,
@@ -232,6 +234,8 @@
 				73A5D4E22AFA6667009AE62D /* Square.swift */,
 				73A5D4E42AFA6B16009AE62D /* SystemColor.swift */,
 				73A5D4E62AFA6D9C009AE62D /* Point.swift */,
+				73CC06DE2B0108BF00C44A06 /* Path.swift */,
+				73CC06E02B01170A00C44A06 /* Paths.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -249,6 +253,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73A5D5182B00ECC9009AE62D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				73A5D4E12AFA6656009AE62D /* Entity */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +286,6 @@
 				73A5D4D12AF927DF009AE62D /* RxSwift */,
 				73A5D4D42AF927F5009AE62D /* Then */,
 				73A5D4ED2AFBBC33009AE62D /* RxGesture */,
-				73A5D4F62B00D53C009AE62D /* RxTest */,
 			);
 			productName = "drawing-app";
 			productReference = 73A5D4942AF92210009AE62D /* drawing-app.app */;
@@ -295,9 +306,9 @@
 			);
 			name = "drawing-appTests";
 			packageProductDependencies = (
-				73A5D50B2B00D927009AE62D /* RxCocoa */,
 				73A5D50D2B00D927009AE62D /* RxSwift */,
 				73A5D50F2B00D927009AE62D /* RxTest */,
+				73A5D51B2B00F562009AE62D /* RxCocoa */,
 			);
 			productName = "drawing-appTests";
 			productReference = 73A5D4AA2AF92211009AE62D /* drawing-appTests.xctest */;
@@ -401,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CC06E12B01170A00C44A06 /* Paths.swift in Sources */,
 				73A5D4E92AFA7A5F009AE62D /* CanvasViewModel.swift in Sources */,
 				73A5D4E52AFA6B16009AE62D /* SystemColor.swift in Sources */,
 				73A5D4D82AF92844009AE62D /* RoundedButton.swift in Sources */,
@@ -411,6 +423,7 @@
 				73A5D4E32AFA6667009AE62D /* Square.swift in Sources */,
 				73A5D4E72AFA6D9C009AE62D /* Point.swift in Sources */,
 				73A5D4DC2AF9327F009AE62D /* UIImage+.swift in Sources */,
+				73CC06DF2B0108BF00C44A06 /* Path.swift in Sources */,
 				73A5D4982AF92210009AE62D /* AppDelegate.swift in Sources */,
 				73A5D49A2AF92210009AE62D /* SceneDelegate.swift in Sources */,
 			);
@@ -516,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -570,7 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -819,16 +832,6 @@
 			package = 73A5D4EC2AFBBC33009AE62D /* XCRemoteSwiftPackageReference "RxGesture" */;
 			productName = RxGesture;
 		};
-		73A5D4F62B00D53C009AE62D /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-		73A5D50B2B00D927009AE62D /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
 		73A5D50D2B00D927009AE62D /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -838,6 +841,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		73A5D51B2B00F562009AE62D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -20,10 +20,16 @@ final class CanvasViewController: UIViewController {
     
     private lazy var canvasView = UIView()
     
+    private var currentLineImageView: UIImageView?
+    
     // MARK: - Property
     
     private let disposeBag = DisposeBag()
     private var viewModel: CanvasViewModelProtocol?
+
+    private var path: Path?
+    private var lineColor = SystemColor.random.uicolor
+    private var isDrawable = false
     
     // MARK: - Life Cycle
 
@@ -62,11 +68,51 @@ final class CanvasViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        drawingButton
+            .rx
+            .tap
+            .asDriver()
+            .throttle(.milliseconds(3))
+            .drive(with: self, onNext: { owner, _ in
+                owner.isDrawable.toggle()
+            })
+            .disposed(by: disposeBag)
+        
         viewModel?.output
             .showSquare
             .asDriver(onErrorDriveWith: .empty())
             .drive(with: self, onNext: { owner, square in
                 owner.addSquareView(square)
+            })
+            .disposed(by: disposeBag)
+        
+        canvasView
+            .rx
+            .panGesture()
+            .filter { [weak self] _ in self?.isDrawable ?? true }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(with: self, onNext: { owner, panGesture in
+                let gesture = panGesture.location(in: owner.canvasView)
+                
+                switch panGesture.state {
+                case .began:
+                    owner.setupPath()
+                    owner.path?.lastPoint = .init(x: gesture.x, y: gesture.y)
+                    
+                case .changed:
+                    let currentPoint = CGPoint(x: gesture.x, y: gesture.y )
+                    guard let lastPoint = owner.path?.lastPoint else { return }
+                    
+                    owner.drawLineFrom(from: lastPoint, to: currentPoint)
+                    owner.path?.lastPoint = currentPoint
+                    
+                case .ended:
+                    owner.clearPath()
+                    
+                default:
+                    return
+                }
+                
             })
             .disposed(by: disposeBag)
     }
@@ -77,7 +123,53 @@ final class CanvasViewController: UIViewController {
         let view = SquareView(with: square)
         canvasView.addSubview(view)
     }
+    
+    private func setupPath() {
+        path = Path()
+        currentLineImageView = UIImageView()
+        
+        guard let currentLineImageView else { return }
+        canvasView.addSubview(currentLineImageView)
+    }
+    
+    private func clearPath() {
+        lineColor = SystemColor.random.uicolor
+        path = nil
+        currentLineImageView = nil
+        isDrawable = false
+    }
 
+}
+
+// MARK: - Drawing
+
+extension CanvasViewController {
+
+    private func drawLineFrom(from: CGPoint, to: CGPoint) {
+        UIGraphicsBeginImageContextWithOptions(canvasView.frame.size, false, 1.0)
+        
+        currentLineImageView?.image?.draw(in: canvasView.frame)
+        currentLineImageView?.frame = canvasView.frame
+        
+        setupContext(from: from, to: to)
+        
+        currentLineImageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+    }
+    
+    private func setupContext(from: CGPoint, to: CGPoint) {
+        let context = UIGraphicsGetCurrentContext()
+        context?.move(to: from)
+        context?.addLine(to: to)
+        
+        context?.setLineCap(.round)
+        context?.setLineWidth(path?.lineWidth ?? .zero)
+        context?.setStrokeColor(lineColor.cgColor)
+        context?.setBlendMode(.normal)
+        context?.strokePath()
+    }
+    
 }
 
 // MARK: - configure UI

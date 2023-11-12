@@ -22,14 +22,14 @@ public class DrawingResourceManager {
     return square
   }
   
-  public func addVector(from position: GesturePosition, data: Data?) -> Vector {
-    let vector = Vector(x: position.x, y: position.y)
+  public func addVector(data: Data?) -> Vector {
+    let vector = Vector()
     vector.data = data
     self.vectors.append(vector)
     return vector
   }
   
-  public func moveSquare(_ square: Square, at position: GesturePosition) -> Bool {
+  public func move(square: Square, at position: CanvasPosition) -> Bool {
     guard let square = squares.first(where: {ObjectIdentifier($0) == ObjectIdentifier(square)}) else {
       return false
     }
@@ -44,6 +44,15 @@ public class DrawingResourceManager {
     }
     
     vector.data = data
+    return true
+  }
+  
+  public func move(vector: Vector, at position: CanvasPosition) -> Bool {
+    guard let vector = vectors.first(where: {ObjectIdentifier($0) == ObjectIdentifier(vector)}) else {
+      return false
+    }
+    
+    vector.setPosition(at: position)
     return true
   }
 }

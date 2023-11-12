@@ -12,6 +12,9 @@ class MainViewFactory {
   private(set) var squareViews: [UIView] = []
   private(set) var vectors: [Data] = []
   private(set) var stackView: UIStackView?
+  
+  private var vectorImageView: UIImageView?
+  
   let manager: DrawingResourceManager
   
   init(width: CGFloat, height: CGFloat) {
@@ -98,8 +101,10 @@ class MainViewFactory {
     return squareView
   }
   
-  func addVector(at position: GesturePosition, image: UIImage) {
-    let _ = manager.addVector(from: position, data: image.pngData())
+  func addVector(at rect: CGRect, image: UIImage) {
+    let vector = manager.addVector(data: image.pngData())
+    vector.setPosition(x: rect.minX, y: rect.minY)
+    vector.setSize(width: rect.width, height: rect.height)
   }
   
   enum OperatingSystem {

@@ -11,8 +11,8 @@ import Foundation
 public class Vector {
   
   // Color(Hex)
-  private(set) var _hexColor: CanvasRandomColor = .init()
-  public var hexColor: CanvasRandomColor {
+  private(set) var _hexColor: CanvasColor = .init()
+  public var hexColor: CanvasColor {
     _hexColor
   }
   
@@ -22,18 +22,26 @@ public class Vector {
   public var canvasSize: CanvasSize {
     CanvasSize(width: width, height: height)
   }
-  
-  // Position
-  var x: Double
-  var y: Double
-  public var position: GesturePosition {
-    GesturePosition(x: x, y: y)
+  public func setSize(width: Double, height: Double) {
+    self.width = width
+    self.height = height
   }
   
-  init(x: Double, y: Double) {
+  // Position
+  private(set) var x: Double = 0
+  private(set) var y: Double = 0
+  public var position: CanvasPosition {
+    CanvasPosition(x: x, y: y)
+  }
+  public func setPosition(x: Double, y: Double) {
     self.x = x
     self.y = y
   }
+  public func setPosition(at position: CanvasPosition) {
+    self.x = position.x
+    self.y = position.y
+  }
+  
   
   public var data: Data?
 }

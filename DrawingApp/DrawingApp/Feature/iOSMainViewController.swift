@@ -60,7 +60,7 @@ class iOSMainViewController: UIViewController {
       }
     case .ended:
       if let imageView = imageView, let image = imageView.image {
-        factory.addVector(at: .init(x: imageView.frame.minX, y: imageView.frame.minY), image: image)
+        factory.addVector(at: imageView.frame, image: image)
       }
       imageView = nil
       lastPoint = nil

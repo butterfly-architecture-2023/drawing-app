@@ -17,7 +17,6 @@ final class CanvasViewController: UIViewController {
     
     private lazy var makeSquareButton = RoundedButton(drawingType: .square)
     private lazy var drawingButton = RoundedButton(drawingType: .drawing)
-    
     private lazy var canvasView = UIView()
     
     private var currentLineImageView: UIImageView?
@@ -160,9 +159,9 @@ extension CanvasViewController {
     
     private func setupContext(from: CGPoint, to: CGPoint) {
         let context = UIGraphicsGetCurrentContext()
+        
         context?.move(to: from)
         context?.addLine(to: to)
-        
         context?.setLineCap(.round)
         context?.setLineWidth(path?.lineWidth ?? .zero)
         context?.setStrokeColor(lineColor.cgColor)

@@ -20,14 +20,3 @@ struct Point {
     }
     
 }
-
-// MARK: - Extension UIScreen
-
-extension UIScreen {
-    
-    static let minX = main.bounds.minX
-    static let minY = main.bounds.minY
-    static let maxX = main.bounds.maxX
-    static let maxY = main.bounds.maxY
-    
-}

@@ -12,7 +12,7 @@
 		73A5D49C2AF92210009AE62D /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D49B2AF92210009AE62D /* CanvasViewController.swift */; };
 		73A5D4A12AF92211009AE62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A5D4A02AF92211009AE62D /* Assets.xcassets */; };
 		73A5D4A42AF92211009AE62D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A5D4A22AF92211009AE62D /* LaunchScreen.storyboard */; };
-		73A5D4AF2AF92211009AE62D /* drawing_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4AE2AF92211009AE62D /* drawing_appTests.swift */; };
+		73A5D4AF2AF92211009AE62D /* Square_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4AE2AF92211009AE62D /* Square_Tests.swift */; };
 		73A5D4B92AF92211009AE62D /* drawing_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4B82AF92211009AE62D /* drawing_appUITests.swift */; };
 		73A5D4BB2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4BA2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift */; };
 		73A5D4CB2AF927C8009AE62D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4CA2AF927C8009AE62D /* SnapKit */; };
@@ -30,6 +30,16 @@
 		73A5D4EB2AFBBA17009AE62D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4EA2AFBBA17009AE62D /* SquareView.swift */; };
 		73A5D4EE2AFBBC33009AE62D /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4ED2AFBBC33009AE62D /* RxGesture */; };
 		73A5D4F12AFBC0BD009AE62D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F02AFBC0BD009AE62D /* Layout.swift */; };
+		73A5D4F22AFCFF8B009AE62D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */; };
+		73A5D4F42B00D50C009AE62D /* BaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F32B00D50C009AE62D /* BaseUnitTest.swift */; };
+		73A5D4F72B00D53C009AE62D /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D4F62B00D53C009AE62D /* RxTest */; };
+		73A5D50C2B00D927009AE62D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50B2B00D927009AE62D /* RxCocoa */; };
+		73A5D50E2B00D927009AE62D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50D2B00D927009AE62D /* RxSwift */; };
+		73A5D5102B00D927009AE62D /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5D50F2B00D927009AE62D /* RxTest */; };
+		73A5D5132B00DD04009AE62D /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E22AFA6667009AE62D /* Square.swift */; };
+		73A5D5152B00DE76009AE62D /* SystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E42AFA6B16009AE62D /* SystemColor.swift */; };
+		73A5D5162B00DE78009AE62D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4E62AFA6D9C009AE62D /* Point.swift */; };
+		73A5D5172B00DE7D009AE62D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5D4F02AFBC0BD009AE62D /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +68,7 @@
 		73A5D4A32AF92211009AE62D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73A5D4A52AF92211009AE62D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A5D4AA2AF92211009AE62D /* drawing-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drawing-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73A5D4AE2AF92211009AE62D /* drawing_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appTests.swift; sourceTree = "<group>"; };
+		73A5D4AE2AF92211009AE62D /* Square_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square_Tests.swift; sourceTree = "<group>"; };
 		73A5D4B42AF92211009AE62D /* drawing-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drawing-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A5D4B82AF92211009AE62D /* drawing_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITests.swift; sourceTree = "<group>"; };
 		73A5D4BA2AF92211009AE62D /* drawing_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 		73A5D4E82AFA7A5F009AE62D /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		73A5D4EA2AFBBA17009AE62D /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		73A5D4F02AFBC0BD009AE62D /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		73A5D4F32B00D50C009AE62D /* BaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUnitTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D4F72B00D53C009AE62D /* RxTest in Frameworks */,
 				73A5D4D52AF927F5009AE62D /* Then in Frameworks */,
 				73A5D4D02AF927DF009AE62D /* RxRelay in Frameworks */,
 				73A5D4CE2AF927DF009AE62D /* RxCocoa in Frameworks */,
@@ -91,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A5D50E2B00D927009AE62D /* RxSwift in Frameworks */,
+				73A5D5102B00D927009AE62D /* RxTest in Frameworks */,
+				73A5D50C2B00D927009AE62D /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +126,7 @@
 				73A5D4AD2AF92211009AE62D /* drawing-appTests */,
 				73A5D4B72AF92211009AE62D /* drawing-appUITests */,
 				73A5D4952AF92210009AE62D /* Products */,
+				73A5D4F52B00D53C009AE62D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				73A5D4C82AF9231C009AE62D /* Application */,
-				73A5D4E12AFA6656009AE62D /* Model */,
+				73A5D4E12AFA6656009AE62D /* Entity */,
 				73A5D4DD2AF93289009AE62D /* Presentation */,
 				73A5D4DF2AF932A9009AE62D /* Common */,
 				73A5D4DE2AF9329C009AE62D /* Extension */,
@@ -140,7 +156,8 @@
 		73A5D4AD2AF92211009AE62D /* drawing-appTests */ = {
 			isa = PBXGroup;
 			children = (
-				73A5D4AE2AF92211009AE62D /* drawing_appTests.swift */,
+				73A5D4F32B00D50C009AE62D /* BaseUnitTest.swift */,
+				73A5D4AE2AF92211009AE62D /* Square_Tests.swift */,
 			);
 			path = "drawing-appTests";
 			sourceTree = "<group>";
@@ -209,14 +226,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		73A5D4E12AFA6656009AE62D /* Model */ = {
+		73A5D4E12AFA6656009AE62D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				73A5D4E22AFA6667009AE62D /* Square.swift */,
 				73A5D4E42AFA6B16009AE62D /* SystemColor.swift */,
 				73A5D4E62AFA6D9C009AE62D /* Point.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		73A5D4EF2AFBC052009AE62D /* Views */ = {
@@ -225,6 +242,13 @@
 				73A5D4EA2AFBBA17009AE62D /* SquareView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		73A5D4F52B00D53C009AE62D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +274,7 @@
 				73A5D4D12AF927DF009AE62D /* RxSwift */,
 				73A5D4D42AF927F5009AE62D /* Then */,
 				73A5D4ED2AFBBC33009AE62D /* RxGesture */,
+				73A5D4F62B00D53C009AE62D /* RxTest */,
 			);
 			productName = "drawing-app";
 			productReference = 73A5D4942AF92210009AE62D /* drawing-app.app */;
@@ -269,6 +294,11 @@
 				73A5D4AC2AF92211009AE62D /* PBXTargetDependency */,
 			);
 			name = "drawing-appTests";
+			packageProductDependencies = (
+				73A5D50B2B00D927009AE62D /* RxCocoa */,
+				73A5D50D2B00D927009AE62D /* RxSwift */,
+				73A5D50F2B00D927009AE62D /* RxTest */,
+			);
 			productName = "drawing-appTests";
 			productReference = 73A5D4AA2AF92211009AE62D /* drawing-appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -390,7 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A5D4AF2AF92211009AE62D /* drawing_appTests.swift in Sources */,
+				73A5D5152B00DE76009AE62D /* SystemColor.swift in Sources */,
+				73A5D5132B00DD04009AE62D /* Square.swift in Sources */,
+				73A5D5162B00DE78009AE62D /* Point.swift in Sources */,
+				73A5D4F42B00D50C009AE62D /* BaseUnitTest.swift in Sources */,
+				73A5D5172B00DE7D009AE62D /* Layout.swift in Sources */,
+				73A5D4F22AFCFF8B009AE62D /* CanvasViewModel.swift in Sources */,
+				73A5D4AF2AF92211009AE62D /* Square_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y9V523M6R;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "drawing-app/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -579,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y9V523M6R;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "drawing-app/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -780,6 +818,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 73A5D4EC2AFBBC33009AE62D /* XCRemoteSwiftPackageReference "RxGesture" */;
 			productName = RxGesture;
+		};
+		73A5D4F62B00D53C009AE62D /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		73A5D50B2B00D927009AE62D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		73A5D50D2B00D927009AE62D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		73A5D50F2B00D927009AE62D /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5D4CC2AF927DF009AE62D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

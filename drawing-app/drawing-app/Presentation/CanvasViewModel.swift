@@ -40,7 +40,6 @@ final class CanvasViewModel: CanvasViewModelProtocol {
     
     let canvasSize = PublishRelay<CGRect>()
     let didTapMakeSquareButton = PublishRelay<Void>()
-
     
     // MARK: - Output
     
@@ -73,7 +72,7 @@ final class CanvasViewModel: CanvasViewModelProtocol {
 
     // MARK: - Function
     
-    private func makeSquare() -> Square? {
+    func makeSquare() -> Square? {
         guard let xRange,
               let yRange else { return nil }
         

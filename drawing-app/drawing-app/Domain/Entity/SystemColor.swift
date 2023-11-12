@@ -9,7 +9,7 @@ import UIKit
 
 enum SystemColor: CaseIterable {
     
-    case systemBlue, systemBrown, systemCyan, systemGreen, systemIndigo, systemMint, systemOrange, systemPink, systemPurple, systemTeal, systemYellow, systemGray
+    case systemBlue, systemBrown, systemGreen, systemIndigo, systemOrange, systemPink, systemPurple, systemTeal, systemYellow, systemGray
     case black, blue, brown, cyan, darkGray, gray, green, lightGray, magenta, purple, red, yellow
     case random
     
@@ -19,14 +19,10 @@ enum SystemColor: CaseIterable {
             return .systemBlue
         case .systemBrown:
             return .systemBrown
-        case .systemCyan:
-            return .systemCyan
         case .systemGreen:
             return .systemGreen
         case .systemIndigo:
             return .systemIndigo
-        case .systemMint:
-            return .systemMint
         case .systemOrange:
             return .systemOrange
         case .systemPink:

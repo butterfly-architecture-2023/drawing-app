@@ -19,9 +19,8 @@ class CanvasViewController: UIViewController {
         setupPanGesture()
     }
     
-    static func create() -> CanvasViewController {
-        let storyboard = UIStoryboard(name: "CanvasViewController", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "CanvasViewController") as! CanvasViewController
+    static func create() -> UIViewController {
+        let viewController = UIStoryboard.viewController(CanvasViewController.self)
         return viewController
     }
     

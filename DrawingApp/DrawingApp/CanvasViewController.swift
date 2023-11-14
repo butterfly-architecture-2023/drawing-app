@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CanvasViewController.swift
 //  DrawingApp
 //
 //  Created by 오킹 on 2023/11/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CanvasViewController: UIViewController {
 
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var drawingButton: UIButton!
@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPanGesture()
+    }
+    
+    static func create() -> CanvasViewController {
+        let storyboard = UIStoryboard(name: "CanvasViewController", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CanvasViewController") as! CanvasViewController
+        return viewController
     }
     
     @IBAction func rectangleButtonTapped(_ sender: Any) {

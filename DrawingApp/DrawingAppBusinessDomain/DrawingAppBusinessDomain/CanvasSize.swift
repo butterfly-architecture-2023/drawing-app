@@ -8,8 +8,8 @@
 import Foundation
 
 public struct CanvasSize {
-  public let width: Double
-  public let height: Double
+  @RangeFromZero public var width: Double
+  @RangeFromZero public var height: Double
   
   public init(width: Double, height: Double) {
     self.width = width

@@ -17,7 +17,8 @@ public class DrawingResourceManager {
   }
   
   public func addSquare() -> Square {
-    let square = Square.random(canvasSize)
+    let square = Square(at: .zero, in: canvasSize)
+    square.randomPosition(canvasSize)
     self.squares.append(square)
     return square
   }

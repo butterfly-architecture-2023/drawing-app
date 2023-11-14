@@ -63,7 +63,7 @@ final class DrawingAppBusinessDomainTests: XCTestCase {
     
     for _ in 0..<20 {
       let position = square.position
-      square.random(manager.canvasSize)
+      square.randomPosition(manager.canvasSize)
       XCTAssertNotEqual(position, square.position)
     }
   }
@@ -71,7 +71,7 @@ final class DrawingAppBusinessDomainTests: XCTestCase {
 
 extension Square: Hashable {
   public static func == (lhs: Square, rhs: Square) -> Bool {
-    lhs.hexColor == rhs.hexColor
+    lhs.color == rhs.color && lhs.position == rhs.position
   }
   
   public func hash(into hasher: inout Hasher) {

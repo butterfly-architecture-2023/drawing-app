@@ -8,47 +8,34 @@
 import Foundation
 
 /// 사각형을 표현하는데 필요한 모델
-public class Square {
-  // Size
-  private(set) var width: Double = 100
-  private(set) var height: Double = 100
-  public var canvasSize: CanvasSize {
-    CanvasSize(width: width, height: height)
-  }
-  
+public class Square: Movable, ElementColorRandom {
   // Color(Hex)
-  private(set) var hexColor: CanvasColor = .init()
-  public var colorSet: (red: Double, green: Double, blue: Double) {
-    (hexColor.colorSet.red, hexColor.colorSet.green, hexColor.colorSet.blue)
+  var _color: CanvasColor = .init()
+  var _canvasFrame: CanvasFrame
+  public var color: CanvasColor {
+    _color
   }
-  
-  // Position
-  private(set) var x: Double
-  private(set) var y: Double
+  public var colorSet: (red: Double, green: Double, blue: Double, alpha: Double) {
+    _color.colorSet
+  }
+  public var size: CanvasSize {
+    _canvasFrame.size
+  }
   public var position: CanvasPosition {
-    CanvasPosition(x: x, y: y)
+    _canvasFrame.position
   }
   
-  init(x: Double, y: Double) {
-    self.x = x
-    self.y = y
+  init(at position: CanvasPosition, in size: CanvasSize) {
+    self._canvasFrame = .init(
+      size: size,
+      position: position)
   }
   
   public func setPosition(at position: CanvasPosition) {
-    x = position.x
-    y = position.y
+    _canvasFrame.position = position
   }
   
-  static func random(_ canvas: CanvasSize) -> Square {
-    let result = Square(x: 0, y: 0)
-    result.setPosition(at: CanvasPosition(
-      x: Double.random(in: 0...(canvas.width - result.width)),
-      y: Double.random(in: 0...(canvas.height - result.height))))
-    return result
-  }
-  
-  public func random(_ canvas: CanvasSize) {
-    x = Double.random(in: 0...(canvas.width - width))
-    y = Double.random(in: 0...(canvas.height - height))
+  public func randomPosition(_ canvas: CanvasSize) {
+    _canvasFrame.convertToRandomPosition()
   }
 }

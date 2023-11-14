@@ -8,11 +8,21 @@
 import Foundation
 
 public struct CanvasPosition: Equatable {
-  public let x: Double
-  public let y: Double
+  static var zero: Self = .init(x: 0, y: 0)
+  public static func == (lhs: CanvasPosition, rhs: CanvasPosition) -> Bool {
+    lhs.x == rhs.x && lhs.y == rhs.y
+  }
   
-  public init(x: Double, y: Double) {
+  @RangeFromZero public var x: Double
+  @RangeFromZero public var y: Double
+  
+  init(x: Double, y: Double) {
     self.x = x
     self.y = y
+  }
+  
+  init(x: Int, y: Int) {
+    self.x = Double(x)
+    self.y = Double(y)
   }
 }

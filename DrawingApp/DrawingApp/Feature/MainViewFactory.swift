@@ -77,25 +77,17 @@ class MainViewFactory {
     let square = manager.addSquare()
     
     if let stackView {
-      let size = square.canvasSize
+      let size = square.size
       let frame = stackView.frame
       while ((frame.minX - size.width) ..< (frame.maxX + size.width) ~= square.position.x
              &&
              (frame.minY - size.height) ..< (frame.maxY + size.height) ~= square.position.y) {
-        square.random(manager.canvasSize)
+        square.randomPosition(manager.canvasSize)
       }
     }
     
-    let squareView = UIView(frame: CGRect(
-      x: square.position.x,
-      y: square.position.y,
-      width: square.canvasSize.width,
-      height: square.canvasSize.height))
-    squareView.backgroundColor = UIColor(
-      red: CGFloat(square.colorSet.red),
-      green: CGFloat(square.colorSet.green),
-      blue: CGFloat(square.colorSet.blue),
-      alpha: 1.0)
+    let squareView = UIView(frame: CGRect(at: square.position, in: square.size))
+    squareView.backgroundColor = UIColor(square.color)
     self.squareViews.append(squareView)
     
     return squareView
@@ -109,5 +101,30 @@ class MainViewFactory {
   
   enum OperatingSystem {
     case iOS, iPad
+  }
+}
+
+private extension CGSize {
+  init(_ size: CanvasSize) {
+    self.init(width: size.width, height: size.height)
+  }
+}
+
+private extension CGPoint {
+  init(_ position: CanvasPosition) {
+    self.init(x: position.x, y: position.y)
+  }
+}
+
+private extension CGRect {
+  init(at position: CanvasPosition, in size: CanvasSize) {
+    self.init(origin: CGPoint(position), size: CGSize(size))
+  }
+}
+
+private extension UIColor {
+  convenience init(_ color: CanvasColor) {
+    let set = color.colorSet
+    self.init(red: set.red, green: set.green, blue: set.blue, alpha: set.alpha)
   }
 }

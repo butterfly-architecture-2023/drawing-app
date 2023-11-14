@@ -30,6 +30,26 @@ extension CanvasViewModel {
         
         self.points.removeAll()
     }
+    
+    func selectRectangle(id: UUID) -> Bool {
+        if let rectangle = canvas.rectangles.first(where: { $0.id == id }) {
+            canvas.select(rectangle: rectangle)
+            
+            return true
+        }
+        
+        return false
+    }
+    
+    func deselectRectangle(id: UUID) -> Bool {
+        if let rectangle = canvas.rectangles.first(where: { $0.id == id }) {
+            canvas.deselect(rectangle: rectangle)
+            
+            return true
+        }
+        
+        return false
+    }
 }
 
 // 출력

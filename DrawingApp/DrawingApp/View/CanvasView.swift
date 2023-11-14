@@ -9,11 +9,12 @@ import UIKit
 
 class CanvasView: UIView {
 
-    func draw(rectangle: Rectangle) {
-        let layer = CAShapeLayer()
-        layer.path = .init(rect: rectangle.rect, transform: nil)
-        layer.fillColor = rectangle.backgroundColor.uiColor.cgColor
-        self.layer.addSublayer(layer)
+    func draw(rectangle: Rectangle, delegate: RectangleViewDelegate? = nil) {
+        let view = RectangleView(id: rectangle.id, frame: rectangle.rect)
+        view.delegate = delegate
+        view.backgroundColor = rectangle.backgroundColor.uiColor
+        
+        self.addSubview(view)
     }
     
     func draw(line: Drawing?) {

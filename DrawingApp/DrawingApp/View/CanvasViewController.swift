@@ -37,7 +37,7 @@ class CanvasViewController: UIViewController {
         let rectangle = viewModel.drawRectangle(maxX: screenBounds.width - 100,
                                 maxY: screenBounds.height - 100)
         
-        canvasView.draw(rectangle: rectangle)
+        canvasView.draw(rectangle: rectangle, delegate: self)
     }
     
     @IBAction func drawingButtonTapped(_ sender: UIButton) {
@@ -66,3 +66,16 @@ class CanvasViewController: UIViewController {
     }
 }
 
+extension CanvasViewController: RectangleViewDelegate {
+    func select(rectangleView: RectangleView) {
+        if let id = rectangleView.id {
+            _ = viewModel.selectRectangle(id: id)
+        }
+    }
+    
+    func deselect(rectangleView: RectangleView) {
+        if let id = rectangleView.id {
+            _ = viewModel.deselectRectangle(id: id)
+        }
+    }
+}

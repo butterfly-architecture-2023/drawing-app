@@ -8,14 +8,23 @@
 import Foundation
 
 final class Canvas {
-    private(set) var shapes: [Rectangle] = []
+    private(set) var rectangles: [Rectangle] = []
     private(set) var drawings: [Drawing] = []
+    private(set) var selectedRectangles: [UUID: Rectangle] = [:]
     
     func add(rectangle: Rectangle) {
-        shapes.append(rectangle)
+        self.rectangles.append(rectangle)
     }
     
     func add(drawing: Drawing) {
-        drawings.append(drawing)
+        self.drawings.append(drawing)
+    }
+    
+    func select(rectangle: Rectangle) {
+        self.selectedRectangles[rectangle.id] = rectangle
+    }
+    
+    func deselect(rectangle: Rectangle) {
+        self.selectedRectangles[rectangle.id] = nil
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct Rectangle {
+    let id = UUID()
     let backgroundColor: Color
     let rect: CGRect
     static let width: CGFloat = 100.0

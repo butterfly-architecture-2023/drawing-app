@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EDF39B12AFC0631007F5A48 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF39B02AFC0631007F5A48 /* Drawing.swift */; };
+		1EECA35A2B03ADED00C1A5EB /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EECA3592B03ADED00C1A5EB /* CanvasViewModel.swift */; };
 		1EF85A7B2AFA8D6400F2D942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF85A7A2AFA8D6400F2D942 /* AppDelegate.swift */; };
 		1EF85A7D2AFA8D6400F2D942 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF85A7C2AFA8D6400F2D942 /* SceneDelegate.swift */; };
 		1EF85A7F2AFA8D6400F2D942 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF85A7E2AFA8D6400F2D942 /* CanvasViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1EDF39B02AFC0631007F5A48 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		1EECA3592B03ADED00C1A5EB /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		1EF85A772AFA8D6400F2D942 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF85A7A2AFA8D6400F2D942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EF85A7C2AFA8D6400F2D942 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		1EECA3582B03ADD800C1A5EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1EECA3592B03ADED00C1A5EB /* CanvasViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1EF85A6E2AFA8D6400F2D942 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 				1EECA3562B03AB1D00C1A5EB /* Application */,
 				1EF85AB02AFA9BC500F2D942 /* View */,
 				1EF85AAB2AFA900800F2D942 /* Model */,
+				1EECA3582B03ADD800C1A5EB /* ViewModel */,
 				1EECA3572B03ABD300C1A5EB /* SupportingFiles */,
 			);
 			path = DrawingApp;
@@ -307,6 +318,7 @@
 			files = (
 				1EF85AAF2AFA94D200F2D942 /* Rectangle.swift in Sources */,
 				1EF85A7F2AFA8D6400F2D942 /* CanvasViewController.swift in Sources */,
+				1EECA35A2B03ADED00C1A5EB /* CanvasViewModel.swift in Sources */,
 				1EF85AB22AFA9BD500F2D942 /* CanvasView.swift in Sources */,
 				1EF85A7B2AFA8D6400F2D942 /* AppDelegate.swift in Sources */,
 				1EDF39B12AFC0631007F5A48 /* Drawing.swift in Sources */,

@@ -10,6 +10,8 @@ import Foundation
 struct Rectangle {
     let backgroundColor: Color
     let rect: CGRect
+    static let width: CGFloat = 100.0
+    static let height: CGFloat = 100.0
     
     init(rect: CGRect, backgroundColor: Color) {
         self.rect = rect

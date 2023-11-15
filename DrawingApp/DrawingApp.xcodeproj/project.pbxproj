@@ -21,6 +21,7 @@
 		1B80C27A2B046908002A6C98 /* VectorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2792B046908002A6C98 /* VectorFactory.swift */; };
 		1B80C27C2B046C4C002A6C98 /* SquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C27B2B046C4C002A6C98 /* SquareManager.swift */; };
 		1B80C27E2B046C53002A6C98 /* VectorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C27D2B046C53002A6C98 /* VectorManager.swift */; };
+		1B80C2832B04E1FB002A6C98 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2822B04E1FB002A6C98 /* DIContainer.swift */; };
 		1BEFF6062AF6685600F737DF /* DrawingAppBusinessDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; };
 		1BEFF6072AF6685600F737DF /* DrawingAppBusinessDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */; };
@@ -80,6 +81,7 @@
 		1B80C2792B046908002A6C98 /* VectorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorFactory.swift; sourceTree = "<group>"; };
 		1B80C27B2B046C4C002A6C98 /* SquareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareManager.swift; sourceTree = "<group>"; };
 		1B80C27D2B046C53002A6C98 /* VectorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorManager.swift; sourceTree = "<group>"; };
+		1B80C2822B04E1FB002A6C98 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMainViewController.swift; sourceTree = "<group>"; };
 		1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFactory.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */,
 				1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */,
 				1B80C2642B038535002A6C98 /* MainViewElementManager.swift */,
+				1B80C2822B04E1FB002A6C98 /* DIContainer.swift */,
 				1B80C2762B046876002A6C98 /* Factory */,
 				1B80C2772B0468F9002A6C98 /* Usecase */,
 				1B80C2782B0468FE002A6C98 /* Manager */,
@@ -321,6 +324,7 @@
 				1B80C27A2B046908002A6C98 /* VectorFactory.swift in Sources */,
 				1BEFF63B2AFA762D00F737DF /* MainViewFactory.swift in Sources */,
 				1B80C26B2B03862E002A6C98 /* AppElementManager.swift in Sources */,
+				1B80C2832B04E1FB002A6C98 /* DIContainer.swift in Sources */,
 				1B330FAD2AF65F310036F6CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

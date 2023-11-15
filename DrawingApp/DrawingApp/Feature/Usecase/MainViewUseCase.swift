@@ -18,6 +18,10 @@ class MainViewUseCase {
     let _ = squareFactory.makeElements()
   }
   
+  func tapVectorButton() {
+    
+  }
+  
   func endVectorGesture(data: Data) {
     let _ = vectorFactory.makeElements(data)
   }
@@ -32,6 +36,14 @@ class MainViewUseCase {
     if let square = square {
       let _ = squareManager.makeChange(id, action: square.isHighlighted ? .move : .highlight)
     }
+  }
+  
+  func startVectorCase() {
+    
+  }
+  
+  func changeVectorCase() {
+    
   }
   
   init(

@@ -6,13 +6,17 @@
 //
 
 import Foundation
+import DrawingAppBusinessDomain
 
-class MainViewUseCase {
-  private let squareFactory: SquareFactory
-  private let squareManager: SquareManager
+class MainViewUseCase: ObservableObject {
+  @Published private var squareFactory: SquareFactory
+  @Published private var squareManager: SquareManager
   
-  private let vectorFactory: VectorFactory
-  private let vectorManager: VectorManager
+  @Published private var vectorFactory: VectorFactory
+  @Published private var vectorManager: VectorManager
+  
+  var squares: [Square] { squareFactory.elements }
+  var vectors: [Vector] { vectorFactory.elements }
   
   func tapAddSquareButton() {
     let _ = squareFactory.makeElements()

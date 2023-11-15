@@ -6,19 +6,35 @@
 //
 
 import UIKit
+import Combine
 
 class iPadMainViewController: UIViewController {
-  private let useCase: MainViewUseCase?
-  private lazy var squareButton: UIButton = UIButton(frame: .init(origin: .zero, size: CGSize(width: 200, height: 60)))
-  private lazy var vectorButton: UIButton = UIButton(frame: .init(origin: .zero, size: CGSize(width: 200, height: 60)))
-  private lazy var buttonsLayer: UIStackView = UIStackView(frame: .init(origin: .zero, size: CGSize(width: 475, height: 80)))
+  private var subscriptions = Set<AnyCancellable>()
+  
+  private let useCase: MainViewUseCase
+  
+  private var squareButton = UIButton()
+  private var vectorButton = UIButton()
+  private var buttonsLayer = UIStackView()
   
   private lazy var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureHandler(_:)))
+  private lazy var gestureDelegate = MainViewGestureDelegate(useCase: useCase, canvas: view)
+  
   private var imageView: UIImageView?
   private var lastPoint: CGPoint?
   
   init(useCase: MainViewUseCase) {
     self.useCase = useCase
+    
+    useCase.objectWillChange.sink { _ in
+      for s in useCase.squares {
+        
+      }
+      for v in useCase.vectors {
+        
+      }
+    }
+    .store(in: &subscriptions)
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -28,8 +44,14 @@ class iPadMainViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
-    
     view.backgroundColor = .white
+    
+    squareButton.setLayout()
+    squareButton.setTitle("Square", for: .normal)
+    vectorButton.setLayout()
+    vectorButton.setTitle("Vector", for: .normal)
+    buttonsLayer.setLayout()
+    
     view.addSubview(buttonsLayer)
     buttonsLayer.center.x = view.frame.width / 2
     buttonsLayer.center.y = view.frame.height - buttonsLayer.frame.height - 1
@@ -42,61 +64,46 @@ class iPadMainViewController: UIViewController {
     
     squareButton.addTarget(self, action: #selector(squareButtonTapped(_:)), for: .touchUpInside)
     vectorButton.addTarget(self, action: #selector(vectorButtonTapped(_:)), for: .touchUpInside)
+    
+    panGestureRecognizer.delegate = gestureDelegate
   }
   
   @objc private func squareButtonTapped(_ sender: UIButton) {
-    useCase?.tapAddSquareButton()
+    useCase.tapAddSquareButton()
   }
   
   @objc private func vectorButtonTapped(_ sender: UIButton) {
-    useCase?.tapVectorButton()
+    useCase.tapVectorButton()
+    if let gestures = view.gestureRecognizers, gestures.contains(where: {$0 == panGestureRecognizer}) {
+      view.removeGestureRecognizer(panGestureRecognizer)
+    } else {
+      view.addGestureRecognizer(panGestureRecognizer)
+    }
   }
   
   @objc private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
-    switch sender.state {
-    case .began:
-      useCase?.startVectorCase()
-    case .changed:
-      useCase?.changeVectorCase()
-    case .ended:
-      if let imageView = imageView,
-         let image = imageView.image,
-         let data = image.pngData() {
-        useCase?.endVectorGesture(data: data)
-      }
-      imageView = nil
-      lastPoint = nil
-      break
-    default:
-      return
-    }
   }
-  
-  func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-    guard let imageView = self.imageView else {
-      return
-    }
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1.0)
-    let context = UIGraphicsGetCurrentContext()
-    
-    imageView.image?.draw(in: view.frame)
-    
-    context?.move(to: fromPoint)
-    context?.addLine(to: toPoint)
-    
-    context?.setLineCap(.round)
-    context?.setLineWidth(2.5)
-    
-    context?.setStrokeColor(UIColor.black.cgColor)
-    
-    context?.setBlendMode(.normal)
-    context?.strokePath()
-    
-    imageView.frame = view.frame
-    
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    imageView.image = newImage
-    UIGraphicsEndImageContext()
-    view.setNeedsLayout()
+}
+
+private extension UIButton {
+  func setLayout() {
+    self.frame.size = CGSize(width: 200, height: 60)
+    self.setTitleColor(.black, for: .normal)
+    self.backgroundColor = .clear
+    self.layer.borderColor = UIColor.black.cgColor
+    self.layer.borderWidth = 1
+  }
+}
+
+private extension UIStackView {
+  func setLayout() {
+    self.frame.size = CGSize(width: 475, height: 80)
+    self.layer.borderColor = UIColor.black.cgColor
+    self.layer.borderWidth = 1
+    self.axis = .horizontal
+    self.spacing = 25
+    self.distribution = .fillEqually
+    self.layoutMargins = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
+    self.isLayoutMarginsRelativeArrangement = true
   }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ElemInView {
+public protocol ElemInView {
   var id: UUID { get }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 /// 사각형을 표현하는데 필요한 모델
 public class Square: Movable, ElementColorRandom, ElemInView {
-  var id: UUID
+  public var id: UUID
   
   // Color(Hex)
   var _color: CanvasColor = .init()

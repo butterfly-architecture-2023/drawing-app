@@ -9,7 +9,7 @@ import Foundation
 
 /// 자유로운 선을 표현하는데 필요한 뷰의 모델
 public class Vector: ElemInView {
-  var id: UUID
+  public var id: UUID
   // Color(Hex)
   private(set) var _hexColor: CanvasColor = .init()
   public var hexColor: CanvasColor {

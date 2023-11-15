@@ -11,6 +11,7 @@ import Foundation
 public class Square: Movable, ElementColorRandom, ElemInView {
   public var id: UUID
   
+  public var isHighlighted: Bool = false
   // Color(Hex)
   var _color: CanvasColor = .init()
   var _canvasFrame: CanvasFrame

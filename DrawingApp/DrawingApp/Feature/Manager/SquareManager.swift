@@ -17,8 +17,23 @@ class SquareManager: AppElementManager {
     case highlight, move
   }
   
-  func makeChange(_ elem: E) -> E {
-    return elem
+  func makeChange(_ elem: E, action: Action) -> E {
+    switch action {
+    case .highlight:
+      return elem
+    case .move:
+      return elem
+    }
+  }
+  
+  func makeChange(_ id: UUID, action: Action) -> E? {
+    let elem = manager.squares.first(where: {$0.id == id})
+    switch action {
+    case .highlight:
+      return elem
+    case .move:
+      return elem
+    }
   }
   
   required init(_ manager: DrawingResourceManager) {

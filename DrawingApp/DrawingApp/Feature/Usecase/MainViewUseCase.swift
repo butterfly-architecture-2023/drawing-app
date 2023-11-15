@@ -15,19 +15,23 @@ class MainViewUseCase {
   private let vectorManager: VectorManager
   
   func tapAddSquareButton() {
-    
+    let _ = squareFactory.makeElements()
   }
   
-  func tapAddVectorButton() {
-    
+  func endVectorGesture(data: Data) {
+    let _ = vectorFactory.makeElements(data)
   }
   
-  func tapVector() {
-    
+  func tapVector(id: UUID) {
+    let _ = vectorManager.makeChange(id, action: .move)
   }
   
-  func tapSquare() {
+  func tapSquare(id: UUID) {
+    let square = squareFactory.elements.first(where: {$0.id == id})
     
+    if let square = square {
+      let _ = squareManager.makeChange(id, action: square.isHighlighted ? .move : .highlight)
+    }
   }
   
   init(

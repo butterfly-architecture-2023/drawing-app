@@ -13,7 +13,8 @@ protocol AppElementManager {
   associatedtype Action: RawRepresentable
   
   var manager: DrawingResourceManager { get }
-  func makeChange(_ elem: E) -> E
+  func makeChange(_ elem: E, action: Action) -> E
+  func makeChange(_ id: UUID, action: Action) -> E?
   
   init(_ manager: DrawingResourceManager)
 }

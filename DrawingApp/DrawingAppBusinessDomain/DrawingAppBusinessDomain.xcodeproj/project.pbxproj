@@ -12,6 +12,8 @@
 		1B3310032AF6650C0036F6CE /* DrawingResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */; };
 		1B3310052AF6651D0036F6CE /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310042AF6651D0036F6CE /* Square.swift */; };
 		1B3310072AF665270036F6CE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310062AF665270036F6CE /* Vector.swift */; };
+		1B80C26D2B038674002A6C98 /* ElemInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C26C2B038674002A6C98 /* ElemInView.swift */; };
+		1B80C2702B03898E002A6C98 /* ElemInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C26C2B038674002A6C98 /* ElemInView.swift */; };
 		1BEFF60F2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF60E2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift */; };
 		1BEFF6102AF6691500F737DF /* DrawingAppBusinessDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B330FE82AF664C40036F6CE /* DrawingAppBusinessDomain.framework */; };
 		1BEFF6162AF6692F00F737DF /* DrawingResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */; };
@@ -54,6 +56,7 @@
 		1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingResourceManager.swift; sourceTree = "<group>"; };
 		1B3310042AF6651D0036F6CE /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		1B3310062AF665270036F6CE /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		1B80C26C2B038674002A6C98 /* ElemInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElemInView.swift; sourceTree = "<group>"; };
 		1BEFF60C2AF6691500F737DF /* DrawingAppBusinessDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppBusinessDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEFF60E2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppBusinessDomainTests.swift; sourceTree = "<group>"; };
 		1BEFF61C2AF7988600F737DF /* CanvasSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasSize.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 				1B330FEC2AF664C40036F6CE /* DrawingAppBusinessDomain.docc */,
 				1B3310022AF6650C0036F6CE /* DrawingResourceManager.swift */,
 				1B3310042AF6651D0036F6CE /* Square.swift */,
+				1B80C26C2B038674002A6C98 /* ElemInView.swift */,
 				1B3310062AF665270036F6CE /* Vector.swift */,
 				1BEFF61C2AF7988600F737DF /* CanvasSize.swift */,
 				1BEFF62E2AF87D6500F737DF /* CanvasColor.swift */,
@@ -260,6 +264,7 @@
 				1B3310032AF6650C0036F6CE /* DrawingResourceManager.swift in Sources */,
 				1BFB1F2F2B026CF500B91424 /* Movable.swift in Sources */,
 				1B3310072AF665270036F6CE /* Vector.swift in Sources */,
+				1B80C26D2B038674002A6C98 /* ElemInView.swift in Sources */,
 				1BEFF62F2AF87D6500F737DF /* CanvasColor.swift in Sources */,
 				1B330FED2AF664C40036F6CE /* DrawingAppBusinessDomain.docc in Sources */,
 				1BFB1F312B026D0D00B91424 /* ElementColorRandom.swift in Sources */,
@@ -280,6 +285,7 @@
 				1BEFF62C2AF876B600F737DF /* CanvasPosition.swift in Sources */,
 				1BFB1F362B02D80A00B91424 /* RangeFromZero.swift in Sources */,
 				1BEFF6162AF6692F00F737DF /* DrawingResourceManager.swift in Sources */,
+				1B80C2702B03898E002A6C98 /* ElemInView.swift in Sources */,
 				1BEFF6182AF6693200F737DF /* Vector.swift in Sources */,
 				1BEFF6302AF8868000F737DF /* CanvasColor.swift in Sources */,
 				1BEFF60F2AF6691500F737DF /* DrawingAppBusinessDomainTests.swift in Sources */,

@@ -13,6 +13,11 @@
 		1B330FB42AF65F320036F6CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B330FB32AF65F320036F6CE /* Assets.xcassets */; };
 		1B330FB72AF65F320036F6CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B330FB52AF65F320036F6CE /* LaunchScreen.storyboard */; };
 		1B330FDB2AF65F420036F6CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B330FDA2AF65F420036F6CE /* README.md */; };
+		1B80C2612B0384CA002A6C98 /* MainViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2602B0384CA002A6C98 /* MainViewUseCase.swift */; };
+		1B80C2652B038535002A6C98 /* MainViewElementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2642B038535002A6C98 /* MainViewElementManager.swift */; };
+		1B80C2672B038622002A6C98 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2662B038622002A6C98 /* AppFactory.swift */; };
+		1B80C2692B038627002A6C98 /* AppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C2682B038627002A6C98 /* AppUseCase.swift */; };
+		1B80C26B2B03862E002A6C98 /* AppElementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80C26A2B03862E002A6C98 /* AppElementManager.swift */; };
 		1BEFF6062AF6685600F737DF /* DrawingAppBusinessDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; };
 		1BEFF6072AF6685600F737DF /* DrawingAppBusinessDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33102E2AF668140036F6CE /* DrawingAppBusinessDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */; };
@@ -64,6 +69,11 @@
 		1B330FB82AF65F320036F6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B330FDA2AF65F420036F6CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1B3310292AF668140036F6CE /* DrawingAppBusinessDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrawingAppBusinessDomain.xcodeproj; path = DrawingAppBusinessDomain/DrawingAppBusinessDomain.xcodeproj; sourceTree = "<group>"; };
+		1B80C2602B0384CA002A6C98 /* MainViewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUseCase.swift; sourceTree = "<group>"; };
+		1B80C2642B038535002A6C98 /* MainViewElementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewElementManager.swift; sourceTree = "<group>"; };
+		1B80C2662B038622002A6C98 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		1B80C2682B038627002A6C98 /* AppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUseCase.swift; sourceTree = "<group>"; };
+		1B80C26A2B03862E002A6C98 /* AppElementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppElementManager.swift; sourceTree = "<group>"; };
 		1BEFF61F2AF799CF00F737DF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMainViewController.swift; sourceTree = "<group>"; };
 		1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFactory.swift; sourceTree = "<group>"; };
@@ -130,6 +140,11 @@
 				1B330FAE2AF65F310036F6CE /* iPadViewController.swift */,
 				1BEFF6362AFA758100F737DF /* iOSMainViewController.swift */,
 				1BEFF63A2AFA762D00F737DF /* MainViewFactory.swift */,
+				1B80C2602B0384CA002A6C98 /* MainViewUseCase.swift */,
+				1B80C2642B038535002A6C98 /* MainViewElementManager.swift */,
+				1B80C2662B038622002A6C98 /* AppFactory.swift */,
+				1B80C2682B038627002A6C98 /* AppUseCase.swift */,
+				1B80C26A2B03862E002A6C98 /* AppElementManager.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -257,14 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B80C2672B038622002A6C98 /* AppFactory.swift in Sources */,
 				1BFB9E6F2AFC3605000E191A /* CanvasSize+Extensions.swift in Sources */,
+				1B80C2612B0384CA002A6C98 /* MainViewUseCase.swift in Sources */,
+				1B80C2692B038627002A6C98 /* AppUseCase.swift in Sources */,
 				1B330FAF2AF65F310036F6CE /* iPadViewController.swift in Sources */,
 				1BFB9E732AFC3743000E191A /* CanvasPosition+Extensions.swift in Sources */,
 				1BEFF6372AFA758100F737DF /* iOSMainViewController.swift in Sources */,
 				1BEFF6202AF799CF00F737DF /* UIScreen+Extensions.swift in Sources */,
 				1B330FAB2AF65F310036F6CE /* AppDelegate.swift in Sources */,
+				1B80C2652B038535002A6C98 /* MainViewElementManager.swift in Sources */,
 				1BFB9E712AFC3613000E191A /* CanvasColor+Extensions.swift in Sources */,
 				1BEFF63B2AFA762D00F737DF /* MainViewFactory.swift in Sources */,
+				1B80C26B2B03862E002A6C98 /* AppElementManager.swift in Sources */,
 				1B330FAD2AF65F310036F6CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

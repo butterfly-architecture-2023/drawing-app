@@ -6,21 +6,32 @@
 //
 
 import UIKit
+import Network
 
-final class ViewController: UIViewController {
-    let canvasView = UIView()
-    let makeRectangleButton = UIButton()
-    let makeDrawLineButton = UIButton()
-    private let stackView = UIStackView()
+protocol DrawingDisplayLogic: AnyObject {
+    func displayDrawing(info: DrawingInformation)
+    func displayDrawingLine(info: DrawingInformation)
+    func displayEndDrawingLine(info: DrawingInformation)
+    func displayRequestFail(failMessage: AlertMessage)
+    func displayLoginResult(success: Bool)
+    func displayChatResult(drawingInfo: [DrawingInformation])
+}
 
-    var currentDrawingPath: UIBezierPath?
-    var isDrawingMode = false
+final class ViewController: UIViewController, DrawingDisplayLogic {
     
-    private let drawManager: DrawingManager
-
-    init(drawManager: DrawingManager = DrawingManager()) {
-        self.drawManager = drawManager
+    var interactor: DrawingBusinessLogic?
+    
+    private let canvasView = CanvasView()
+    private let makeRectangleButton = UIButton()
+    private let makeDrawLineButton = UIButton()
+    private let syncButton = UIButton()
+    private let stackView = UIStackView()
+    private let loginView = LoginView()
+    
+    init() {
         super.init(nibName: nil, bundle: nil)
+        setup()
+        serverFetch()
     }
     
     required init?(coder: NSCoder) {
@@ -32,92 +43,103 @@ final class ViewController: UIViewController {
         layout()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard isDrawingMode else { return }
-        guard let touch = touches.first else { return }
-        
-        let location = touch.location(in: canvasView)
-        currentDrawingPath?.move(to: location)
+    func displayDrawing(info: DrawingInformation) {
+        canvasView.appendRectangle(info: info)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let location = touch.location(in: canvasView)
-        
-        guard isDrawingMode else { return }
-        
-        currentDrawingPath?.addLine(to: location)
-        drawDrawing()
+    func displayDrawingLine(info: DrawingInformation) {
+        canvasView.drawDrawing(drawingPath: info)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard isDrawingMode else { return }
-        guard let path = currentDrawingPath else { return }
-        drawManager.makeDrawing(path: path)
+    func displayEndDrawingLine(info: DrawingInformation) {
+        canvasView.makeDrawingLineView(info: info)
+    }
+    
+    func displayRequestFail(failMessage: AlertMessage) {
+        loginView.clear()
+        showAlert(type: failMessage)
+    }
+    
+    func displayLoginResult(success: Bool) {
+        interactor?.syncDrawingInfo()
+    }
+    
+    func displayChatResult(drawingInfo: [DrawingInformation]) {
+        guard drawingInfo.isEmpty == false else { return }
+        showAlert(type: .loginSuccess) { [weak self] in
+            guard let self = self else { return }
+            self.canvasView.syncDrawing(infos: drawingInfo)
+        }
+    }
+    
+    func displayLoginResult() {
+        loginView.clear()
+        showAlert(type: .loginSuccess)
+    }
+    
+    func displayChatResult() {
+        showAlert(type: .chatSuccess)
+    }
+    
+    private func serverFetch() {
+        interactor?.serverFetch()
+    }
+    
+    private func setup() {
+        let viewController = self
+        let canvasView = viewController.canvasView
+        let loginView = viewController.loginView
+        let interactor = DrawingInteractor()
+        let presenter = DrawingPresenter()
+        let drawUseCase = DrawingUseCaseImpl()
+        let server = ChatServer(with: .init(integerLiteral: 9090))
+        let chatClientUseCase = ChatClientImpl()
+        
+        viewController.interactor = interactor
+        canvasView.interactor = interactor
+        loginView.interactor = interactor
+        interactor.presenter = presenter
+        interactor.drawUseCase = drawUseCase
+        interactor.chatClientUseCase = chatClientUseCase
+        interactor.server = server
+        presenter.viewController = viewController
     }
 }
 
 /// Event Action
 
-extension ViewController {
-    @objc func handleShapeTap(_ sender: RectangleButton) {
-        sender.active()
-        deselectSelectedShape(id: sender.id)
-    }
-    
+private extension ViewController {
     @objc func makeRectangleButtonTapped(_ sender: UIButton) {
         makeDrawLineButton.isSelected = false
-        isDrawingMode = false
-        currentDrawingPath = nil
-        deselectSelectedShape()
-        drawRectangles()
+        canvasView.isDrawingMode = false
+        interactor?.makeRectangle(drawRect: canvasView.frame.convertDrawingRect())
     }
     
     @objc func makeDrawLineButtonTapped(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        isDrawingMode = sender.isSelected
-        currentDrawingPath = isDrawingMode ? UIBezierPath() : nil
+        canvasView.isDrawingMode = sender.isSelected
     }
-}
-
-/// Drawing
-
-extension ViewController {
-    func drawDrawing() {
-        if let path = currentDrawingPath {
-            let shapeLayer = CAShapeLayer()
-            shapeLayer.path = path.cgPath
-            shapeLayer.strokeColor = UIColor.black.cgColor
-            shapeLayer.fillColor = UIColor.clear.cgColor
-            shapeLayer.lineWidth = 5.0
-            canvasView.layer.addSublayer(shapeLayer)
+    
+    @objc func syncButtonTapped(_ sender: UIButton) {
+        if LoginStateManager.shared.isUserLogin() == true {
+            interactor?.syncDrawingInfo()
+        }
+        
+        if LoginStateManager.shared.isUserLogin() == false {
+            loginView.isHidden = false
         }
     }
     
-    func clearCanvasView() {
-        canvasView.subviews.forEach { $0.removeFromSuperview() }
-        if let sublayers = canvasView.layer.sublayers {
-            for sublayer in sublayers {
-                sublayer.removeFromSuperlayer()
-            }
+    func showAlert(type: AlertMessage, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: type.title, message: type.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .cancel) { _ in
+            completion?()
         }
-    }
-    
-    func drawRectangles() {
-        let rectangle = drawManager.makeRectangle(canvasBounds: canvasView.bounds)
-        rectangle.addTarget(self, action: #selector(handleShapeTap), for: .touchUpInside)
-        canvasView.addSubview(rectangle)
-    }
-    
-    func deselectSelectedShape(id: String? = nil ) {
-        _ = getRectangleViews()
-            .filter { $0.id != id }
-            .map { $0.clear() }
-    }
-    
-    func getRectangleViews() -> [RectangleButton] {
-        return canvasView.subviews
-            .compactMap { $0 as? RectangleButton }
+        alert.addAction(okAction)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.present(alert, animated: true)
+        }
     }
 }
 
@@ -133,18 +155,22 @@ private extension ViewController {
     func insertUI() {
         [
             canvasView,
-            stackView
+            stackView,
+            loginView
         ].forEach {
             view.addSubview($0)
         }
         stackView.addArrangedSubview(makeRectangleButton)
         stackView.addArrangedSubview(makeDrawLineButton)
+        stackView.addArrangedSubview(syncButton)
     }
     
     func basicSetUI() {
         canvasViewBasicSet()
+        loginViewBasicSet()
         makeRectangleButtonBasicSet()
         makeDrawLineButtonBasicSet()
+        syncButtonBasicSet()
         stackViewBasicSet()
     }
     
@@ -153,6 +179,8 @@ private extension ViewController {
         stackViewAnchor()
         makeRectangleButtonAnchor()
         makeDrawLineButtonAnchor()
+        syncButtonAnchor()
+        loginViewAnchor()
     }
     
     func stackViewBasicSet() {
@@ -167,6 +195,11 @@ private extension ViewController {
         canvasView.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    func loginViewBasicSet() {
+        loginView.translatesAutoresizingMaskIntoConstraints = false
+        loginView.isHidden = true
+    }
+    
     func makeRectangleButtonBasicSet() {
         makeRectangleButton.setTitle("사각형", for: .normal)
         makeRectangleButton.setTitleColor(.darkGray, for: .normal)
@@ -179,14 +212,24 @@ private extension ViewController {
     
     func makeDrawLineButtonBasicSet() {
         makeDrawLineButton.setTitle("그리기", for: .normal)
-        makeDrawLineButton.setTitleColor(.darkGray, for: .normal)
         makeDrawLineButton.setTitle("그리기", for: .selected)
+        makeDrawLineButton.setTitleColor(.darkGray, for: .normal)
         makeDrawLineButton.setTitleColor(.black, for: .selected)
         makeDrawLineButton.backgroundColor = .white
         makeDrawLineButton.addTarget(self, action: #selector(makeDrawLineButtonTapped), for: .touchUpInside)
         makeDrawLineButton.layer.borderWidth = 1
         makeDrawLineButton.layer.borderColor = UIColor.black.cgColor
         makeDrawLineButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func syncButtonBasicSet() {
+        syncButton.setTitle("동기화", for: .normal)
+        syncButton.setTitleColor(.darkGray, for: .normal)
+        syncButton.backgroundColor = .white
+        syncButton.addTarget(self, action: #selector(syncButtonTapped), for: .touchUpInside)
+        syncButton.layer.borderWidth = 1
+        syncButton.layer.borderColor = UIColor.black.cgColor
+        syncButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func canvasViewAnchor() {
@@ -205,7 +248,7 @@ private extension ViewController {
             [
                 stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                stackView.heightAnchor.constraint(equalToConstant: 50)
+                stackView.heightAnchor.constraint(equalToConstant: 100)
             ]
         )
     }
@@ -214,7 +257,7 @@ private extension ViewController {
         NSLayoutConstraint.activate(
             [
                 makeRectangleButton.widthAnchor.constraint(equalToConstant: 100),
-                makeRectangleButton.heightAnchor.constraint(equalToConstant: 50)
+                makeRectangleButton.heightAnchor.constraint(equalToConstant: 100)
             ]
         )
     }
@@ -223,7 +266,27 @@ private extension ViewController {
         NSLayoutConstraint.activate(
             [
                 makeDrawLineButton.widthAnchor.constraint(equalToConstant: 100),
-                makeDrawLineButton.heightAnchor.constraint(equalToConstant: 50)
+                makeDrawLineButton.heightAnchor.constraint(equalToConstant: 100)
+            ]
+        )
+    }
+    
+    func syncButtonAnchor() {
+        NSLayoutConstraint.activate(
+            [
+                syncButton.widthAnchor.constraint(equalToConstant: 100),
+                syncButton.heightAnchor.constraint(equalToConstant: 100)
+            ]
+        )
+    }
+    
+    func loginViewAnchor() {
+        NSLayoutConstraint.activate(
+            [
+                loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                loginView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                loginView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             ]
         )
     }

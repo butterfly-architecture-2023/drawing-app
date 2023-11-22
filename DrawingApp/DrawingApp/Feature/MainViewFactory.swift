@@ -21,16 +21,6 @@ class MainViewFactory {
     self.manager = DrawingResourceManager(CanvasSize(width: width, height: height))
   }
   
-  func currentVectorColor() -> UIColor? {
-    guard let vector = manager.vectors.last else {
-      return nil
-    }
-    
-    let set = vector.hexColor.colorSet
-    
-    return UIColor(red: set.red, green: set.green, blue: set.blue, alpha: 1)
-  }
-  
   func getButtonStackView(as os: OperatingSystem) -> UIStackView {
     let result = UIStackView()
     result.frame.size = CGSize(
@@ -82,12 +72,12 @@ class MainViewFactory {
       while ((frame.minX - size.width) ..< (frame.maxX + size.width) ~= square.position.x
              &&
              (frame.minY - size.height) ..< (frame.maxY + size.height) ~= square.position.y) {
-        square.randomPosition(manager.canvasSize)
+//        manager.setRandomPosition(elem: square, in: CanvasFrame(.init(width: frame.width, height: frame.height), .init(x: 0, y: 0)))
       }
     }
     
     let squareView = UIView(frame: CGRect(at: square.position, in: square.size))
-    squareView.backgroundColor = UIColor(square.color)
+//    squareView.backgroundColor = UIColor(square.color)
     self.squareViews.append(squareView)
     
     return squareView
@@ -95,8 +85,8 @@ class MainViewFactory {
   
   func addVector(at rect: CGRect, image: UIImage) {
     let vector = manager.addVector(data: image.pngData())
-    vector.setPosition(x: rect.minX, y: rect.minY)
-    vector.setSize(width: rect.width, height: rect.height)
+//    vector.setPosition(x: rect.minX, y: rect.minY)
+//    vector.setSize(width: rect.width, height: rect.height)
   }
   
   enum OperatingSystem {

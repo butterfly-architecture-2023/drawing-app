@@ -10,6 +10,8 @@ import Foundation
 /// 자유로운 선을 표현하는데 필요한 뷰의 모델
 public class Vector: ElemInView {
   public var id: UUID
+  public var order: Int
+  
   // Color(Hex)
   private(set) var _hexColor: CanvasColor = .init()
   public var hexColor: CanvasColor {
@@ -17,33 +19,16 @@ public class Vector: ElemInView {
   }
   
   // Size
-  private(set) var width: Double = 100
-  private(set) var height: Double = 100
-  public var canvasSize: CanvasSize {
-    CanvasSize(width: width, height: height)
-  }
-  public func setSize(width: Double, height: Double) {
-    self.width = width
-    self.height = height
-  }
+  public var width: Double = 0
+  public var height: Double = 0
   
   // Position
-  private(set) var x: Double = 0
-  private(set) var y: Double = 0
-  public var position: CanvasPosition {
-    CanvasPosition(x: x, y: y)
-  }
-  public func setPosition(x: Double, y: Double) {
-    self.x = x
-    self.y = y
-  }
-  public func setPosition(at position: CanvasPosition) {
-    self.x = position.x
-    self.y = position.y
-  }
+  public var x: Double = 0
+  public var y: Double = 0
   
-  init(id: UUID = UUID()) {
+  init(id: UUID = UUID(), order: Int = 0) {
     self.id = id
+    self.order = order
   }
   
   public var data: Data?

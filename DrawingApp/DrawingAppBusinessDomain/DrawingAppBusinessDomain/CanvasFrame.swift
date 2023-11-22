@@ -7,12 +7,23 @@
 
 import Foundation
 
-struct CanvasFrame {
-  var size: CanvasSize
-  var position: CanvasPosition
+public struct CanvasFrame {
+  var _size: CanvasSize
+  public var size: CanvasSize {
+    _size
+  }
+  var _position: CanvasPosition
+  public var position: CanvasPosition {
+    _position
+  }
   
-  mutating func convertToRandomPosition() {
-    position.x = Double.random(in: position.x...position.x+size.width)
-    position.y = Double.random(in: position.y...position.y+size.height)
+  public init(_ size: CanvasSize, _ position: CanvasPosition) {
+    self._size = size
+    self._position = position
+  }
+  
+  public mutating func convertToRandomPosition() {
+    _position.x = Double.random(in: position.x...position.x+size.width)
+    _position.y = Double.random(in: position.y...position.y+size.height)
   }
 }

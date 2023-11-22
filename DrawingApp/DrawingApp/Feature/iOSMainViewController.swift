@@ -10,29 +10,17 @@ import Combine
 
 class iOSMainViewController: UIViewController {
   private var subscriptions = Set<AnyCancellable>()
-  
-  private let useCase: MainViewUseCase
-  
   private var squareButton = UIButton()
   private var vectorButton = UIButton()
   private var buttonsLayer = UIStackView()
   
   private lazy var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureHandler(_:)))
-  private lazy var gestureDelegate = MainViewGestureDelegate(useCase: useCase, canvas: view)
+  private lazy var backgroundGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped(_:)))
+  private let vm: MainViewModel
   
-  init(useCase: MainViewUseCase) {
-    self.useCase = useCase
+  init(vm: MainViewModel) {
+    self.vm = vm
     super.init(nibName: nil, bundle: nil)
-    
-    useCase.objectWillChange.sink { _ in
-      for s in useCase.squares {
-        
-      }
-      for v in useCase.vectors {
-        
-      }
-    }
-    .store(in: &subscriptions)
   }
   
   required init?(coder: NSCoder) {
@@ -42,6 +30,9 @@ class iOSMainViewController: UIViewController {
   override func loadView() {
     super.loadView()
     view.backgroundColor = .white
+    
+    self.vm.view = view
+    panGestureRecognizer.delegate = vm
     
     squareButton.setLayout()
     squareButton.setTitle("Vector", for: .normal)
@@ -61,21 +52,24 @@ class iOSMainViewController: UIViewController {
     
     squareButton.addTarget(self, action: #selector(squareButtonTapped(_:)), for: .touchUpInside)
     vectorButton.addTarget(self, action: #selector(vectorButtonTapped(_:)), for: .touchUpInside)
-    
-    panGestureRecognizer.delegate = gestureDelegate
+    view.addGestureRecognizer(backgroundGestureRecognizer)
   }
   
   @objc private func squareButtonTapped(_ sender: UIButton) {
-    useCase.tapAddSquareButton()
+    vm.addSquareButtonTapped()
   }
   
   @objc private func vectorButtonTapped(_ sender: UIButton) {
-    useCase.tapVectorButton()
     if let gestures = view.gestureRecognizers, gestures.contains(where: {$0 == panGestureRecognizer}) {
       view.removeGestureRecognizer(panGestureRecognizer)
     } else {
       view.addGestureRecognizer(panGestureRecognizer)
     }
+  }
+  
+  @objc private func backgroundTapped(_ gesture: UITapGestureRecognizer) {
+    let location = gesture.location(in: view)
+    vm.screenTapped(location.x, location.y)
   }
   
   @objc private func panGestureHandler(_ sender: UIPanGestureRecognizer) {

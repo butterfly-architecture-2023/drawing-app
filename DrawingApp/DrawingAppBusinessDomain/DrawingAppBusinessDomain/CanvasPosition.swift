@@ -16,7 +16,7 @@ public struct CanvasPosition: Equatable {
   @RangeFromZero public var x: Double
   @RangeFromZero public var y: Double
   
-  init(x: Double, y: Double) {
+  public init(x: Double, y: Double) {
     self.x = x
     self.y = y
   }

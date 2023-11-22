@@ -26,7 +26,7 @@ extension Movable {
       return false
     }
     
-    self._canvasFrame.position = position
+//    self._canvasFrame.setPosition(position)
     return true
   }
 }

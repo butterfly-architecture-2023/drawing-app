@@ -13,58 +13,51 @@ class DIContainer {
     width: UIScreen.screenWidth,
     height: UIScreen.screenHeight))
   
-  private var _mainViewUseCase: MainViewUseCase?
-  var mainViewUseCase: MainViewUseCase {
-    MainViewUseCase(
-      squareFactory: squareFactory,
-      squareManager: squareManager,
-      vectorFactory: vectorFactory,
-      vectorManager: vectorManager
-    )
+  private var _selectElementUseCase: SelectSquareElementUseCase?
+  var selectElementUseCase: SelectSquareElementUseCase {
+    guard let _selectElementUseCase else {
+      let useCase = SelectSquareElementUseCase()
+      _selectElementUseCase = useCase
+      return useCase
+    }
+    
+    return _selectElementUseCase
   }
   
-  // TODO: - 중복되는 코드를 해결할 방안이 필요. 메타타입을 고려하는 중.
-  private var _squareFactory: SquareFactory?
-  var squareFactory: SquareFactory {
-    guard let _squareFactory else {
-      let factory = SquareFactory(manager)
-      _squareFactory = factory
+  private var _selectVectorUseCase: SelectVectorElementUseCase?
+  var selectVectorUseCase: SelectVectorElementUseCase {
+    guard let _selectVectorUseCase else {
+      let useCase = SelectVectorElementUseCase()
+      _selectVectorUseCase = useCase
+      return useCase
+    }
+    
+    return _selectVectorUseCase
+  }
+  
+  private var _viewFactory: ViewFactory?
+  var viewFactory: ViewFactory {
+    guard let _viewFactory else {
+      let factory = ViewFactory(manager)
+      self._viewFactory = factory
       return factory
     }
     
-    return _squareFactory
+    return _viewFactory
   }
   
-  private var _vectorFactory: VectorFactory?
-  var vectorFactory: VectorFactory {
-    guard let _vectorFactory else {
-      let factory = VectorFactory(manager)
-      _vectorFactory = factory
-      return factory
+  private var _mainViewModel: MainViewModel?
+  var mainViewModel: MainViewModel {
+    guard let _mainViewModel else {
+      let vm = MainViewModel(
+        viewFactory,
+        selectElementUseCase,
+        selectVectorUseCase
+      )
+      self._mainViewModel = vm
+      return vm
     }
     
-    return _vectorFactory
-  }
-  
-  private var _squareManager: SquareManager?
-  var squareManager: SquareManager {
-    guard let _squareManager else {
-      let m = SquareManager(manager)
-      _squareManager = m
-      return m
-    }
-    
-    return _squareManager
-  }
-  
-  private var _vectorManager: VectorManager?
-  var vectorManager: VectorManager {
-    guard let _vectorManager else {
-      let m = VectorManager(manager)
-      _vectorManager = m
-      return m
-    }
-    
-    return _vectorManager
+    return _mainViewModel
   }
 }

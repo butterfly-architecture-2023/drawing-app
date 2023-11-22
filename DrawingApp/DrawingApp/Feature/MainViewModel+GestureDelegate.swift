@@ -1,34 +1,28 @@
 //
-//  MainViewGestureDelegate.swift
+//  MainViewModel+GestureDelegate.swift
 //  DrawingApp
 //
-//  Created by 백상휘 on 2023/11/15.
+//  Created by 백상휘 on 2023/11/22.
 //
 
+import Foundation
 import UIKit
 
-class MainViewGestureDelegate: NSObject, UIGestureRecognizerDelegate {
-  private var imageView: UIImageView?
-  private var lastPoint: CGPoint?
-  private let useCase: MainViewUseCase?
-  private let canvas: UIView
-  
-  init(useCase: MainViewUseCase, canvas view: UIView) {
-    self.useCase = useCase
-    self.canvas = view
-  }
+extension MainViewModel: UIGestureRecognizerDelegate {
   
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive event: UIEvent) -> Bool {
+    guard let view = view else { return false }
+    
     switch gestureRecognizer.state {
     case .began:
-      useCase?.startVectorCase()
+      //      useCase?.startVectorCase()
       let imageView = UIImageView()
       self.imageView = imageView
-      self.lastPoint = gestureRecognizer.location(in: canvas)
-      canvas.addSubview(imageView)
+      self.lastPoint = gestureRecognizer.location(in: view)
+      view.addSubview(imageView)
     case .changed:
-      useCase?.changeVectorCase()
-      let currentPoint = gestureRecognizer.location(in: canvas)
+      //      useCase?.changeVectorCase()
+      let currentPoint = gestureRecognizer.location(in: view)
       if let lastPoint {
         drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
         self.lastPoint = currentPoint
@@ -37,7 +31,7 @@ class MainViewGestureDelegate: NSObject, UIGestureRecognizerDelegate {
       if let imageView = imageView,
          let image = imageView.image,
          let data = image.pngData() {
-        useCase?.endVectorGesture(data: data)
+        vectorGestureEnded(data)
       }
       imageView = nil
       lastPoint = nil
@@ -51,13 +45,13 @@ class MainViewGestureDelegate: NSObject, UIGestureRecognizerDelegate {
   }
   
   func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-    guard let imageView = imageView else {
+    guard let imageView = imageView, let view = view else {
       return
     }
-    UIGraphicsBeginImageContextWithOptions(canvas.frame.size, false, 1.0)
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1.0)
     let context = UIGraphicsGetCurrentContext()
     
-    imageView.image?.draw(in: canvas.frame)
+    imageView.image?.draw(in: view.frame)
     
     context?.move(to: fromPoint)
     context?.addLine(to: toPoint)
@@ -70,11 +64,11 @@ class MainViewGestureDelegate: NSObject, UIGestureRecognizerDelegate {
     context?.setBlendMode(.normal)
     context?.strokePath()
     
-    imageView.frame = canvas.frame
+    imageView.frame = view.frame
     
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
     imageView.image = newImage
     UIGraphicsEndImageContext()
-    canvas.setNeedsLayout()
+    view.setNeedsLayout()
   }
 }

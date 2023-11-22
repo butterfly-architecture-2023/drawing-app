@@ -58,6 +58,14 @@ class ViewController: UIViewController {
                 self?.canvasView.drawingCanvas.graphicsInfo = info.graphicsInfo as? [Drawing] ?? []
             }
         }
+        
+        viewModel.updateUserInteractionEnable = { [weak self] mode in
+            if mode == .rectangle {
+                self?.canvasView.isUserInteractionEnabled = false
+            } else { // drawing
+                self?.canvasView.isUserInteractionEnabled = true
+            }
+        }
     }
 }
 

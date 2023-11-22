@@ -59,10 +59,7 @@ class ViewModel {
     var updateUserInteractionEnable: (DrawingButtonType) -> Void = { _ in }
     
     
-    // TODO: - 사각형 모드이고, 유저 선택 좌표값에 사각형이 존재하면 선택여부를 체킹하고, 빨간색으로 색상 변경하도록 함
-    private func changeRectangleColor() {
-        
-    }
+    // MARK: - private method
     
     private func makeDrawingInfo(_ info: PositionProtocol) {
         let color = CGColor.random(without: .red)

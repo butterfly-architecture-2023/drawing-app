@@ -32,7 +32,6 @@ class DrawingCanvas: UIImageView {
         self.init(frame: .zero)
         self.graphicsInfo = graphicsInfo
         self.backgroundColor = .white
-        self.isUserInteractionEnabled = true
         self.alpha = 0.5
     }
     

@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         rectangleButton.addTarget(self, action: #selector(rectangleButtonTapped), for: .touchUpInside)
         drawingButton.addTarget(self, action: #selector(drawingButtonTapped), for: .touchUpInside)
         canvasView.delegate = self
+        viewModel.screenSize = UIScreen.main.bounds
         
         bindViewModel()
         
@@ -52,19 +53,12 @@ class ViewController: UIViewController {
     
     private func bindViewModel() {
         viewModel.refreshCanvas = { [weak self] info in
-            if info is ShapeInfo {
-                self?.canvasView.shapeCanvas.graphicsInfo = info.graphicsInfo as? [Rectangle] ?? []
-            } else if info is DrawingInfo {
-                self?.canvasView.drawingCanvas.graphicsInfo = info.graphicsInfo as? [Drawing] ?? []
-            }
+            self?.canvasView.setGraphicsInfo(info)
         }
         
         viewModel.updateUserInteractionEnable = { [weak self] mode in
-            if mode == .rectangle {
-                self?.canvasView.isUserInteractionEnabled = false
-            } else { // drawing
-                self?.canvasView.isUserInteractionEnabled = true
-            }
+            self?.canvasView.setMode(mode)
+            
         }
     }
 }

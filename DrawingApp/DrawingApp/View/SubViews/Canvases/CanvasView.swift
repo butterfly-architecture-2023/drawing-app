@@ -16,6 +16,8 @@ class CanvasView: UIView {
     
     private var drawingInfo: Drawing = Drawing()
     
+    private var mode: DrawingButtonType = .drawing
+    
     
     // MARK: - Delegate
     
@@ -35,10 +37,17 @@ class CanvasView: UIView {
     // MARK: - Touch Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard mode == .drawing else {
+            let position = RectanglePosition(points: [drawingCanvas.makeTouchPoint(touches)])
+            delegate?.send(position)
+            return
+        }
+        self.isUserInteractionEnabled = (mode == .rectangle) ? false : true
         drawingInfo = Drawing(color: CGColor.random(without: .red), points: [drawingCanvas.makeTouchPoint(touches)])
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard mode == .drawing else { return }
         let lastPoint = drawingInfo.points.last ?? CGPoint()
         let currentPoint = drawingCanvas.makeTouchPoint(touches)
         drawingCanvas.drawLine(lastPoint, currentPoint, drawingInfo.color)
@@ -46,12 +55,25 @@ class CanvasView: UIView {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard mode == .drawing else { return }
         let lastPoint = drawingInfo.points.last ?? CGPoint()
         let currentPoint = drawingCanvas.makeTouchPoint(touches)
         drawingCanvas.drawLine(lastPoint, currentPoint, drawingInfo.color)
         drawingInfo.points.append(currentPoint)
         let position = DrawingPosition(points: drawingInfo.points)
         delegate?.send(position)
+    }
+    
+    func setGraphicsInfo(_ info: any GraphicsProvider) {
+        if info is ShapeInfo {
+            shapeCanvas.graphicsInfo = info.graphicsInfo as? [Rectangle] ?? []
+        } else if info is DrawingInfo {
+            drawingCanvas.graphicsInfo = info.graphicsInfo as? [Drawing] ?? []
+        }
+    }
+    
+    func setMode(_ mode: DrawingButtonType) {
+        self.mode = mode
     }
 }
 

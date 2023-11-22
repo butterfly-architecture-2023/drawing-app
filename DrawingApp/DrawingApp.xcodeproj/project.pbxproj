@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453307882AF5FFA500DF41A3 /* CanvasView.swift */; };
 		4533078B2AF6179B00DF41A3 /* DrawingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */; };
 		4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8202AF5EC190077907E /* AppDelegate.swift */; };
 		4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8222AF5EC190077907E /* SceneDelegate.swift */; };
@@ -23,9 +22,21 @@
 		4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8562AF5EDF50077907E /* DrawingButton.swift */; };
 		4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C8582AF5F0600077907E /* UISubviewStyle.swift */; };
 		4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594C85A2AF5F0730077907E /* DrawingButtonType.swift */; };
+		45ABD3132B0379990042E0F1 /* GraphicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3122B0379990042E0F1 /* GraphicsProtocol.swift */; };
+		45ABD3162B037ABD0042E0F1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3152B037ABD0042E0F1 /* ViewModel.swift */; };
+		45ABD3182B037ECA0042E0F1 /* EventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3172B037ECA0042E0F1 /* EventDelegate.swift */; };
+		45ABD3212B05D03A0042E0F1 /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3202B05D03A0042E0F1 /* DrawingCanvas.swift */; };
+		45ABD3232B05D1130042E0F1 /* ShapeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3222B05D1130042E0F1 /* ShapeCanvas.swift */; };
+		45ABD3252B0B1F100042E0F1 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3242B0B1F100042E0F1 /* CanvasView.swift */; };
+		45ABD3272B0B22720042E0F1 /* PositionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3262B0B22710042E0F1 /* PositionProtocol.swift */; };
+		45ABD32A2B0BBD3A0042E0F1 /* CGColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD3292B0BBD3A0042E0F1 /* CGColor+.swift */; };
 		45BB0CD52AF62D89008B21AD /* ShapeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */; };
-		45BB0CDF2AF6422B008B21AD /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB0CDE2AF6422B008B21AD /* UIColor+.swift */; };
 		45BB0CE12AF64333008B21AD /* CGPoint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB0CE02AF64333008B21AD /* CGPoint+.swift */; };
+		45FB706A2B0E726C0023BD0B /* GraphicsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB70692B0E726C0023BD0B /* GraphicsProvider.swift */; };
+		45FB706C2B0E729F0023BD0B /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB706B2B0E729F0023BD0B /* Rectangle.swift */; };
+		45FB706E2B0E72B40023BD0B /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB706D2B0E72B40023BD0B /* Drawing.swift */; };
+		45FB70702B0E72E10023BD0B /* DrawingPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB706F2B0E72E10023BD0B /* DrawingPosition.swift */; };
+		45FB70722B0E73010023BD0B /* RectanglePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB70712B0E73010023BD0B /* RectanglePosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		453307882AF5FFA500DF41A3 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingInfo.swift; sourceTree = "<group>"; };
 		4594C81D2AF5EC190077907E /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594C8202AF5EC190077907E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,9 +74,21 @@
 		4594C8562AF5EDF50077907E /* DrawingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButton.swift; sourceTree = "<group>"; };
 		4594C8582AF5F0600077907E /* UISubviewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISubviewStyle.swift; sourceTree = "<group>"; };
 		4594C85A2AF5F0730077907E /* DrawingButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonType.swift; sourceTree = "<group>"; };
+		45ABD3122B0379990042E0F1 /* GraphicsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsProtocol.swift; sourceTree = "<group>"; };
+		45ABD3152B037ABD0042E0F1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		45ABD3172B037ECA0042E0F1 /* EventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDelegate.swift; sourceTree = "<group>"; };
+		45ABD3202B05D03A0042E0F1 /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
+		45ABD3222B05D1130042E0F1 /* ShapeCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvas.swift; sourceTree = "<group>"; };
+		45ABD3242B0B1F100042E0F1 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		45ABD3262B0B22710042E0F1 /* PositionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionProtocol.swift; sourceTree = "<group>"; };
+		45ABD3292B0BBD3A0042E0F1 /* CGColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+.swift"; sourceTree = "<group>"; };
 		45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeInfo.swift; sourceTree = "<group>"; };
-		45BB0CDE2AF6422B008B21AD /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		45BB0CE02AF64333008B21AD /* CGPoint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+.swift"; sourceTree = "<group>"; };
+		45FB70692B0E726C0023BD0B /* GraphicsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsProvider.swift; sourceTree = "<group>"; };
+		45FB706B2B0E729F0023BD0B /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		45FB706D2B0E72B40023BD0B /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		45FB706F2B0E72E10023BD0B /* DrawingPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPosition.swift; sourceTree = "<group>"; };
+		45FB70712B0E73010023BD0B /* RectanglePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +132,10 @@
 			children = (
 				4533078A2AF6179B00DF41A3 /* DrawingInfo.swift */,
 				45BB0CD42AF62D89008B21AD /* ShapeInfo.swift */,
+				45FB706B2B0E729F0023BD0B /* Rectangle.swift */,
+				45FB706D2B0E72B40023BD0B /* Drawing.swift */,
+				45FB706F2B0E72E10023BD0B /* DrawingPosition.swift */,
+				45FB70712B0E73010023BD0B /* RectanglePosition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,10 +143,8 @@
 		4533078E2AF6181500DF41A3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				453307882AF5FFA500DF41A3 /* CanvasView.swift */,
-				4594C8562AF5EDF50077907E /* DrawingButton.swift */,
-				4594C85A2AF5F0730077907E /* DrawingButtonType.swift */,
-				4594C8582AF5F0600077907E /* UISubviewStyle.swift */,
+				45FB70682B0E72200023BD0B /* Canvases */,
+				45FB70672B0E720D0023BD0B /* Buttons */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -154,7 +178,9 @@
 				4594C8292AF5EC1A0077907E /* Assets.xcassets */,
 				4594C82B2AF5EC1A0077907E /* LaunchScreen.storyboard */,
 				4594C82E2AF5EC1A0077907E /* Info.plist */,
+				45ABD3282B0BB6440042E0F1 /* Protocol */,
 				4533078C2AF617B000DF41A3 /* View */,
+				45ABD3142B037AB00042E0F1 /* ViewModel */,
 				4533078D2AF617CA00DF41A3 /* Model */,
 				45BB0CE22AF643B9008B21AD /* Extension */,
 			);
@@ -178,13 +204,52 @@
 			path = DrawingAppUITests;
 			sourceTree = "<group>";
 		};
+		45ABD3142B037AB00042E0F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				45ABD3152B037ABD0042E0F1 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		45ABD3282B0BB6440042E0F1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4594C8582AF5F0600077907E /* UISubviewStyle.swift */,
+				45ABD3262B0B22710042E0F1 /* PositionProtocol.swift */,
+				45ABD3122B0379990042E0F1 /* GraphicsProtocol.swift */,
+				45FB70692B0E726C0023BD0B /* GraphicsProvider.swift */,
+				45ABD3172B037ECA0042E0F1 /* EventDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		45BB0CE22AF643B9008B21AD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				45BB0CDE2AF6422B008B21AD /* UIColor+.swift */,
 				45BB0CE02AF64333008B21AD /* CGPoint+.swift */,
+				45ABD3292B0BBD3A0042E0F1 /* CGColor+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		45FB70672B0E720D0023BD0B /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4594C8562AF5EDF50077907E /* DrawingButton.swift */,
+				4594C85A2AF5F0730077907E /* DrawingButtonType.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		45FB70682B0E72200023BD0B /* Canvases */ = {
+			isa = PBXGroup;
+			children = (
+				45ABD3202B05D03A0042E0F1 /* DrawingCanvas.swift */,
+				45ABD3222B05D1130042E0F1 /* ShapeCanvas.swift */,
+				45ABD3242B0B1F100042E0F1 /* CanvasView.swift */,
+			);
+			path = Canvases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,15 +393,26 @@
 			files = (
 				45BB0CD52AF62D89008B21AD /* ShapeInfo.swift in Sources */,
 				4594C8592AF5F0600077907E /* UISubviewStyle.swift in Sources */,
-				453307892AF5FFA500DF41A3 /* CanvasView.swift in Sources */,
+				45ABD3212B05D03A0042E0F1 /* DrawingCanvas.swift in Sources */,
+				45ABD3272B0B22720042E0F1 /* PositionProtocol.swift in Sources */,
+				45FB706E2B0E72B40023BD0B /* Drawing.swift in Sources */,
+				45ABD3182B037ECA0042E0F1 /* EventDelegate.swift in Sources */,
 				4594C8252AF5EC190077907E /* ViewController.swift in Sources */,
+				45ABD32A2B0BBD3A0042E0F1 /* CGColor+.swift in Sources */,
 				4594C85B2AF5F0730077907E /* DrawingButtonType.swift in Sources */,
 				45BB0CE12AF64333008B21AD /* CGPoint+.swift in Sources */,
+				45FB706A2B0E726C0023BD0B /* GraphicsProvider.swift in Sources */,
+				45ABD3162B037ABD0042E0F1 /* ViewModel.swift in Sources */,
+				45ABD3232B05D1130042E0F1 /* ShapeCanvas.swift in Sources */,
+				45ABD3132B0379990042E0F1 /* GraphicsProtocol.swift in Sources */,
+				45ABD3252B0B1F100042E0F1 /* CanvasView.swift in Sources */,
+				45FB70702B0E72E10023BD0B /* DrawingPosition.swift in Sources */,
 				4594C8212AF5EC190077907E /* AppDelegate.swift in Sources */,
 				4533078B2AF6179B00DF41A3 /* DrawingInfo.swift in Sources */,
 				4594C8572AF5EDF50077907E /* DrawingButton.swift in Sources */,
+				45FB706C2B0E729F0023BD0B /* Rectangle.swift in Sources */,
+				45FB70722B0E73010023BD0B /* RectanglePosition.swift in Sources */,
 				4594C8232AF5EC190077907E /* SceneDelegate.swift in Sources */,
-				45BB0CDF2AF6422B008B21AD /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,15 +5,12 @@
 //  Created by elly on 11/4/23.
 //
 
-import UIKit
+import Foundation
 
-struct ShapeInfo {
-    var point: CGPoint
-    var path: UIBezierPath
-    var color: UIColor
-    var isSelected: Bool
+struct ShapeInfo: GraphicsProvider {
+    typealias GraphicsType = Rectangle
     
-    func contains(_ point: CGPoint) -> Bool {
-        return path.contains(point)
-    }
+    var graphicsInfo: [Rectangle] = []
+    
+    func draw() { }
 }

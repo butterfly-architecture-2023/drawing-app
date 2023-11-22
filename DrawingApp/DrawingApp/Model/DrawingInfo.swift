@@ -7,12 +7,6 @@
 
 import Foundation
 
-protocol GraphicsProvider {
-    associatedtype GraphicsType
-    var graphicsInfo: [GraphicsType] { get set }
-    func draw()
-}
-
 struct DrawingInfo: GraphicsProvider {
     typealias GraphicsType = Drawing
     

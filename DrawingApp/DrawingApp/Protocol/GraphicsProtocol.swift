@@ -28,20 +28,3 @@ protocol RectangleProtocol: Identifiable, Colored, Pointable {
 }
 
 protocol DrawingProtocol: Identifiable, Colored, Pointable { }
-
-struct Rectangle: RectangleProtocol {
-    var id: UUID = UUID()
-    var color: CGColor = .black
-    var points: [CGPoint] = []
-    var isSelected: Bool = false
-
-    func topLeftPoint() -> CGPoint {
-        return points.first ?? CGPoint(x: 0, y: 0)
-    }
-}
-
-struct Drawing: DrawingProtocol {
-    var id: UUID = UUID()
-    var color: CGColor = .black
-    var points: [CGPoint] = []
-}

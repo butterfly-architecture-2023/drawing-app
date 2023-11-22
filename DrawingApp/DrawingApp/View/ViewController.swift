@@ -42,12 +42,10 @@ class ViewController: UIViewController {
     }
     
     @objc func drawingButtonTapped() {
-        debugPrint("drawingButtonTapped")
         viewModel.updateMode(.drawing)
     }
     
     @objc func rectangleButtonTapped() {
-        debugPrint("rectangleButtonTapped")
         viewModel.updateMode(.rectangle)
     }
     

@@ -71,8 +71,6 @@ class DrawingCanvas: UIImageView {
     }
     
     func draw() {
-        print("DrawingCanvas draw")
-        print(graphicsInfo)
         for drawing in graphicsInfo {
             for index in 0..<drawing.points.count-1 {
                 drawLine(drawing.points[index], drawing.points[index+1], drawing.color)

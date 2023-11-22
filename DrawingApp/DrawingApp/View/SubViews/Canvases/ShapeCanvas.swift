@@ -49,10 +49,8 @@ class ShapeCanvas: UIView {
     // shapeInfoList에 있는 사각형을 모두 그려줌
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        print("---- draw")
         _ = graphicsInfo.map {
             guard let context = UIGraphicsGetCurrentContext() else { return }
-            print("drawing")
             let color = ($0.isSelected == true) ? CGColor.red : $0.color
             context.setStrokeColor(color)
             context.addPath(makePath($0.topLeftPoint()).cgPath)
@@ -87,7 +85,6 @@ class ShapeCanvas: UIView {
     }
     
     func draw() {
-        print("ShapeCanvas draw")
         self.setNeedsDisplay()
     }
 }

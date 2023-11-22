@@ -24,12 +24,17 @@ class ViewController: UIViewController {
     }
     private var rectangleButton: DrawingButton = DrawingButton(.rectangle)
     private var drawingButton: DrawingButton = DrawingButton(.drawing)
+    
+    private let viewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rectangleButton.addTarget(self, action: #selector(rectangleButtonTapped), for: .touchUpInside)
         drawingButton.addTarget(self, action: #selector(drawingButtonTapped), for: .touchUpInside)
+        canvasView.delegate = self
+        
+        bindViewModel()
         
         addSubviews()
         makeConstraints()
@@ -37,12 +42,31 @@ class ViewController: UIViewController {
     
     @objc func drawingButtonTapped() {
         debugPrint("drawingButtonTapped")
-        canvasView.updateMode(.drawing)
+        viewModel.updateMode(.drawing)
     }
     
     @objc func rectangleButtonTapped() {
         debugPrint("rectangleButtonTapped")
-        canvasView.updateMode(.rectangle)
+        viewModel.updateMode(.rectangle)
+    }
+    
+    private func bindViewModel() {
+        viewModel.refreshCanvas = { [weak self] info in
+            if info is ShapeInfo {
+                self?.canvasView.shapeCanvas.graphicsInfo = info.graphicsInfo as? [Rectangle] ?? []
+            } else if info is DrawingInfo {
+                self?.canvasView.drawingCanvas.graphicsInfo = info.graphicsInfo as? [Drawing] ?? []
+            }
+        }
+    }
+}
+
+
+// MARK: - EventDelegate
+
+extension ViewController: EventDelegate {
+    func send(_ info: any PositionProtocol) {
+        viewModel.setPosition(info)
     }
 }
 

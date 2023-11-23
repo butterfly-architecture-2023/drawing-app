@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import Combine
 
 class iPadMainViewController: UIViewController {
-  private let factory = MainViewFactory(
-    width: UIScreen.screenWidth,
-    height: UIScreen.screenHeight)
-  
-  private lazy var squareButton: UIButton = factory.getSquareMakeButton(as: .iPad)
-  private lazy var vectorButton: UIButton = factory.getVectorMakeButton(as: .iPad)
-  private lazy var buttonsLayer: UIStackView = factory.getButtonStackView(as: .iPad)
+  private var subscriptions = Set<AnyCancellable>()
+  private var squareButton = UIButton()
+  private var vectorButton = UIButton()
+  private var buttonsLayer = UIStackView()
   
   private lazy var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureHandler(_:)))
-  private var imageView: UIImageView?
-  private var lastPoint: CGPoint?
+  private lazy var backgroundGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped(_:)))
+  
+  private let vm: MainViewModel
+  
+  init(vm: MainViewModel) {
+    self.vm = vm
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   override func loadView() {
     super.loadView()
-    
     view.backgroundColor = .white
+    
+    self.vm.view = view
+    panGestureRecognizer.delegate = vm
+    
+    squareButton.setLayout()
+    squareButton.setTitle("Square", for: .normal)
+    vectorButton.setLayout()
+    vectorButton.setTitle("Vector", for: .normal)
+    buttonsLayer.setLayout()
+    
     view.addSubview(buttonsLayer)
     buttonsLayer.center.x = view.frame.width / 2
     buttonsLayer.center.y = view.frame.height - buttonsLayer.frame.height - 1
@@ -36,67 +53,49 @@ class iPadMainViewController: UIViewController {
     
     squareButton.addTarget(self, action: #selector(squareButtonTapped(_:)), for: .touchUpInside)
     vectorButton.addTarget(self, action: #selector(vectorButtonTapped(_:)), for: .touchUpInside)
+    view.addGestureRecognizer(backgroundGestureRecognizer)
   }
   
   @objc private func squareButtonTapped(_ sender: UIButton) {
-    view.addSubview(factory.addSquare())
+    vm.addSquareButtonTapped()
   }
   
   @objc private func vectorButtonTapped(_ sender: UIButton) {
-    view.addGestureRecognizer(panGestureRecognizer)
+    if let gestures = view.gestureRecognizers, gestures.contains(where: {$0 == panGestureRecognizer}) {
+      view.removeGestureRecognizer(panGestureRecognizer)
+    } else {
+      view.addGestureRecognizer(panGestureRecognizer)
+    }
+  }
+  
+  @objc private func backgroundTapped(_ gesture: UITapGestureRecognizer) {
+    let location = gesture.location(in: view)
+    vm.screenTapped(location.x, location.y)
   }
   
   @objc private func panGestureHandler(_ sender: UIPanGestureRecognizer) {
-    switch sender.state {
-    case .began:
-      imageView = UIImageView()
-      view.addSubview(imageView!)
-      lastPoint = CGPoint(x: sender.location(in: view).x, y: sender.location(in: view).y)
-    case .changed:
-      let currentPoint = CGPoint(x: sender.location(in: view).x, y: sender.location(in: view).y)
-      if let point = lastPoint {
-        drawLineFrom(fromPoint: point, toPoint: currentPoint)
-        lastPoint = currentPoint
-      }
-    case .ended:
-      if let imageView = imageView, let image = imageView.image {
-        factory.addVector(at: .init(x: imageView.frame.minX, y: imageView.frame.minY), image: image)
-      }
-      imageView = nil
-      lastPoint = nil
-      view.removeGestureRecognizer(panGestureRecognizer)
-      break
-    default:
-      return
-    }
   }
-  
-  func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-    guard let imageView = self.imageView else {
-      return
-    }
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1.0)
-    let context = UIGraphicsGetCurrentContext()
-    
-    imageView.image?.draw(in: view.frame)
-    
-    context?.move(to: fromPoint)
-    context?.addLine(to: toPoint)
-    
-    context?.setLineCap(.round)
-    context?.setLineWidth(2.5)
-    
-    let color = factory.currentVectorColor() ?? .black
-    context?.setStrokeColor(color.cgColor)
-    
-    context?.setBlendMode(.normal)
-    context?.strokePath()
-    
-    imageView.frame = view.frame
-    
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    imageView.image = newImage
-    UIGraphicsEndImageContext()
-    view.setNeedsLayout()
+}
+
+private extension UIButton {
+  func setLayout() {
+    self.frame.size = CGSize(width: 200, height: 60)
+    self.setTitleColor(.black, for: .normal)
+    self.backgroundColor = .clear
+    self.layer.borderColor = UIColor.black.cgColor
+    self.layer.borderWidth = 1
+  }
+}
+
+private extension UIStackView {
+  func setLayout() {
+    self.frame.size = CGSize(width: 475, height: 80)
+    self.layer.borderColor = UIColor.black.cgColor
+    self.layer.borderWidth = 1
+    self.axis = .horizontal
+    self.spacing = 25
+    self.distribution = .fillEqually
+    self.layoutMargins = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
+    self.isLayoutMarginsRelativeArrangement = true
   }
 }

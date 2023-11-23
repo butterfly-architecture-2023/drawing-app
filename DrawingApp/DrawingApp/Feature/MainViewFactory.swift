@@ -12,20 +12,13 @@ class MainViewFactory {
   private(set) var squareViews: [UIView] = []
   private(set) var vectors: [Data] = []
   private(set) var stackView: UIStackView?
+  
+  private var vectorImageView: UIImageView?
+  
   let manager: DrawingResourceManager
   
   init(width: CGFloat, height: CGFloat) {
     self.manager = DrawingResourceManager(CanvasSize(width: width, height: height))
-  }
-  
-  func currentVectorColor() -> UIColor? {
-    guard let vector = manager.vectors.last else {
-      return nil
-    }
-    
-    let set = vector.hexColor.colorSet
-    
-    return UIColor(red: set.red, green: set.green, blue: set.blue, alpha: 1)
   }
   
   func getButtonStackView(as os: OperatingSystem) -> UIStackView {
@@ -74,35 +67,54 @@ class MainViewFactory {
     let square = manager.addSquare()
     
     if let stackView {
-      let size = square.canvasSize
+      let size = square.size
       let frame = stackView.frame
       while ((frame.minX - size.width) ..< (frame.maxX + size.width) ~= square.position.x
              &&
              (frame.minY - size.height) ..< (frame.maxY + size.height) ~= square.position.y) {
-        square.random(manager.canvasSize)
+//        manager.setRandomPosition(elem: square, in: CanvasFrame(.init(width: frame.width, height: frame.height), .init(x: 0, y: 0)))
       }
     }
     
-    let squareView = UIView(frame: CGRect(
-      x: square.position.x,
-      y: square.position.y,
-      width: square.canvasSize.width,
-      height: square.canvasSize.height))
-    squareView.backgroundColor = UIColor(
-      red: CGFloat(square.colorSet.red),
-      green: CGFloat(square.colorSet.green),
-      blue: CGFloat(square.colorSet.blue),
-      alpha: 1.0)
+    let squareView = UIView(frame: CGRect(at: square.position, in: square.size))
+//    squareView.backgroundColor = UIColor(square.color)
     self.squareViews.append(squareView)
     
     return squareView
   }
   
-  func addVector(at position: GesturePosition, image: UIImage) {
-    let _ = manager.addVector(from: position, data: image.pngData())
+  func addVector(at rect: CGRect, image: UIImage) {
+    let vector = manager.addVector(data: image.pngData())
+//    vector.setPosition(x: rect.minX, y: rect.minY)
+//    vector.setSize(width: rect.width, height: rect.height)
   }
   
   enum OperatingSystem {
     case iOS, iPad
+  }
+}
+
+private extension CGSize {
+  init(_ size: CanvasSize) {
+    self.init(width: size.width, height: size.height)
+  }
+}
+
+private extension CGPoint {
+  init(_ position: CanvasPosition) {
+    self.init(x: position.x, y: position.y)
+  }
+}
+
+private extension CGRect {
+  init(at position: CanvasPosition, in size: CanvasSize) {
+    self.init(origin: CGPoint(position), size: CGSize(size))
+  }
+}
+
+private extension UIColor {
+  convenience init(_ color: CanvasColor) {
+    let set = color.colorSet
+    self.init(red: set.red, green: set.green, blue: set.blue, alpha: set.alpha)
   }
 }

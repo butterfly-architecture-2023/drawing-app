@@ -8,31 +8,27 @@
 import Foundation
 
 /// 자유로운 선을 표현하는데 필요한 뷰의 모델
-public class Vector {
+public class Vector: ElemInView {
+  public var id: UUID
+  public var order: Int
   
   // Color(Hex)
-  private(set) var _hexColor: CanvasRandomColor = .init()
-  public var hexColor: CanvasRandomColor {
+  private(set) var _hexColor: CanvasColor = .init()
+  public var hexColor: CanvasColor {
     _hexColor
   }
   
   // Size
-  private(set) var width: Double = 100
-  private(set) var height: Double = 100
-  public var canvasSize: CanvasSize {
-    CanvasSize(width: width, height: height)
-  }
+  public var width: Double = 0
+  public var height: Double = 0
   
   // Position
-  var x: Double
-  var y: Double
-  public var position: GesturePosition {
-    GesturePosition(x: x, y: y)
-  }
+  public var x: Double = 0
+  public var y: Double = 0
   
-  init(x: Double, y: Double) {
-    self.x = x
-    self.y = y
+  init(id: UUID = UUID(), order: Int = 0) {
+    self.id = id
+    self.order = order
   }
   
   public var data: Data?

@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6851C3F52B04D1A9004ACD41 /* LoginStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C3F42B04D1A9004ACD41 /* LoginStateManager.swift */; };
+		6851C3F72B04E5CD004ACD41 /* BezierPathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C3F62B04E5CD004ACD41 /* BezierPathManager.swift */; };
+		6851C3F92B04EF4C004ACD41 /* DrawingUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C3F82B04EF4C004ACD41 /* DrawingUseCaseTests.swift */; };
+		6851C3FD2B051074004ACD41 /* ChatClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C3FC2B051074004ACD41 /* ChatClientTests.swift */; };
+		6851C3FF2B051341004ACD41 /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C3FE2B051341004ACD41 /* NWConnection+Extension.swift */; };
+		6851C4012B051AC3004ACD41 /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C4002B051AC3004ACD41 /* UIBezierPath+Extension.swift */; };
+		6851C4032B051E3A004ACD41 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C4022B051E3A004ACD41 /* CGPoint+Extension.swift */; };
+		6851C40B2B0538CF004ACD41 /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C4082B0538CF004ACD41 /* MockInteractor.swift */; };
+		6851C40C2B0538CF004ACD41 /* MockNWConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C4092B0538CF004ACD41 /* MockNWConnection.swift */; };
+		6851C40D2B0538CF004ACD41 /* MockChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C40A2B0538CF004ACD41 /* MockChatClient.swift */; };
+		6851C40F2B053B40004ACD41 /* DrawingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851C40E2B053B40004ACD41 /* DrawingInteractorTests.swift */; };
+		68B09B052AFE566D009CACEC /* ChatServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B042AFE566D009CACEC /* ChatServer.swift */; };
+		68B09B092B00DA8D009CACEC /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B082B00DA8D009CACEC /* CanvasView.swift */; };
+		68B09B0F2B011758009CACEC /* DrawingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B0E2B011758009CACEC /* DrawingUseCase.swift */; };
+		68B09B172B023118009CACEC /* DrawingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B142B023118009CACEC /* DrawingInteractor.swift */; };
+		68B09B182B023118009CACEC /* DrawingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B152B023118009CACEC /* DrawingType.swift */; };
+		68B09B192B023118009CACEC /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B162B023118009CACEC /* DrawingPresenter.swift */; };
+		68B09B1B2B0235EB009CACEC /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B1A2B0235EB009CACEC /* CGRect+Extension.swift */; };
+		68B09B5B2B0376C2009CACEC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B5A2B0376C2009CACEC /* LoginView.swift */; };
+		68B09B5D2B0382ED009CACEC /* ChatClientUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B09B5C2B0382ED009CACEC /* ChatClientUseCase.swift */; };
 		68B7E9F82AF74722005CAB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7E9F72AF74722005CAB62 /* AppDelegate.swift */; };
 		68B7E9FC2AF74722005CAB62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7E9FB2AF74722005CAB62 /* ViewController.swift */; };
 		68B7EA012AF74723005CAB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B7EA002AF74723005CAB62 /* Assets.xcassets */; };
 		68B7EA042AF74723005CAB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B7EA022AF74723005CAB62 /* LaunchScreen.storyboard */; };
-		68B7EA0F2AF74723005CAB62 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA0E2AF74723005CAB62 /* DrawingTests.swift */; };
 		68B7EA192AF74723005CAB62 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA182AF74723005CAB62 /* DrawingUITests.swift */; };
 		68B7EA1B2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA1A2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift */; };
 		68B7EA282AF74928005CAB62 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */; };
-		68B7EA2A2AF90F54005CAB62 /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA292AF90F54005CAB62 /* DrawingManager.swift */; };
-		68B7EA2C2AF93506005CAB62 /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */; };
-		68B7EA332AFA67CE005CAB62 /* RectangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */; };
-		74C3C8B42AF9C0B600E8DF78 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3C8B32AF9C0B600E8DF78 /* Shape.swift */; };
-		74C3C8B82AF9C43C00E8DF78 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3C8B72AF9C43C00E8DF78 /* Define.swift */; };
+		68B7EA2C2AF93506005CAB62 /* DrawedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7EA2B2AF93506005CAB62 /* DrawedButton.swift */; };
+		74C3C8B82AF9C43C00E8DF78 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3C8B72AF9C43C00E8DF78 /* AlertMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +56,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6851C3F42B04D1A9004ACD41 /* LoginStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStateManager.swift; sourceTree = "<group>"; };
+		6851C3F62B04E5CD004ACD41 /* BezierPathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathManager.swift; sourceTree = "<group>"; };
+		6851C3F82B04EF4C004ACD41 /* DrawingUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCaseTests.swift; sourceTree = "<group>"; };
+		6851C3FC2B051074004ACD41 /* ChatClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClientTests.swift; sourceTree = "<group>"; };
+		6851C3FE2B051341004ACD41 /* NWConnection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWConnection+Extension.swift"; sourceTree = "<group>"; };
+		6851C4002B051AC3004ACD41 /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
+		6851C4022B051E3A004ACD41 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		6851C4082B0538CF004ACD41 /* MockInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
+		6851C4092B0538CF004ACD41 /* MockNWConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNWConnection.swift; sourceTree = "<group>"; };
+		6851C40A2B0538CF004ACD41 /* MockChatClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockChatClient.swift; sourceTree = "<group>"; };
+		6851C40E2B053B40004ACD41 /* DrawingInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingInteractorTests.swift; sourceTree = "<group>"; };
+		68B09B042AFE566D009CACEC /* ChatServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatServer.swift; sourceTree = "<group>"; };
+		68B09B082B00DA8D009CACEC /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		68B09B0E2B011758009CACEC /* DrawingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUseCase.swift; sourceTree = "<group>"; };
+		68B09B142B023118009CACEC /* DrawingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingInteractor.swift; sourceTree = "<group>"; };
+		68B09B152B023118009CACEC /* DrawingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingType.swift; sourceTree = "<group>"; };
+		68B09B162B023118009CACEC /* DrawingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
+		68B09B1A2B0235EB009CACEC /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
+		68B09B5A2B0376C2009CACEC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		68B09B5C2B0382ED009CACEC /* ChatClientUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClientUseCase.swift; sourceTree = "<group>"; };
 		68B7E9F42AF74722005CAB62 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B7E9F72AF74722005CAB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68B7E9FB2AF74722005CAB62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,16 +83,12 @@
 		68B7EA032AF74723005CAB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68B7EA052AF74723005CAB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B7EA0A2AF74723005CAB62 /* DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68B7EA0E2AF74723005CAB62 /* DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTests.swift; sourceTree = "<group>"; };
 		68B7EA142AF74723005CAB62 /* DrawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B7EA182AF74723005CAB62 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 		68B7EA1A2AF74723005CAB62 /* DrawingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		68B7EA292AF90F54005CAB62 /* DrawingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingManager.swift; sourceTree = "<group>"; };
-		68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
-		68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RectangleTests.swift; path = ../../../../../Documents/RectangleTests.swift; sourceTree = "<group>"; };
-		74C3C8B32AF9C0B600E8DF78 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
-		74C3C8B72AF9C43C00E8DF78 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		68B7EA2B2AF93506005CAB62 /* DrawedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawedButton.swift; sourceTree = "<group>"; };
+		74C3C8B72AF9C43C00E8DF78 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +154,12 @@
 		68B7EA0D2AF74723005CAB62 /* DrawingTests */ = {
 			isa = PBXGroup;
 			children = (
-				68B7EA0E2AF74723005CAB62 /* DrawingTests.swift */,
-				68B7EA322AFA67CE005CAB62 /* RectangleTests.swift */,
+				6851C4082B0538CF004ACD41 /* MockInteractor.swift */,
+				6851C40A2B0538CF004ACD41 /* MockChatClient.swift */,
+				6851C4092B0538CF004ACD41 /* MockNWConnection.swift */,
+				6851C3F82B04EF4C004ACD41 /* DrawingUseCaseTests.swift */,
+				6851C3FC2B051074004ACD41 /* ChatClientTests.swift */,
+				6851C40E2B053B40004ACD41 /* DrawingInteractorTests.swift */,
 			);
 			path = DrawingTests;
 			sourceTree = "<group>";
@@ -140,8 +176,8 @@
 		68B7EA2F2AFA670A005CAB62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				74C3C8B72AF9C43C00E8DF78 /* Define.swift */,
-				74C3C8B32AF9C0B600E8DF78 /* Shape.swift */,
+				68B09B152B023118009CACEC /* DrawingType.swift */,
+				74C3C8B72AF9C43C00E8DF78 /* AlertMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,7 +185,9 @@
 		68B7EA302AFA6719005CAB62 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				68B7EA292AF90F54005CAB62 /* DrawingManager.swift */,
+				6851C3F42B04D1A9004ACD41 /* LoginStateManager.swift */,
+				6851C3F62B04E5CD004ACD41 /* BezierPathManager.swift */,
+				68B09B042AFE566D009CACEC /* ChatServer.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -158,7 +196,13 @@
 			isa = PBXGroup;
 			children = (
 				68B7E9FB2AF74722005CAB62 /* ViewController.swift */,
-				68B7EA2B2AF93506005CAB62 /* RectangleButton.swift */,
+				68B09B082B00DA8D009CACEC /* CanvasView.swift */,
+				68B7EA2B2AF93506005CAB62 /* DrawedButton.swift */,
+				68B09B5A2B0376C2009CACEC /* LoginView.swift */,
+				68B09B0E2B011758009CACEC /* DrawingUseCase.swift */,
+				68B09B5C2B0382ED009CACEC /* ChatClientUseCase.swift */,
+				68B09B142B023118009CACEC /* DrawingInteractor.swift */,
+				68B09B162B023118009CACEC /* DrawingPresenter.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -167,6 +211,10 @@
 			isa = PBXGroup;
 			children = (
 				68B7EA272AF74928005CAB62 /* UIColor+Extension.swift */,
+				68B09B1A2B0235EB009CACEC /* CGRect+Extension.swift */,
+				6851C4022B051E3A004ACD41 /* CGPoint+Extension.swift */,
+				6851C3FE2B051341004ACD41 /* NWConnection+Extension.swift */,
+				6851C4002B051AC3004ACD41 /* UIBezierPath+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,12 +358,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B7E9FC2AF74722005CAB62 /* ViewController.swift in Sources */,
-				74C3C8B82AF9C43C00E8DF78 /* Define.swift in Sources */,
-				68B7EA2C2AF93506005CAB62 /* RectangleButton.swift in Sources */,
+				6851C3F52B04D1A9004ACD41 /* LoginStateManager.swift in Sources */,
+				6851C4032B051E3A004ACD41 /* CGPoint+Extension.swift in Sources */,
+				68B09B5D2B0382ED009CACEC /* ChatClientUseCase.swift in Sources */,
+				68B09B092B00DA8D009CACEC /* CanvasView.swift in Sources */,
+				68B09B5B2B0376C2009CACEC /* LoginView.swift in Sources */,
+				74C3C8B82AF9C43C00E8DF78 /* AlertMessage.swift in Sources */,
+				68B09B182B023118009CACEC /* DrawingType.swift in Sources */,
+				68B09B192B023118009CACEC /* DrawingPresenter.swift in Sources */,
+				68B09B052AFE566D009CACEC /* ChatServer.swift in Sources */,
+				6851C4012B051AC3004ACD41 /* UIBezierPath+Extension.swift in Sources */,
+				68B09B0F2B011758009CACEC /* DrawingUseCase.swift in Sources */,
+				68B7EA2C2AF93506005CAB62 /* DrawedButton.swift in Sources */,
+				6851C3F72B04E5CD004ACD41 /* BezierPathManager.swift in Sources */,
 				68B7E9F82AF74722005CAB62 /* AppDelegate.swift in Sources */,
-				68B7EA2A2AF90F54005CAB62 /* DrawingManager.swift in Sources */,
+				68B09B1B2B0235EB009CACEC /* CGRect+Extension.swift in Sources */,
+				68B09B172B023118009CACEC /* DrawingInteractor.swift in Sources */,
+				6851C3FF2B051341004ACD41 /* NWConnection+Extension.swift in Sources */,
 				68B7EA282AF74928005CAB62 /* UIColor+Extension.swift in Sources */,
-				74C3C8B42AF9C0B600E8DF78 /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68B7EA0F2AF74723005CAB62 /* DrawingTests.swift in Sources */,
-				68B7EA332AFA67CE005CAB62 /* RectangleTests.swift in Sources */,
+				6851C3F92B04EF4C004ACD41 /* DrawingUseCaseTests.swift in Sources */,
+				6851C3FD2B051074004ACD41 /* ChatClientTests.swift in Sources */,
+				6851C40D2B0538CF004ACD41 /* MockChatClient.swift in Sources */,
+				6851C40F2B053B40004ACD41 /* DrawingInteractorTests.swift in Sources */,
+				6851C40B2B0538CF004ACD41 /* MockInteractor.swift in Sources */,
+				6851C40C2B0538CF004ACD41 /* MockNWConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

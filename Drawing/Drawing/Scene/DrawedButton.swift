@@ -1,5 +1,5 @@
 //
-//  RectangleButton.swift
+//  DrawButton.swift
 //  Drawing
 //
 //  Created by ByungHoon Ann on 2023/11/06.
@@ -7,22 +7,21 @@
 
 import UIKit
 
-
-class RectangleButton: UIButton {
-    private let shape: Shape
+final class DrawedButton: UIButton {
+    let info: DrawingInformation
     
-    var id: String {
-        return shape.id
-    }
-    
-    init(shape: Shape) {
-        self.shape = shape
-        super.init(frame: shape.frame)
-        backgroundColor = shape.color
+    init(info: DrawingInformation) {
+        self.info = info
+        super.init(frame: .makeDrawingRectToCGRect(drawingRect: info.rect))
+        basicSetUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func basicSetUI() {
+        backgroundColor = .convertColor(drawingColor: info.color)
     }
     
     func clear() {
